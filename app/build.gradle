@@ -31,4 +31,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'de.hdodenhof:circleimageview:3.0.0'
 
+    // Gif Image View
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
 }

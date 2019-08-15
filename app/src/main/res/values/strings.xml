@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Hurry Driver</string>
+    <string name="having_trouble_login">Having trouble login?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="agree_terms_privacy">By clicking, you agree to our
+        <a href="http://link1/terms">Terms of Use</a> and read the <a href="http://link1/privacy">Privacy Policy</a></string>
 </resources>
