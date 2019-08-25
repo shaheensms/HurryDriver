@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/car"
-    tools:context=".SignIn_Register">
+    tools:context=".Activity.Acitivity_Choose_SignIn_Register">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,22 +45,24 @@
                     android:orientation="horizontal">
 
                     <Button
+                        android:id="@+id/signin_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginRight="4dp"
                         android:textColor="@color/colorPrimary"
                         android:background="@drawable/btn_red_tint"
-                        android:text="Sign In"/>
+                        android:text="@string/sign_in_btn"/>
 
                     <Button
+                        android:id="@+id/signUP_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:layout_marginLeft="4dp"
                         android:textColor="@color/white"
                         android:background="@drawable/btn_red_back"
-                        android:text="Register"/>
+                        android:text="@string/registerBtn"/>
                 </LinearLayout>
 
 

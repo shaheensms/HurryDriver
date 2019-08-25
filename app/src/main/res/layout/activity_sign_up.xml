@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SignUp">
+    tools:context=".Activity.signUpAcitivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -48,13 +48,14 @@
                         android:textColorHint="@color/colorAccent"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_fname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableTint="@color/colorAccent"
                             android:drawableLeft="@drawable/draweble_user"
                             android:drawablePadding="8dp"
                             android:padding="12dp"
-                            android:hint="First Name "/>
+                            android:hint="@string/first_name"/>
 
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -69,13 +70,14 @@
                         android:textColorHint="@color/colorAccent"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/edt_lname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableTint="@color/colorAccent"
                             android:drawableLeft="@drawable/draweble_user"
                             android:drawablePadding="8dp"
                             android:padding="12dp"
-                            android:hint="Last Name "/>
+                            android:hint="@string/last_name"/>
 
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -90,13 +92,14 @@
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/email_icon"
                         android:drawablePadding="8dp"
                         android:padding="12dp"
-                        android:hint="Email "/>
+                        android:hint="@string/email"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -110,19 +113,21 @@
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_phoneNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
                         android:padding="12dp"
-                        android:hint="Phone Number "/>
+                        android:hint="@string/phone_number"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
+                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
@@ -137,7 +142,7 @@
                         android:drawablePadding="8dp"
                         android:padding="12dp"
                         android:inputType="textPassword"
-                        android:hint="Password "/>
+                        android:hint="@string/password"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -151,13 +156,15 @@
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/cityName"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
                         android:padding="12dp"
-                        android:hint="Phone Number "/>
+                        android:hint="@string/city_name"/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>
@@ -168,6 +175,7 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
+                    android:visibility="gone"
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <com.google.android.material.textfield.TextInputEditText
@@ -183,6 +191,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <CheckBox
+                    android:id="@+id/termCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -199,9 +208,12 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="8dp"
+                    android:fontFamily="@font/benson_bagla_font"
+                    android:textAllCaps="true"
+                    android:id="@+id/continueBtn"
                     android:background="@drawable/login_btn_background"
                     android:textColor="#fff"
-                    android:text="Continue"/>
+                    android:text="@string/continuetext"/>
 
 
 
