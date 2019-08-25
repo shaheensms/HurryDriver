@@ -81,6 +81,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
+                        android:id="@+id/driverLicenseUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
@@ -115,12 +116,12 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/driverIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_weight="1"
                                 android:layout_gravity="center"
-                                android:src="@drawable/done_icon"
-                                />
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -128,6 +129,7 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/vehicleCertificateUploadBtn"
                         android:layout_margin="4dp"
                         app:cardBackgroundColor="#ECF0F0">
 
@@ -163,6 +165,7 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/fitnessIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
@@ -177,6 +180,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
+                        android:id="@+id/RegistrationImageUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
@@ -211,6 +215,7 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/regPaperIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
@@ -225,6 +230,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
+                        android:id="@+id/nidUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
@@ -259,6 +265,7 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/nidIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
@@ -273,12 +280,14 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
+                        android:id="@+id/profileUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:padding="12dp"
+
                             android:orientation="horizontal">
 
                             <LinearLayout
@@ -307,6 +316,7 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/ppicon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1"
@@ -320,6 +330,7 @@
                     <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:id="@+id/taxTokenUploadBtn"
                         android:layout_margin="4dp"
                         app:cardBackgroundColor="#ECF0F0">
 
@@ -355,6 +366,7 @@
                             </LinearLayout>
 
                             <ImageView
+                                android:id="@+id/taxtokenIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:layout_weight="1"

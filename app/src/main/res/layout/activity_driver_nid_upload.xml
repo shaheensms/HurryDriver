@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Driver_Licence_upload">
+    tools:context=".Activity.Driver_Licence_upload_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,10 +34,11 @@
             android:textSize="14sp"/>
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp"
             android:layout_gravity="center"
-            android:src="@drawable/nid_card2"/>
+            android:src="@drawable/nid_card2" />
 
     </LinearLayout>
 

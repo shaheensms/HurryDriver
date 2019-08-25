@@ -127,7 +127,7 @@ public class signUpAcitivity extends AppCompatActivity {
                         // data succefully d updated
 
 
-                        Intent i = new Intent(getApplicationContext() , remainingStepsActivity.class);
+                        Intent i = new Intent(getApplicationContext() , ChooseVehicle.class);
 
                         startActivity(i);
 

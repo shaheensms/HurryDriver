@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Driver_Licence_upload">
+    tools:context=".Activity.Driver_Licence_upload_Activity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,9 +21,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:id="@+id/titleText"
             android:layout_marginBottom="24dp"
             android:text="Pick a photo of your Driver's License"
-            android:textSize="28sp"/>
+            android:textSize="28sp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -34,10 +35,23 @@
             android:textSize="14sp"/>
 
         <ImageView
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:id="@+id/imageOnUploadPage"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_marginTop="40dp"
             android:layout_gravity="center"
-            android:src="@drawable/driving_license"/>
+            android:visibility="visible"
+            android:src="@drawable/nid_card2" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/avatar"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:id="@+id/circlerImageOnUpload"
+            />
+
 
     </LinearLayout>
 
@@ -54,6 +68,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/takePhotoBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Take Photo"

@@ -28,6 +28,9 @@ dependencies {
     //firebase
     implementation 'com.google.firebase:firebase-auth:19.0.0'
     implementation 'com.google.firebase:firebase-database:19.0.0'
+    implementation 'com.google.firebase:firebase-storage:19.0.0'
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
@@ -52,6 +55,12 @@ dependencies {
 
     //aweesome dialogue
     implementation 'com.github.blennerSilva:AwesomeDialog:2.0.6'
+
+    //cropper library
+    api 'com.theartofdev.edmodo:android-image-cropper:2.8.0'
+
+    //compress library
+    implementation 'id.zelory:compressor:2.1.0'
 
 
 }
