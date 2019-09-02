@@ -25,13 +25,7 @@ public class ChooseYourVehicle extends AppCompatActivity {
         setContentView(R.layout.activity_choose_your_vehicle);
 
         // init views
-        carType = findViewById(R.id.) ;
-        selectManufecture = findViewById(R.id.) ;
-        selectCarModel = findViewById(R.id.) ;
-        selectYear= findViewById(R.id.) ;
-        carmodelLayout = findViewById(R.id.) ;
-        carmodelText= findViewById(R.id.) ;
-        manufetureText= findViewById(R.id.) ;
+
 
 
 

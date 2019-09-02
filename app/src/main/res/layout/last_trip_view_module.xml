@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -49,7 +48,7 @@
                     android:orientation="horizontal"
                     android:weightSum="2">
                     <TextView
-                        android:id="@+id/dateOfRow"
+                        android:id="@+id/dateOfRows"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="27 jun 2019 at 2:30 AM"
@@ -59,18 +58,21 @@
                         android:layout_weight="2"
                         />
                     <TextView
-                        android:id="@+id/fareRow"
+                        android:visibility="gone"
+                        android:id="@+id/statusRows"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="$350"
+                        android:text="Completed"
                         android:paddingLeft="10dp"
                         android:paddingRight="4dp"
                         android:paddingTop="2dp"
                         android:paddingBottom="2dp"
-                        android:background="@drawable/price_tag_round_bg"
+
                         android:textColor="#fff"
+
+                        android:textStyle="bold"
                         android:textAlignment="textEnd"
-                        android:textSize="12dp"
+                        android:textSize="14sp"
                         />
                 </LinearLayout>
 
@@ -87,7 +89,7 @@
                         android:text="Pickup Location"/>
 
                     <TextView
-                        android:id="@+id/locationFrom"
+                        android:id="@+id/locationFroms"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
@@ -110,7 +112,7 @@
                         android:text="Drop of Location"/>
 
                     <TextView
-                        android:id="@+id/locationTo"
+                        android:id="@+id/locationTos"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"

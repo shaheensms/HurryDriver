@@ -22,11 +22,7 @@
             android:theme="@style/AppThemee">
 
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
@@ -43,8 +39,16 @@
         <activity android:name=".Activity.signUpAcitivity" />
         <activity android:name=".Activity.login_Activity"></activity>
         <activity android:name=".Activity.Acitivity_Choose_SignIn_Register" />
-        <activity android:name=".HomePage" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Fragmnet.HomePageFragment" />
+        <activity android:name=".Activity.MainActivity" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
