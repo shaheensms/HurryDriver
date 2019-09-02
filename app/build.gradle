@@ -62,5 +62,8 @@ dependencies {
     //compress library
     implementation 'id.zelory:compressor:2.1.0'
 
+    // spinner library
+    implementation 'com.github.tiper:MaterialSpinner:1.3.3'
+
 
 }

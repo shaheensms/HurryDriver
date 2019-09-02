@@ -20,6 +20,7 @@
     <string name="upload_a_reg_paper_image">Upload A Registration Paper Image (Vehicle)</string>
     <string name="nid_front_side">NID Front Side</string>
     <string name="upload_a_profile_photo">Upload A Profile Photo</string>
+    <string name="vehicle_tax_token">Vehicle Tax Token</string>
     <string name="car_primary_reqs">At least 21 years old, with a driver\'s license and comprehensive insurance. Your vehicle is any mid-size or full-size 4-door vehicle, in excellent condition, less than 9 years old</string>
 
 

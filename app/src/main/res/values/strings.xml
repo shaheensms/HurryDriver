@@ -21,4 +21,39 @@
     <string name="upload_a_profile_photo">Upload A Profile Photo</string>
     <string name="vehicle_tax_token">Vehicle Tax Token</string>
     <string name="car_primary_reqs">At least 21 years old, with a driver\'s license and comprehensive insurance. Your vehicle is any mid-size or full-size 4-door vehicle, in excellent condition, less than 9 years old</string>
+
+    <string-array name="carType">
+        <item>Model of Car</item>
+        <item>Private Car</item>
+        <item>Micro-Bus</item>
+        <item>Truck</item>
+    </string-array>
+
+    <string-array name="Year">
+        <item>Year</item>
+        <item>1999</item>
+        <item>2000</item>
+        <item>2001</item>
+        <item>2002</item>
+        <item>2004</item>
+        <item>2005</item>
+        <item>2006</item>
+        <item>2007</item>
+        <item>2008</item>
+        <item>2009</item>
+        <item>2010</item>
+        <item>2011</item>
+        <item>2012</item>
+    </string-array>
+    <string-array name="truckType">
+        <item>Model of Truck</item>
+        <item>Private Car</item>
+        <item>Micro-Bus</item>
+        <item>Truck</item>
+    </string-array>
+
+
+
+
+
 </resources>
