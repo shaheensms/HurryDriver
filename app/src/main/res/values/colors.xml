@@ -7,4 +7,8 @@
     <color name="primary_red">#832727</color>
     <color name="white">#fff</color>
     <color name="image_red">#FC5F61</color>
+    <color name="icon_green">#20FF94</color>
+    <color name="icon_yellow">#FFEB3B</color>
+    <color name="icon_red">#FF0900</color>
+
 </resources>
