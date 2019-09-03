@@ -17,6 +17,7 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.metacoders.hurrydriver.Activity.Activity_Bid_Page_Driver;
 import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.Models.modelForCarRequest;
 import com.metacoders.hurrydriver.R;
@@ -77,7 +78,9 @@ public class RequestListFragment extends Fragment {
                         model.getPostId() , model.getUserId()  ,model.getUserNotificationID()   , model.getDriverId()  , model.getDriverNotificationID() ,
                         model.getToLoc() , model.getFromLoc() ,  model.getTimeDate() , model.getCarModl() , model.getDriverName() ,
                         model.getStatus()  , model.getCarLicNum() , model.getFare() , model.getCarType() ,
-                        model.getReqDate() , model.getTripDetails() , model.getReturnTimee() );
+                        model.getReqDate() , model.getTripDetails() , model.getReturnTimee() , model.getNumOfPpl() ,model.getRideType() );
+
+
 
 
 
@@ -101,6 +104,48 @@ public class RequestListFragment extends Fragment {
 
                         String DriverName  = getItem(postion).getDriverName() ;
                         String Status = getItem(postion).getStatus() ;
+                        String PostID = getItem(postion).getPostId() ;
+                        String userNottificaionId = getItem(postion).getUserNotificationID() ;
+                        String timeOfTrip = getItem(postion).getTimeDate();
+                        String fromLoc = getItem(postion).getFromLoc() ;
+                        String toLoc = getItem(postion).getToLoc();
+                        String numberOfppl = getItem(postion).getNumOfPpl();
+                        String description = getItem(postion).getTripDetails() ;
+                        String returnDate = getItem(postion).getReturnTimee() ;
+                        String rideType = getItem(postion).getRideType() ;
+
+
+                        //TODO you have to check for driver has already bid on this or not
+                        //TODO if he didnt then   give him access
+
+
+
+
+                        Intent io = new Intent(getContext() , Activity_Bid_Page_Driver.class) ;
+
+                        io.putExtra("drivername" , DriverName) ;
+                        io.putExtra("status",Status);
+                        io.putExtra("postid", PostID);
+                        io.putExtra("usernottificationid" , userNottificaionId);
+                        io.putExtra("timeoftrip", timeOfTrip);
+                        io.putExtra("fromloc", fromLoc);
+                        io.putExtra("toloc", toLoc);
+                        io.putExtra("numberofppl", numberOfppl);
+                        io.putExtra("des", description);
+                        io.putExtra("returndate", returnDate) ;
+                        io.putExtra("ridetype" , rideType) ;
+
+
+
+                        startActivity(io);
+
+
+
+
+
+
+
+
 
                     }
                 });

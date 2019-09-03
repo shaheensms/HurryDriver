@@ -104,6 +104,7 @@
                         android:textStyle="bold"
                         android:text="Ride Type: "/>
                     <TextView
+                        android:id="@+id/rideTypeTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
@@ -127,6 +128,7 @@
                         android:textStyle="bold"
                         android:text="Number of People: "/>
                     <TextView
+                        android:id="@+id/numberOfPPlTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
@@ -154,6 +156,7 @@
                     android:text="About Trip"/>
 
                 <TextView
+                    android:id="@+id/desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
@@ -171,12 +174,14 @@
                 android:orientation="vertical">
 
                 <EditText
+                    android:id="@+id/bidPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="number"
                     android:hint="Enter Your Price"/>
 
                 <Button
+                    android:id="@+id/submitBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Submit"/>
