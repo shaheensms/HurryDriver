@@ -31,8 +31,9 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
     Button  bidSubmitBtn ;
     EditText bidInput ;
     String bid , uid  ;
+    HashMap map ;
 
-    DatabaseReference mref  ;
+    DatabaseReference mref, driverRef  ;
 
 
 
@@ -113,15 +114,16 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
 
         mref = FirebaseDatabase.getInstance().getReference(constants.carRequestLink).child(postid).child("bids").child(uid);
 
+        driverRef = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child(constants.driverBidDir);
         // String     , driverRating  , bidPrice   ,driverImageLink;
 
-        HashMap map = new HashMap();
+         map = new HashMap();
         map.put("driverUid" ,uid  );
         map.put("bidPrice", bid) ;
         map.put("driverNottificationId" ,"test" ) ;
         map.put("userNotticationId" , usernottificationid) ;
         map.put("tripId", postid) ;
-        map.put("postID", uid) ;
+        map.put("postID", postid) ;
         map.put("driverName", "DriverNamePlaceHolder") ;
         map.put("drivercarcondition", "drivercarconditionPlaceHolder");
         map.put("driverCarModel", "driverCarModels") ;
@@ -135,8 +137,31 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
 
+                    //uploading data to driver db
 
-                        finish();
+                        driverRef.child(postid).setValue(map).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+                                finish();
+
+
+                            }
+                        })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+
+                                        Toast.makeText(getApplicationContext(), "Error : "+ e.getMessage() , Toast.LENGTH_LONG)
+                                                .show();
+
+
+                                    }
+                                }) ;
+
+
+
+
 
                     }
                 })
@@ -150,12 +175,6 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
 
                     }
                 }) ;
-
-
-
-
-
-
 
 
     }

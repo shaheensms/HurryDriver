@@ -7,6 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_marginTop="8dp"
+        android:id="@+id/tripModule_card"
         app:cardElevation="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -51,7 +52,7 @@
                         android:id="@+id/dateOfRows"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 jun 2019 at 2:30 AM"
+                        android:text=""
                         android:textColor="#000000"
                         android:textAlignment="textStart"
                         android:textStyle="bold"
@@ -96,7 +97,7 @@
                         android:textSize="12sp"
                         android:textColor="#000"
                         android:textStyle="bold"
-                        android:text="Shaktola, Tomsom Bridge, Cumilla"/>
+                        android:text=""/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -119,7 +120,7 @@
                         android:textSize="12sp"
                         android:textColor="#000"
                         android:textStyle="bold"
-                        android:text="Bashundhara Shopping Complex, Dhaka"/>
+                        android:text=""/>
                 </LinearLayout>
 
 

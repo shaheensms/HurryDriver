@@ -9,6 +9,9 @@ public class constants {
 
     public  static  String  acceptedRideList = "" ;
 
+    public  static  String driverBidDir = "bidList";
+
+
 
 
 

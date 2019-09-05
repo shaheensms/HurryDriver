@@ -5,13 +5,18 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.metacoders.hurrydriver.R;
 
+import java.security.PublicKey;
+
 public class viewholderForReqList extends RecyclerView.ViewHolder {
     View mview ;
     public TextView statusTv ;
+    public  CardView cardView  ;
+
 
     public viewholderForReqList(@NonNull View itemView) {
 
@@ -42,6 +47,7 @@ public class viewholderForReqList extends RecyclerView.ViewHolder {
         TextView locaTo = mview.findViewById(R.id.locationTos);
         TextView locaFrom = mview.findViewById(R.id.locationFroms);
         TextView statusTv = mview.findViewById(R.id.statusRows) ;
+        cardView = mview.findViewById(R.id.tripModule_card);
 
 
 

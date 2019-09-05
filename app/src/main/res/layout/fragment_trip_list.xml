@@ -16,6 +16,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.card.MaterialCardView
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -27,103 +28,106 @@
                 android:focusable="true">
 
                 <LinearLayout
+                    android:id="@+id/runningBidCardview"
+                    android:layout_width="374dp"
+                    android:layout_height="match_parent"
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:weightSum="5"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="5">
 
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginRight="16dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:src="@drawable/running_bid_icon"
-                        />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:gravity="center"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/icon_yellow"
-                            android:textSize="22sp"
-                            android:textStyle="bold"
-                            android:text="Running Bids"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:text="Total Trips : "/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="20sp"
-                                android:text="14"/>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:layout_gravity="center"
-                            android:orientation="horizontal">
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:text="Updated "/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:text="7"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:textColor="@color/black"
-                                android:textSize="16sp"
-                                android:text=" Days ago"/>
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
+                        android:src="@drawable/running_bid_icon" />
 
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:layout_marginTop="16dp"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="4dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginRight="4dp"
                         android:layout_marginBottom="16dp"
-                        android:layout_gravity="center"
                         android:layout_weight="1"
-                        android:src="@drawable/arrow_icon_yellow_24dp"
-                        />
+                        android:src="@drawable/arrow_icon_yellow_24dp" />
 
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="3"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Total Trips : "
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="14"
+                                android:textColor="@color/black"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Updated "
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="7"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" Days ago"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Running Bids"
+                            android:textColor="@color/icon_yellow"
+                            android:textSize="22sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
 
 
                 </LinearLayout>
@@ -256,6 +260,7 @@
                 <LinearLayout
                     android:background="?attr/selectableItemBackground"
                     android:clickable="true"
+                    android:id="@+id/cancelCardview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="5"
