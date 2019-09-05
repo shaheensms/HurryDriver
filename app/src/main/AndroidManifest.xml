@@ -11,8 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.Activity_On_UnsuccessfulBidList"></activity>
-        <activity android:name=".Activity.Activity_Running_Bid_List" />
+        <activity android:name=".AmbulanceReg"></activity>
+        <activity android:name=".TruckReg" />
+        <activity android:name=".CarReg" />
         <activity
             android:name=".ChooseYourVehicle"
             android:theme="@style/AppThemee" />
