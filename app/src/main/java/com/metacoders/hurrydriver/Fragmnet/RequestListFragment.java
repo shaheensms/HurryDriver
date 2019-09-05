@@ -15,8 +15,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.metacoders.hurrydriver.Activity.Activity_Bid_Page_Driver;
 import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.Models.modelForCarRequest;
@@ -33,6 +36,8 @@ public class RequestListFragment extends Fragment {
     FirebaseRecyclerAdapter<modelForCarRequest, viewholderForReqList> firebaseRecyclerAdapter ;
 
     View view  ;
+    String uid = "TEST" ;
+
 
     public  RequestListFragment(){
 
@@ -102,44 +107,68 @@ public class RequestListFragment extends Fragment {
                     @Override
                     public void onItemClick(View view, final  int postion) {
 
-                        String DriverName  = getItem(postion).getDriverName() ;
-                        String Status = getItem(postion).getStatus() ;
-                        String PostID = getItem(postion).getPostId() ;
-                        String userNottificaionId = getItem(postion).getUserNotificationID() ;
-                        String timeOfTrip = getItem(postion).getTimeDate();
-                        String fromLoc = getItem(postion).getFromLoc() ;
-                        String toLoc = getItem(postion).getToLoc();
-                        String numberOfppl = getItem(postion).getNumOfPpl();
-                        String description = getItem(postion).getTripDetails() ;
-                        String returnDate = getItem(postion).getReturnTimee() ;
-                        String rideType = getItem(postion).getRideType() ;
+                        final String DriverName  = getItem(postion).getDriverName() ;
+                        final String Status = getItem(postion).getStatus() ;
+                        final String PostID = getItem(postion).getPostId() ;
+                        final String userNottificaionId = getItem(postion).getUserNotificationID() ;
+                        final String timeOfTrip = getItem(postion).getTimeDate();
+                        final String fromLoc = getItem(postion).getFromLoc() ;
+                        final String toLoc = getItem(postion).getToLoc();
+                        final String numberOfppl = getItem(postion).getNumOfPpl();
+                        final String description = getItem(postion).getTripDetails() ;
+                        final String returnDate = getItem(postion).getReturnTimee() ;
+                        final String rideType = getItem(postion).getRideType() ;
 
 
                         //TODO you have to check for driver has already bid on this or not
                         //TODO if he didnt then   give him access
 
+                 mref.child(PostID).child("bids").addValueEventListener(new ValueEventListener() {
+                     @Override
+                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+
+                         if (dataSnapshot.hasChild(uid))
+                         {
+                             Intent io = new Intent(getContext() , Activity_Bid_Page_Driver.class) ;
+
+                             io.putExtra("drivername" , DriverName) ;
+                             io.putExtra("status",Status);
+                             io.putExtra("postid", PostID);
+                             io.putExtra("usernottificationid" , userNottificaionId);
+                             io.putExtra("timeoftrip", timeOfTrip);
+                             io.putExtra("fromloc", fromLoc);
+                             io.putExtra("toloc", toLoc);
+                             io.putExtra("numberofppl", numberOfppl);
+                             io.putExtra("des", description);
+                             io.putExtra("returndate", returnDate) ;
+                             io.putExtra("ridetype" , rideType) ;
 
 
 
-                        Intent io = new Intent(getContext() , Activity_Bid_Page_Driver.class) ;
-
-                        io.putExtra("drivername" , DriverName) ;
-                        io.putExtra("status",Status);
-                        io.putExtra("postid", PostID);
-                        io.putExtra("usernottificationid" , userNottificaionId);
-                        io.putExtra("timeoftrip", timeOfTrip);
-                        io.putExtra("fromloc", fromLoc);
-                        io.putExtra("toloc", toLoc);
-                        io.putExtra("numberofppl", numberOfppl);
-                        io.putExtra("des", description);
-                        io.putExtra("returndate", returnDate) ;
-                        io.putExtra("ridetype" , rideType) ;
+                             startActivity(io);
 
 
 
-                        startActivity(io);
+                         }
+
+                         else {
+
+                             Toast.makeText(getContext() , "Sorry You Already Has Bidded On This" , Toast.LENGTH_SHORT)
+                                     .show();
 
 
+                         }
+
+
+
+                     }
+
+                     @Override
+                     public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                     }
+                 }) ;
 
 
 

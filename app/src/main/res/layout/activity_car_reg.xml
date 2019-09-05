@@ -31,9 +31,23 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp">
 
+                <AutoCompleteTextView
+                    android:id="@+id/carManufacturAutoComplete"
+                    android:layout_width="match_parent"
+                    android:textColorHint="@color/colorAccent"
+                    android:drawableLeft="@drawable/car_icon"
+                    android:drawableTint="@color/colorAccent"
+                    android:hint="Manufacturer"
+                    android:textAllCaps="true"
+
+                    android:gravity="center"
+                    android:drawableRight="@drawable/ic_arrow_drop_down"
+                    android:layout_height="wrap_content"/>
+
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"

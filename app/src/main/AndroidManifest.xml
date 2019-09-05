@@ -13,7 +13,17 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".AmbulanceReg"></activity>
         <activity android:name=".TruckReg" />
-        <activity android:name=".CarReg" />
+        <activity android:name=".CarReg" >
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
         <activity
             android:name=".ChooseYourVehicle"
             android:theme="@style/AppThemee" />
@@ -25,17 +35,19 @@
         <activity android:name=".Activity.login_Activity" />
         <activity android:name=".Activity.Acitivity_Choose_SignIn_Register" />
         <activity android:name=".Fragmnet.HomePageFragment" />
-        <activity android:name=".Activity.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".Activity.Activity_Running_Bid_List"/>
+        <activity android:name=".Activity.Activity_On_UnsuccessfulBidList"/>
+        <activity android:name=".Activity.Activity_Bid_Page_Driver"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".Activity.MainActivity">
+
+
+
         </activity>
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-        <activity android:name=".Activity.Activity_Bid_Page_Driver" />
+
     </application>
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
