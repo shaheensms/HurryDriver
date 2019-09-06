@@ -40,7 +40,8 @@
                     android:layout_marginTop="16dp"
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
+                    <AutoCompleteTextView
+                        android:id="@+id/ed_truckType"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
@@ -68,7 +69,8 @@
                         android:layout_marginTop="16dp"
                         android:textColorHint="@color/colorAccent"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <com.google.android.material.textfield.TextInputEditText
+                        <AutoCompleteTextView
+                            android:id="@+id/ed_truckModel"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableTint="@color/colorAccent"
@@ -90,7 +92,8 @@
                         android:layout_marginTop="16dp"
                         android:textColorHint="@color/colorAccent"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <com.google.android.material.textfield.TextInputEditText
+                        <AutoCompleteTextView
+                            android:id="@+id/ed_truckYear"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableTint="@color/colorAccent"
@@ -112,7 +115,8 @@
                     android:layout_marginTop="16dp"
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
+                    <AutoCompleteTextView
+                        android:id="@+id/ed_truckTon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
@@ -120,7 +124,7 @@
                         android:drawableRight="@drawable/ic_arrow_drop_down"
                         android:drawablePadding="8dp"
                         android:padding="12dp"
-                        android:hint="Truck Type "/>
+                        android:hint="Ton "/>
 
 
                 </com.google.android.material.textfield.TextInputLayout>

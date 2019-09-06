@@ -39,7 +39,8 @@
                     android:layout_marginTop="16dp"
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/ed_manufacturer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
@@ -67,7 +68,8 @@
                         android:layout_marginTop="16dp"
                         android:textColorHint="@color/colorAccent"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <com.google.android.material.textfield.TextInputEditText
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/ed_model"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableTint="@color/colorAccent"
@@ -89,7 +91,9 @@
                         android:layout_marginTop="16dp"
                         android:textColorHint="@color/colorAccent"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <com.google.android.material.textfield.TextInputEditText
+
+                        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                            android:id="@+id/ed_year"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:drawableTint="@color/colorAccent"
