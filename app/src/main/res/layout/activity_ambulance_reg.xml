@@ -41,6 +41,7 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                         android:id="@+id/ed_manufacturer"
+                        android:visibility="gone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
@@ -55,6 +56,7 @@
 
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
@@ -113,10 +115,13 @@
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
+                    android:textSize="18sp"
                     android:textColor="@color/red"
                     android:text="Ambulance Type : "/>
 
                 <RadioGroup
+                    android:id="@+id/ambulanceTypeGroup"
+                    android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -124,20 +129,24 @@
                     android:layout_marginRight="16dp">
 
                     <RadioButton
+                        android:id="@+id/radio_icu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/red"
-                        android:text="ICO"/>
+                        android:checked="true"
+                        android:text="ICU/CCU"/>
                     <RadioButton
+                        android:id="@+id/radio_General"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textColor="@color/red"
-                        android:text="CCO"/>
+                        android:text="General"/>
 
                 </RadioGroup>
 
 
                 <TextView
+                    android:textSize="18sp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
@@ -148,30 +157,35 @@
 
 
                 <LinearLayout
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:id="@+id/acTypeGroup"
+                        android:textSize="18sp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
+                        android:layout_marginTop="16dp"
                         android:layout_marginLeft="16dp"
-                        android:textColor="@color/colorAccent"
-                        android:linksClickable="true"
-                        android:textColorLink="#0D47A1"
-                        android:text="AC"/>
+                        android:layout_marginRight="16dp">
 
-                    <CheckBox
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="16dp"
-                        android:textColor="@color/colorAccent"
-                        android:linksClickable="true"
-                        android:textColorLink="#0D47A1"
-                        android:text="Non AC"/>
+                        <RadioButton
+                            android:id="@+id/ac_on"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red"
+                            android:checked="true"
+                            android:text="AC"/>
+                        <RadioButton
+                            android:id="@+id/ac_off"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/red"
+                            android:text="NON-Ac"/>
 
+                    </RadioGroup>
                 </LinearLayout>
 
 
@@ -182,6 +196,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/sumbitBtnAmbulance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"

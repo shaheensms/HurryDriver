@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.metacoders.hurrydriver.AmbulanceReg;
+import com.metacoders.hurrydriver.CarReg;
 import com.metacoders.hurrydriver.R;
 import com.metacoders.hurrydriver.TruckReg;
 
@@ -44,7 +46,8 @@ public class ChooseVehicle extends AppCompatActivity {
         car.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent i  = new Intent(getApplicationContext() , CarReg.class);
+                startActivity(i);
 
             }
         });
@@ -54,7 +57,8 @@ public class ChooseVehicle extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
+                Intent i  = new Intent(getApplicationContext() , AmbulanceReg.class);
+                startActivity(i);
             }
         });
 

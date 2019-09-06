@@ -11,23 +11,29 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AmbulanceReg"></activity>
-        <activity android:name=".TruckReg" />
+        <activity android:name=".AmbulanceReg">
+
+        </activity>
+        <activity android:name=".TruckReg"
+           >
+
+        </activity>
         <activity android:name=".CarReg" >
 
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
 
         </activity>
         <activity
             android:name=".ChooseYourVehicle"
             android:theme="@style/AppThemee" />
-        <activity android:name=".Activity.ChooseVehicle" />
+        <activity android:name=".Activity.ChooseVehicle" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Activity.mobileVerifiacitonActivity" />
         <activity android:name=".Activity.Driver_Licence_upload_Activity" />
         <activity android:name=".Activity.remainingStepsActivity" />
