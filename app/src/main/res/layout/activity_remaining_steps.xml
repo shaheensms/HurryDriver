@@ -380,6 +380,17 @@
 
                 </LinearLayout>
 
+                <Button
+                    android:id="@+id/nextStepButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Next Step"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    >
+
+
+                </Button>
 
             </LinearLayout>
 

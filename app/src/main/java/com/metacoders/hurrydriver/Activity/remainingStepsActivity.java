@@ -7,8 +7,13 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
+import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
+import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
 import com.metacoders.hurrydriver.R;
 
 public class remainingStepsActivity extends AppCompatActivity {
@@ -21,6 +26,8 @@ public class remainingStepsActivity extends AppCompatActivity {
     private static final int INTENT_TAXTOKEN = 500;
 
     CardView driverLicenceBtn, nidCardBtn, ppuploadBtn, fitnessBtn, taxToken, vehicleRegistrationBtn;
+    Button  nextButton ;
+
 
     Boolean dirverLicenceClick = false, nidCardClick = false,
             ppUplaodClick = false, fitnessClick = false,
@@ -34,7 +41,7 @@ public class remainingStepsActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_remaining_steps);
 
@@ -53,6 +60,15 @@ public class remainingStepsActivity extends AppCompatActivity {
         fitnessIcon = findViewById(R.id.fitnessIcon) ;
         taxTokenIcon = findViewById(R.id.taxtokenIcon) ;
         vehicleREgIcon = findViewById(R.id.regPaperIcon);
+        nextButton = findViewById(R.id.nextStepButton);
+
+        // setting tag
+        vehicleREgIcon.setTag("NOTOK");
+        taxTokenIcon.setTag("NOTOK");
+        fitnessIcon.setTag("NOTOK");
+        ppIcon.setTag("NOTOK");
+        nidICon.setTag("NOTOK");
+        driverLicIcon.setTag("NOTOK");
 
 
 
@@ -60,6 +76,164 @@ public class remainingStepsActivity extends AppCompatActivity {
         // setting on click listenner
 
         o = new Intent(getApplicationContext(), Driver_Licence_upload_Activity.class);
+
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                // check if all the work is done or not
+                if(vehicleREgIcon.getTag()=="NOTOK"){
+                    // show something  wrong
+                    new AwesomeWarningDialog(remainingStepsActivity.this)
+                            .setTitle("Error")
+                            .setMessage(getString(R.string.upload_vehicle_reg_papaer))
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(false)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+
+
+                }
+                else if (taxTokenIcon.getTag()=="NOTOK"){
+
+                    new AwesomeWarningDialog(remainingStepsActivity.this)
+                            .setTitle("Error")
+                            .setMessage(getString(R.string.upload_tax_token))
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(false)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+
+                }
+                else if (fitnessIcon.getTag()=="NOTOK"){
+                    new AwesomeWarningDialog(remainingStepsActivity.this)
+                            .setTitle("Error")
+                            .setMessage(getString(R.string.upload_vehicle_fitness_paper)+"")
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(false)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+
+                }
+                else if (ppIcon.getTag()=="NOTOK"){
+
+                    new AwesomeWarningDialog(remainingStepsActivity.this)
+                            .setTitle("Error")
+                            .setMessage(getString(R.string.upload_your_profile_pic)+ "")
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(false)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+
+                }
+                else if (nidICon.getTag()=="NOTOK"){
+                    new AwesomeWarningDialog(remainingStepsActivity.this)
+                            .setTitle("Error")
+                            .setMessage("" + getString(R.string.ulpoad_your_nid))
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(false)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+
+                }
+
+                else if (driverLicIcon.getTag()=="NOTOK"){
+
+                    new AwesomeWarningDialog(remainingStepsActivity.this)
+                            .setTitle("Error")
+                            .setMessage(""+ getString(R.string.upload_dirver_lic_image))
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(false)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+
+                }
+                else {
+
+                    Toast.makeText(getApplicationContext() , "HEy"  , Toast.LENGTH_LONG)
+                            .show();
+
+                }
+
+
+
+
+
+            }
+        });
 
 
         driverLicenceBtn.setOnClickListener(new View.OnClickListener() {
@@ -150,25 +324,32 @@ public class remainingStepsActivity extends AppCompatActivity {
         if (requestCode == INTENT_DRIVERLICENCE && resultCode == RESULT_OK) {
 
             driverLicIcon.setImageResource(R.drawable.done_icon);
+            driverLicIcon.setTag("OK");
 
         } else if (requestCode == INTENT_NIDCARD && resultCode == RESULT_OK) {
 
             nidICon.setImageResource(R.drawable.done_icon);
+            nidICon.setTag("OK");
 
         } else if (requestCode == INTENT_PPUPLOAD && resultCode == RESULT_OK) {
 
             ppIcon.setImageResource(R.drawable.done_icon);
+            ppIcon.setTag("OK");
+
 
 
         } else if (requestCode == INTENT_FITNESS && resultCode == RESULT_OK) {
 
             fitnessIcon.setImageResource(R.drawable.done_icon);
+            fitnessIcon.setTag("OK");
         } else if (requestCode == INTENT_TAXTOKEN && resultCode == RESULT_OK) {
                 taxTokenIcon.setImageResource(R.drawable.done_icon);
+                taxTokenIcon.setTag("OK");
 
         } else if (requestCode == INTENT_VEHICLE_REG_IMAGE && resultCode == RESULT_OK) {
 
             vehicleREgIcon.setImageResource(R.drawable.done_icon);
+            vehicleREgIcon.setTag("OK");
 
         } else {
             /*

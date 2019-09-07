@@ -21,6 +21,13 @@
     <string name="upload_a_profile_photo">Upload A Profile Photo</string>
     <string name="vehicle_tax_token">Vehicle Tax Token</string>
     <string name="car_primary_reqs">At least 21 years old, with a driver\'s license and comprehensive insurance. Your vehicle is any mid-size or full-size 4-door vehicle, in excellent condition, less than 9 years old</string>
+    <string name="fillTheDataProperly">Please Fill The Data Properly!!</string>
+    <string name="upload_dirver_lic_image">Please Upload Your Driver License Image</string>
+    <string name="ulpoad_your_nid">Please Upload Your Nid Image (Front)</string>
+    <string name="upload_your_profile_pic">Please Upload Your Profile Picture Image</string>
+    <string name="upload_vehicle_fitness_paper">Please Upload Vehicle Fitness Paper Image</string>
+    <string name="upload_tax_token">Please Upload Tax Token Paper Image</string>
+    <string name="upload_vehicle_reg_papaer">Please Upload Vehicle Registration Paper Image</string>
 
     <string-array name="carType">
         <item>Model of Car</item>

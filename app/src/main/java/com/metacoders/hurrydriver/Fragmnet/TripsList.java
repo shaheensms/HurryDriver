@@ -19,7 +19,7 @@ import com.metacoders.hurrydriver.R;
 public class TripsList extends Fragment {
 
     View view ;
-    LinearLayout runningBidCard  , cancelBid;
+    LinearLayout runningBidCard  , cancelBid  , successfulBid ;
 
 
     public  TripsList()
@@ -36,6 +36,8 @@ public class TripsList extends Fragment {
 
         runningBidCard = view.findViewById(R.id.runningBidCardview) ;
         cancelBid = view.findViewById(R.id.cancelCardview) ;
+        successfulBid = view.findViewById(R.id.successfulBidList) ;
+
 
 
         cancelBid.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +59,19 @@ public class TripsList extends Fragment {
                 Intent intent = new Intent(getContext() , Activity_Running_Bid_List.class);
 
                 startActivity(intent);
+
+            }
+        });
+
+        successfulBid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Intent intent = new Intent(getContext() , Activity_Running_Bid_List.class);
+
+                startActivity(intent);
+
 
             }
         });

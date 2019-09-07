@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,11 +14,15 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
+import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
+import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.metacoders.hurrydriver.Activity.remainingStepsActivity;
 import com.metacoders.hurrydriver.Constants.constants;
 
 import java.util.HashMap;
@@ -147,13 +152,33 @@ public class TruckReg extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
+                                Intent o = new Intent(getApplicationContext(), remainingStepsActivity.class);
+                                startActivity(o);
+                                finish();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
 
+                                new AwesomeWarningDialog(TruckReg.this)
+                                        .setTitle("Error")
+                                        .setMessage("Error"+ e.getMessage()+ ". Please Try Again !!")
+                                        .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                                        .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                                        .setCancelable(false)
+                                        .setButtonText(getString(R.string.dialog_ok_button))
+                                        .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                                        .setButtonText(getString(R.string.dialog_ok_button))
+                                        .setWarningButtonClick(new Closure() {
+                                            @Override
+                                            public void exec() {
+                                                // click
+                                                new AwesomeErrorDialog(getApplicationContext()).hide() ;
 
+                                            }
+                                        })
+                                        .show();
                             }
                         }) ;
 

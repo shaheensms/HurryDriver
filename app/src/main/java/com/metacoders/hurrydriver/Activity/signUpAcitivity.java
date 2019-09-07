@@ -60,6 +60,8 @@ public class signUpAcitivity extends AppCompatActivity {
         phIn = findViewById(R.id.edt_phoneNo);
         emailIn = findViewById(R.id.edt_email);
         resigterBtn = findViewById(R.id.continueBtn);
+        terms = findViewById(R.id.termCheck) ;
+
 
         phIn.setText(phone);
 
@@ -78,9 +80,26 @@ public class signUpAcitivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 if (!TextUtils.isEmpty(fname) ||!TextUtils.isEmpty(sname) ||!TextUtils.isEmpty(email) ||!TextUtils.isEmpty(phone)
-                        || phone.length() != 11){
+                        || phone.length() != 11|| !terms.isChecked()){
 
+                    new AwesomeWarningDialog(signUpAcitivity.this)
+                            .setTitle("Error")
+                            .setMessage(getString(R.string.fillTheDataProperly))
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(true)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
 
+                                }
+                            })
+                            .show();
 
                 }
 
