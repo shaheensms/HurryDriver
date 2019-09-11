@@ -3,6 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.metacoders.hurrydriver">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,14 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.successFulBidList"></activity>
-        <activity android:name=".AmbulanceReg"></activity>
-        <activity android:name=".TruckReg"></activity>
-        <activity android:name=".CarReg"></activity>
+        <activity android:name=".CarPhotoUpload"></activity>
+        <activity android:name=".Activity.successFulBidList" />
+        <activity android:name=".AmbulanceReg" />
+        <activity android:name=".TruckReg" />
+        <activity android:name=".CarReg" />
         <activity
             android:name=".ChooseYourVehicle"
             android:theme="@style/AppThemee" />
-        <activity android:name=".Activity.ChooseVehicle"></activity>
+        <activity android:name=".Activity.ChooseVehicle" />
         <activity android:name=".Activity.mobileVerifiacitonActivity" />
         <activity android:name=".Activity.Driver_Licence_upload_Activity" />
         <activity android:name=".Activity.remainingStepsActivity">
@@ -35,16 +42,10 @@
         <activity android:name=".Activity.Activity_Running_Bid_List" />
         <activity android:name=".Activity.Activity_On_UnsuccessfulBidList" />
         <activity android:name=".Activity.Activity_Bid_Page_Driver" />
-        <activity android:name=".Activity.MainActivity"></activity>
+        <activity android:name=".Activity.MainActivity" />
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
     </application>
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>
