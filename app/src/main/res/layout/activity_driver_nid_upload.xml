@@ -18,6 +18,7 @@
         android:layout_marginBottom="16dp">
 
         <TextView
+            android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -34,11 +35,12 @@
             android:textSize="14sp"/>
 
         <ImageView
-            android:layout_width="match_parent"
+            android:id="@+id/selectedPic"
+            android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_marginTop="50dp"
             android:layout_gravity="center"
-            android:src="@drawable/nid_card2" />
+            android:background="@drawable/nid_card2" />
 
     </LinearLayout>
 
@@ -55,6 +57,7 @@
             android:orientation="vertical">
 
             <Button
+                android:id="@+id/buttonSumbit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Take Photo"

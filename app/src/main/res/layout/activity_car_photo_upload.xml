@@ -5,122 +5,305 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CarPhotoUpload">
+    tools:context=".Activity.remainingStepsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="16dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/titleText"
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="24dp"
-                android:text="Upload 4 photo's of your Car"
-                android:textSize="28sp" />
+                android:layout_height="250dp"
+                android:src="@drawable/remaining_back1"/>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginBottom="16dp"
-                android:text="Please upload your car's front, back, side and inner photo's here"
-                android:textSize="14sp" />
+                android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:orientation="horizontal">
 
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/photo_upload"
-                    android:visibility="visible" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Welcome back, "
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
 
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/photo_upload"
-                    android:visibility="visible" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shaheen,"
+                        android:textColor="@color/black"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/what_to_do"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="@string/remaining_steps"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:id="@+id/frontUploadBtn"
+                        app:cardBackgroundColor="#ECF0F0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Next step"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Upload An Image Of The Front"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/driverfrontIcon"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/backUploadBtn"
+                        android:layout_margin="4dp"
+                        app:cardBackgroundColor="#ECF0F0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Next step"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Upload An Image Of The Back"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/fitnessIconBack"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:src="@drawable/incomplete_icon"
+                                />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:id="@+id/insideUploadBtn"
+                        app:cardBackgroundColor="#ECF0F0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Next step"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Upload An Image Of The Inside"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/regPaperIconinside"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:src="@drawable/incomplete_icon"
+                                />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:id="@+id/nidUploadBtn"
+                        app:cardBackgroundColor="#ECF0F0"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:id="@+id/sideUploadBtn"
+                        app:cardBackgroundColor="#ECF0F0">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="12dp"
+
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Next step"
+                                    android:textSize="14sp" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:text="Upload An Image Of The Side"
+                                    android:textColor="@color/black"
+                                    android:textSize="16sp" />
+
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/ppiconside"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:src="@drawable/incomplete_icon"
+                                />
+
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/nextStepButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Next Step"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary"
+                    >
+
+
+                </Button>
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/photo_upload"
-                    android:visibility="visible" />
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:src="@drawable/photo_upload"
-                    android:visibility="visible" />
-
-            </LinearLayout>
-
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circlerImageOnUpload"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center"
-                android:src="@drawable/avatar"
-                android:visibility="gone" />
 
 
         </LinearLayout>
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            app:cardElevation="10dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/takePhotoBtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:background="@drawable/btn_red_back"
-                    android:text="Take Photo"
-                    android:textColor="@color/white" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
 
     </ScrollView>
 

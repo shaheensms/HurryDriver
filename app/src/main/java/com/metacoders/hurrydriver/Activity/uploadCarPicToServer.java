@@ -1,12 +1,6 @@
 package com.metacoders.hurrydriver.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -19,6 +13,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -37,20 +36,18 @@ import com.theartofdev.edmodo.cropper.CropImageView;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.UUID;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import id.zelory.compressor.Compressor;
 
-public class Driver_Licence_upload_Activity extends AppCompatActivity {
+public class uploadCarPicToServer extends AppCompatActivity {
 
     String uid , imageIdentifier = null  ;
     String  STATE = "";
     ProgressDialog mprogressDialog ;
-    TextView  title ;
+    TextView title ;
     ImageView image ;
-    Button  takePhotoBtn ;
+    Button takePhotoBtn ;
     StorageReference mStorageReference ;
 
     private Bitmap compressedImageFile;
@@ -58,54 +55,56 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
     DatabaseReference mref ;
 
 
-    CircleImageView circleImageView ;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_driver__licence_upload);
+        setContentView(R.layout.activity_driver_nid_upload);
+
 
         getSupportActionBar().hide();
         uid = "testData" ;
-        mStorageReference = FirebaseStorage.getInstance().getReference("drivers_profile_Pic").child(uid);
-        mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
-        //initViews
+        mStorageReference = FirebaseStorage.getInstance().getReference("drivers_profile_Pic").child(uid).child("carPics");
+        mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child("carPics");
 
-        title = findViewById(R.id.titleText);
-        image = findViewById(R.id.imageOnUploadPage);
-        takePhotoBtn = findViewById(R.id.takePhotoBtn) ;
-        circleImageView = findViewById(R.id.circlerImageOnUpload);
+        title = findViewById(R.id.title);
+        image = findViewById(R.id.selectedPic);
+        takePhotoBtn = findViewById(R.id.buttonSumbit) ;
+
+
+
         //pregress dialog
-        mprogressDialog = new ProgressDialog(Driver_Licence_upload_Activity.this  );
-
-
-
-
-        Intent  y = getIntent() ;
+        mprogressDialog = new ProgressDialog(uploadCarPicToServer.this  );
+        Intent y = getIntent() ;
 
         STATE = y.getStringExtra("STATE");
+       // Toast.makeText(getApplicationContext(), "Satte " + STATE , Toast.LENGTH_SHORT).show();
+
+        deteermineWhatToView(STATE) ;
 
 
-       deteermineWhatToView(STATE) ;
+        takePhotoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+
+                    if (ContextCompat.checkSelfPermission(uploadCarPicToServer.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
+                        ActivityCompat.requestPermissions(uploadCarPicToServer.this,
+                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
+
+                        BringImagePicker();
 
 
 
-    takePhotoBtn.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
+                    } else {
 
+                        BringImagePicker();
 
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-
-                if (ContextCompat.checkSelfPermission(Driver_Licence_upload_Activity.this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-
-                    ActivityCompat.requestPermissions(Driver_Licence_upload_Activity.this,
-                            new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 1);
-
-                    BringImagePicker();
-
-
+                    }
 
                 } else {
 
@@ -113,83 +112,60 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
 
                 }
 
-            } else {
-
-                BringImagePicker();
 
             }
-
-
-        }
-    });
-
+        });
 
 
 
     }
+
+
+
+
 
     private void deteermineWhatToView(String state) {
 
 
 
-        if(state.contains("driverLicence"))
+        if(state.contains("front"))
 
         {
-            imageIdentifier = "driver_license_image" ;
-            circleImageView.setVisibility(View.GONE);
+            imageIdentifier = "car_front_image" ;
+
             image.setVisibility(View.VISIBLE);
-            title.setText("Pick a photo of your Driver's License");
+            title.setText("Pick a Front photo of your Car");
 
         }
 
-        else if ( state.contains("nidCard"))
+        else if ( state.contains("back"))
 
-        {     imageIdentifier = "nid_card_image" ;
-            circleImageView.setVisibility(View.GONE);
+        {     imageIdentifier = "car_back_image" ;
+
             image.setVisibility(View.VISIBLE);
-            title.setText("Pick a photo of your NID Card");
+            title.setText("Pick a photo of your Car's Back");
         }
-        else if ( state.contains("fitness"))
+        else if ( state.equals("side"))
         {
-            imageIdentifier = "fitness_license_image" ;
-            circleImageView.setVisibility(View.GONE);
+            imageIdentifier = "car_side_image" ;
+
             image.setVisibility(View.VISIBLE);
-            title.setText("Pick a photo of your Vehicle Fitness Card Image");
+            title.setText("Pick a photo of your Car's Side");
         }
 
-        else if ( state.contains("taxToken"))
+        else if ( state.contains("inside"))
 
         {
-            imageIdentifier = "tax_token_image" ;
-            circleImageView.setVisibility(View.GONE);
+            imageIdentifier = "car_inside_image" ;
             image.setVisibility(View.VISIBLE);
             title.setText("Pick a photo of your Vehicle Tax Token Image");
         }
 
-        else if ( state.contains("vehicleRegImage"))
 
-        {
-            imageIdentifier = "vehicle_reg_image" ;
-            circleImageView.setVisibility(View.GONE);
-            image.setVisibility(View.VISIBLE);
-            title.setText("Pick a photo of your Vehicle Registration  Image");
-        }
-
-        else if ( state.contains("ppUpload"))
-
-        {
-            title.setText("Pick a photo of You  ");
-            imageIdentifier = "profile_picture" ;
-
-
-            circleImageView.setVisibility(View.VISIBLE);
-            image.setVisibility(View.GONE);
-
-
-        }
 
 
     }
+
     private void BringImagePicker () {
 
         if(STATE.contains("ppUpload"))
@@ -198,7 +174,7 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .setAspectRatio(1,1)
                     .setCropShape(CropImageView.CropShape.OVAL) //shaping the image
-                    .start(Driver_Licence_upload_Activity.this);
+                    .start(uploadCarPicToServer.this);
 
         }
         else {
@@ -206,7 +182,7 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
             CropImage.activity()
                     .setGuidelines(CropImageView.Guidelines.ON)
                     .setCropShape(CropImageView.CropShape.RECTANGLE) //shaping the image
-                    .start(Driver_Licence_upload_Activity.this);
+                    .start(uploadCarPicToServer.this);
         }
 
     }
@@ -222,17 +198,13 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
 
                 mFilePathUri = result.getUri();
-                if (STATE.contains("ppUpload"))
-                {
-                    circleImageView.setImageURI(mFilePathUri);
-                }
-                else {
+
                     image.setImageURI(mFilePathUri);
-                }
+
 
 
                 //sending data once  user select the image
-                    uploadPicToServer(mFilePathUri) ;
+                uploadPicToServer(mFilePathUri) ;
 
 
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
@@ -255,7 +227,7 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
 
             try {
 
-                compressedImageFile = new Compressor(Driver_Licence_upload_Activity.this)
+                compressedImageFile = new Compressor(uploadCarPicToServer.this)
                         .setMaxHeight(920)
                         .setMaxWidth(920)
                         .setQuality(60)
@@ -266,15 +238,15 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
             }
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            compressedImageFile.compress(Bitmap.CompressFormat.JPEG, 40, baos);
+            compressedImageFile.compress(Bitmap.CompressFormat.JPEG, 50, baos);
             byte[] imageData = baos.toByteArray();
             UploadTask filePath = mStorageReference.child(randomName+uid + ".jpg").putBytes(imageData);
 
             filePath.addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    
-                    
+
+
 
                     Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
                     while (!uriTask.isSuccessful()) ;
@@ -282,7 +254,7 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
 
 
 
-                 //   String ts =mref.push().getKey() ;
+                    //   String ts =mref.push().getKey() ;
 
 
                     mref.child(imageIdentifier).setValue(downloaduri.toString());
@@ -305,7 +277,7 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
 
 
                 }
-            }); 
+            });
 
 
         }
