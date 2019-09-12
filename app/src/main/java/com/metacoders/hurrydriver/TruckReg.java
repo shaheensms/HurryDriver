@@ -20,6 +20,7 @@ import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Activity.remainingStepsActivity;
@@ -35,7 +36,7 @@ public class TruckReg extends AppCompatActivity {
     AutoCompleteTextView  truckYearTv ;
     AutoCompleteTextView  truckTonTv ;
     Button SubmitBtn ;
-    String uid = "TEST" ;
+    String uid  ;
 
 
 
@@ -76,6 +77,8 @@ public class TruckReg extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_truck_reg);
 
+        uid = FirebaseAuth.getInstance().getUid() ;
+
         truckTypeTv = findViewById(R.id.ed_truckType);
         truckModelTv = findViewById(R.id.ed_truckModel);
         truckYearTv = findViewById(R.id.ed_truckYear);
@@ -92,6 +95,7 @@ public class TruckReg extends AppCompatActivity {
         truckModelTv.setAdapter(truckModelAdapter);
         truckModelTv.setThreshold(1);
         truckYearTv.setAdapter(truckYearAdapter);
+        truckYearTv.setThreshold(1);
         truckTonTv.setAdapter(truckTonAdapter);
 
 
@@ -142,6 +146,8 @@ public class TruckReg extends AppCompatActivity {
                 map.put("carYear", truckYear) ;
                 map.put("truckSize",truckTon ) ;
                 map.put("sitCount","null" )  ;
+
+
 
 
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);

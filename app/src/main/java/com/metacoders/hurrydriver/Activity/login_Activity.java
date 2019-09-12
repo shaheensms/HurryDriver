@@ -54,9 +54,6 @@ public class login_Activity extends AppCompatActivity {
 
                     i.putExtra("PHONE" , phone);
                     i.putExtra("STATe", State) ;
-                    phoneNumEdit.setText("");//seting the text to zero
-                    phoneNumEdit.setHint("01778445517");//setting the random hint
-
                     startActivity(i);
 
                 }

@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -44,7 +45,7 @@ public class Activity_Running_Bid_List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__running__bid__list);
 
-        // uid
+     uid =    FirebaseAuth.getInstance().getUid() ;
 
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child(constants.driverBidDir); // db link
         checkRef = FirebaseDatabase.getInstance().getReference(constants.carRequestLink);

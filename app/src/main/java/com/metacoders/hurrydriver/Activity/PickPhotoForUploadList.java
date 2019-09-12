@@ -214,9 +214,11 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                 }
 
                 else {
+                    //TODO must  sent user to the  another page where the get Nottified there acoount activision
 
-                    Toast.makeText(getApplicationContext() , "DONE"  , Toast.LENGTH_LONG)
-                            .show();
+                    Intent intent = new Intent(getApplicationContext() , MainActivity.class);
+                    startActivity(intent);
+                    finish();
 
                 }
 

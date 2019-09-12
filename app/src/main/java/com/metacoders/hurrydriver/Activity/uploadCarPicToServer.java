@@ -22,6 +22,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -64,7 +65,7 @@ public class uploadCarPicToServer extends AppCompatActivity {
 
 
         getSupportActionBar().hide();
-        uid = "testData" ;
+        uid = FirebaseAuth.getInstance().getUid() ;
         mStorageReference = FirebaseStorage.getInstance().getReference("drivers_profile_Pic").child(uid).child("carPics");
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child("carPics");
 

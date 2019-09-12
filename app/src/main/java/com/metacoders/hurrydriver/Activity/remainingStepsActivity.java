@@ -223,8 +223,9 @@ public class remainingStepsActivity extends AppCompatActivity {
                 }
                 else {
 
-                    Toast.makeText(getApplicationContext() , "HEy"  , Toast.LENGTH_LONG)
-                            .show();
+                  Intent intent = new Intent(getApplicationContext() , PickPhotoForUploadList.class);
+                  startActivity(intent);
+                  finish();
 
                 }
 

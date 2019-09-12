@@ -155,19 +155,22 @@
                     android:layout_marginTop="16dp"
                     android:textColorHint="@color/colorAccent"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/cityName"
 
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="@string/city_name"/>
+                        android:drawableTint="@color/colorAccent"
+                        android:hint="@string/city_name"
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
+
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
@@ -186,6 +189,28 @@
                         android:drawablePadding="8dp"
                         android:padding="12dp"
                         android:hint="Invite Code "/>
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:textColorHint="@color/colorAccent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/carLicName"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/phone_icon"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/colorAccent"
+                        android:hint="Vehicle License Number"
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>

@@ -23,6 +23,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -67,7 +68,8 @@ public class Driver_Licence_upload_Activity extends AppCompatActivity {
         setContentView(R.layout.activity_driver__licence_upload);
 
         getSupportActionBar().hide();
-        uid = "testData" ;
+        uid = FirebaseAuth.getInstance().getUid() ;
+
         mStorageReference = FirebaseStorage.getInstance().getReference("drivers_profile_Pic").child(uid);
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
         //initViews

@@ -18,20 +18,13 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".Activity.PickPhotoForUploadList">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Activity.uploadCarPicToServer"/>
         <activity android:name=".Activity.successFulBidList" />
         <activity android:name=".AmbulanceReg" />
         <activity android:name=".TruckReg" />
         <activity android:name=".CarReg" />
-        <activity
-            android:name=".ChooseYourVehicle"
-            android:theme="@style/AppThemee" />
         <activity android:name=".Activity.ChooseVehicle" />
         <activity android:name=".Activity.mobileVerifiacitonActivity" />
         <activity android:name=".Activity.Driver_Licence_upload_Activity" />
@@ -40,7 +33,13 @@
         </activity>
         <activity android:name=".Activity.signUpAcitivity" />
         <activity android:name=".Activity.login_Activity" />
-        <activity android:name=".Activity.Acitivity_Choose_SignIn_Register" />
+        <activity android:name=".Activity.Acitivity_Choose_SignIn_Register" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Fragmnet.HomePageFragment" />
         <activity android:name=".Activity.Activity_Running_Bid_List" />
         <activity android:name=".Activity.Activity_On_UnsuccessfulBidList" />

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageButton;
@@ -40,9 +41,7 @@ public class mobileVerifiacitonActivity extends AppCompatActivity {
     private String verificationid;
     private FirebaseAuth mAuth;
     private ProgressBar progressBar;
-    private final static  int RC_SIGN_IN =2 ;
     FirebaseAuth.AuthStateListener mAuthListener ;
-    SignInButton google_btn ;
     private OtpTextView editText;
     PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallbacks ;
     ImageButton signInBtn ;
@@ -70,7 +69,7 @@ public class mobileVerifiacitonActivity extends AppCompatActivity {
         editText = findViewById(R.id.otp_view) ;
         progressBar = findViewById(R.id.progrssBar);
 
-
+        mAuth = FirebaseAuth.getInstance();
         //setting my views
         countDownTextView.setVisibility(View.VISIBLE);
         resendText.setVisibility(View.GONE);
@@ -140,8 +139,11 @@ public class mobileVerifiacitonActivity extends AppCompatActivity {
         try {
             PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationid, code);
             signInWithCredential(credential);
-        }catch (Exception e){
-            Toast toast = Toast.makeText(this, "Verification Code is wrong", Toast.LENGTH_SHORT);
+        }
+        catch (Exception e){
+            progressBar.setVisibility(View.INVISIBLE);
+            Log.i("Error : ", " " + e.getMessage());
+            Toast toast = Toast.makeText(this, "Error   "+  e.getMessage(), Toast.LENGTH_LONG);
             toast.setGravity(Gravity.CENTER,0,0);
             toast.show();
         }
@@ -228,6 +230,7 @@ public class mobileVerifiacitonActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null){
@@ -237,6 +240,15 @@ public class mobileVerifiacitonActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+
+
+
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+    finish();
 
     }
 }

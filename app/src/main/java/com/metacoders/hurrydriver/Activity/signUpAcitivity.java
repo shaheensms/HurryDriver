@@ -9,6 +9,8 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
@@ -23,14 +25,17 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.R;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 
 public class signUpAcitivity extends AppCompatActivity {
 
-    TextInputEditText fnamein , snameIn, emailIn , phIn   ;
+    TextInputEditText  fnamein , snameIn, emailIn , phIn , carLicNumber    ;
     CheckBox  terms ;
     Button resigterBtn ;
-    String  fname , sname , email,  phone ;
+    String  fname , sname , email,  phone , carLic;
     DatabaseReference mref ;
     FirebaseAuth mauth ;
 
@@ -61,15 +66,14 @@ public class signUpAcitivity extends AppCompatActivity {
         emailIn = findViewById(R.id.edt_email);
         resigterBtn = findViewById(R.id.continueBtn);
         terms = findViewById(R.id.termCheck) ;
+        carLicNumber = findViewById(R.id.carLicName) ;
 
 
-        phIn.setText(phone);
+        terms.setChecked(false);
 
-//        Text in
-        fname = fnamein.getText().toString();
-        sname = snameIn.getText().toString();
-        email = emailIn.getText().toString();
-        phone = phIn.getText().toString();
+
+
+
 
 
 
@@ -78,9 +82,18 @@ public class signUpAcitivity extends AppCompatActivity {
         resigterBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                phIn.setText(phone);
+                fname = fnamein.getText().toString();
+                sname = snameIn.getText().toString();
+                email = emailIn.getText().toString();
+                //  phone = phIn.getText().toString();
+                carLic = carLicNumber.getText().toString() ;
 
-                if (!TextUtils.isEmpty(fname) ||!TextUtils.isEmpty(sname) ||!TextUtils.isEmpty(email) ||!TextUtils.isEmpty(phone)
-                        || phone.length() != 11|| !terms.isChecked()){
+
+                if (TextUtils.isEmpty(fname) ||TextUtils.isEmpty(sname) ||TextUtils.isEmpty(email) ||TextUtils.isEmpty(phone)
+                        || phone.length() != 14||  TextUtils.isEmpty(carLic)){
+
+                    Toast.makeText(getApplicationContext() , "ffff"+fname+ sname + email +carLic+ phone, Toast.LENGTH_LONG).show();
 
                     new AwesomeWarningDialog(signUpAcitivity.this)
                             .setTitle("Error")
@@ -102,11 +115,33 @@ public class signUpAcitivity extends AppCompatActivity {
                             .show();
 
                 }
+                else if (!terms.isChecked() )
+                {
+                    new AwesomeWarningDialog(signUpAcitivity.this)
+                            .setTitle("Error")
+                            .setMessage("Please Accept To Our Terms & Condition")
+                            .setColoredCircle(R.color.dialogNoticeBackgroundColor)
+                            .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
+                            .setCancelable(true)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setButtonBackgroundColor(R.color.dialogNoticeBackgroundColor)
+                            .setButtonText(getString(R.string.dialog_ok_button))
+                            .setWarningButtonClick(new Closure() {
+                                @Override
+                                public void exec() {
+                                    // click
+                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+
+                                }
+                            })
+                            .show();
+
+                }
 
                 else{
 
                     // uploading data to firebase
-                    uploadDataToFirebase(fname+ " "+ sname  , email , phone) ;
+                    uploadDataToFirebase(fname+ " "+ sname  , email , phone , carLic) ;
                 }
 
 
@@ -123,7 +158,11 @@ public class signUpAcitivity extends AppCompatActivity {
 
     }
 
-    private void uploadDataToFirebase(String s, String email, String phone) {
+    private void uploadDataToFirebase(String s, String email, String phone , String carLicense) {
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        Date date = new Date();
+      String DATE  =  dateFormat.format(date);
 
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink);
         String uid  = mauth.getUid() ;
@@ -135,6 +174,15 @@ public class signUpAcitivity extends AppCompatActivity {
         dataMap.put("email",email);
         dataMap.put("phone", phone) ;
         dataMap.put("userID" , uid) ;
+        dataMap.put("driverRating", "0") ;
+        dataMap.put("totalRides","0" )  ;
+        dataMap.put("driverFined" , "0") ;
+        dataMap.put("driverEarnedThisMonth" , "0") ;
+        dataMap.put("driverEarnedLifeLong", "0") ;
+        dataMap.put("driverJoinedDate" , DATE) ;
+        dataMap.put("driverIdActivated" , "DEACTIVATED") ;
+        dataMap.put("carLic" , carLicense) ;
+
 
         // starting to send the data to firebase
 
@@ -149,6 +197,7 @@ public class signUpAcitivity extends AppCompatActivity {
                         Intent i = new Intent(getApplicationContext() , ChooseVehicle.class);
 
                         startActivity(i);
+                        finish();
 
 
 
@@ -183,6 +232,15 @@ public class signUpAcitivity extends AppCompatActivity {
 
 
 
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+
+        Toast.makeText(getApplicationContext() , "You Cant Go Back " , Toast.LENGTH_SHORT)
+                .show();
 
     }
 }

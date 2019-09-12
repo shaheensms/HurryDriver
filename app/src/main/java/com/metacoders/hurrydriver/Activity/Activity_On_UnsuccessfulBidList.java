@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -41,7 +42,8 @@ public class Activity_On_UnsuccessfulBidList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__on__unsuccessful_bid_list);
-        // uid
+        uid  = FirebaseAuth.getInstance().getUid() ;
+
 
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child(constants.driverBidDir); // db link
         checkRef = FirebaseDatabase.getInstance().getReference(constants.carRequestLink);

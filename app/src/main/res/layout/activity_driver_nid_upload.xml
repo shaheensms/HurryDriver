@@ -34,13 +34,15 @@
             android:text="Please make sure we can easily read all the details"
             android:textSize="14sp"/>
 
+
         <ImageView
             android:id="@+id/selectedPic"
-            android:layout_width="250dp"
+            android:layout_width="match_parent"
             android:layout_height="250dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:layout_gravity="center"
-            android:background="@drawable/nid_card2" />
+            android:visibility="visible"
+            android:src="@drawable/nid_card2" />
 
     </LinearLayout>
 

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,7 +39,7 @@ public class successFulBidList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success_ful_bid_list);
 
-
+            uid = FirebaseAuth.getInstance().getUid() ;
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child(constants.succfulllistDir);
 
 

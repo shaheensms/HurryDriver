@@ -21,6 +21,7 @@ import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Activity.remainingStepsActivity;
@@ -37,7 +38,7 @@ public class CarReg extends AppCompatActivity {
     AutoCompleteTextView  carYearTv ;
     RadioGroup  acRadioGroup , carSeatNumber ;
     String acType = "NULL" , carType = "Private-Car" , carSeatNum ;
-    String uid = "TEST" ;
+    String uid  ;
 
 
 
@@ -73,6 +74,10 @@ public class CarReg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_reg);
+
+
+        uid = FirebaseAuth.getInstance().getUid() ;
+
 
         manufactureTv = findViewById(R.id.carManufacturAutoComplete);
         carModelTv = findViewById(R.id.ed_carModel);

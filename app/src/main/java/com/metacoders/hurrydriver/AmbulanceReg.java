@@ -19,6 +19,7 @@ import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Activity.remainingStepsActivity;
@@ -31,7 +32,7 @@ import java.util.Map;
 public class AmbulanceReg extends AppCompatActivity {
 
 
-    String uid =  "TEST"  ;
+    String uid   ;
 
 
 
@@ -69,6 +70,9 @@ public class AmbulanceReg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ambulance_reg);
+
+
+          uid = FirebaseAuth.getInstance().getUid() ;
 
         // init views
 
@@ -161,17 +165,6 @@ public class AmbulanceReg extends AppCompatActivity {
 
         }
 
-      //  ArrayAdapter<String>companyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, AMBULANCE_MANUFACTURER);
-      //  ArrayAdapter<String>carModelAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, AMBULANCE_MODEL);
-      //  ArrayAdapter<String>carYearAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, AMBULANCE_YEAR);
-
-     //   manufactureTv.setAdapter(companyAdapter);
-    //    modelTv.setAdapter(carModelAdapter);
-     //   yearTv.setAdapter(carYearAdapter);
-
-      //  manufactureCompany = manufactureTv.getText().toString().trim();
-    //    carModel = modelTv.getText().toString().trim();
-     //   carYear = yearTv.getText().toString().trim();
 
 
 

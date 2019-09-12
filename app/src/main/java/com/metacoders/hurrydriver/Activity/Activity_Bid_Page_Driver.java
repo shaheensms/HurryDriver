@@ -15,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Constants.constants;
@@ -110,7 +111,8 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
 
         //TODO seting the uid to test for test purpose
 
-        uid = "TEST" ;
+        uid = FirebaseAuth.getInstance().getUid() ;
+
 
         mref = FirebaseDatabase.getInstance().getReference(constants.carRequestLink).child(postid).child("bids").child(uid);
 
