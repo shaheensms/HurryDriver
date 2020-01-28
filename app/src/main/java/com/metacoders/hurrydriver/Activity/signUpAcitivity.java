@@ -182,6 +182,7 @@ public class signUpAcitivity extends AppCompatActivity {
         dataMap.put("driverJoinedDate" , DATE) ;
         dataMap.put("driverIdActivated" , "DEACTIVATED") ;
         dataMap.put("carLic" , carLicense) ;
+        dataMap.put("tripCounter" ,"0" ) ;
 
 
         // starting to send the data to firebase
