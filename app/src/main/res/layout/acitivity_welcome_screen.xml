@@ -12,9 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.google.android.material.card.MaterialCardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:layout_gravity="bottom">
 
             <LinearLayout
@@ -34,7 +35,7 @@
                     android:letterSpacing="0.05"
                     android:text="Welcome to our \nDriver App"
                     android:textColor="@color/black"
-                    android:textSize="32dp" />
+                    android:textSize="32sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -69,7 +70,7 @@
 
             </LinearLayout>
 
-        </com.google.android.material.card.MaterialCardView>
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
