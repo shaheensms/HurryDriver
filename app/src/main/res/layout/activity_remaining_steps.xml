@@ -19,7 +19,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:src="@drawable/remaining_back1"/>
+                android:src="@drawable/remaining_back1" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -40,6 +40,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="Welcome back, "
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -47,6 +48,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="Shaheen,"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
@@ -54,12 +56,12 @@
                 </LinearLayout>
 
 
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
+                    android:fontFamily="@font/jose_san_bold"
                     android:text="@string/what_to_do"
                     android:textSize="14sp" />
 
@@ -78,17 +80,17 @@
                     android:orientation="vertical">
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/driverLicenseUploadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:id="@+id/driverLicenseUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="12dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:padding="12dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -101,6 +103,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Next step"
                                     android:textSize="14sp" />
 
@@ -109,6 +112,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="@string/upload_Driver_lic"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
@@ -127,17 +131,17 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/vehicleCertificateUploadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/vehicleCertificateUploadBtn"
                         android:layout_margin="4dp"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="12dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:padding="12dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -150,6 +154,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Next step"
                                     android:textSize="14sp" />
 
@@ -158,6 +163,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Vehicle Certificate of Fitness"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
@@ -168,26 +174,25 @@
                                 android:id="@+id/fitnessIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_weight="1"
                                 android:layout_gravity="center"
-                                android:src="@drawable/incomplete_icon"
-                                />
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/RegistrationImageUploadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:id="@+id/RegistrationImageUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="12dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:padding="12dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -200,6 +205,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Next step"
                                     android:textSize="14sp" />
 
@@ -208,6 +214,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="@string/upload_a_reg_paper_image"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
@@ -218,26 +225,25 @@
                                 android:id="@+id/regPaperIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_weight="1"
                                 android:layout_gravity="center"
-                                android:src="@drawable/incomplete_icon"
-                                />
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/nidUploadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:id="@+id/nidUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="12dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:padding="12dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -250,6 +256,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Next step"
                                     android:textSize="14sp" />
 
@@ -258,6 +265,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="@string/nid_front_side"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
@@ -268,27 +276,26 @@
                                 android:id="@+id/nidIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_weight="1"
                                 android:layout_gravity="center"
-                                android:src="@drawable/incomplete_icon"
-                                />
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/profileUploadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="4dp"
-                        android:id="@+id/profileUploadBtn"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="12dp"
+                            android:orientation="horizontal"
 
-                            android:orientation="horizontal">
+                            android:padding="12dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -301,6 +308,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Next step"
                                     android:textSize="14sp" />
 
@@ -309,6 +317,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="@string/upload_a_profile_photo"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
@@ -319,26 +328,25 @@
                                 android:id="@+id/ppicon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_weight="1"
                                 android:layout_gravity="center"
-                                android:src="@drawable/incomplete_icon"
-                                />
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/taxTokenUploadBtn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/taxTokenUploadBtn"
                         android:layout_margin="4dp"
                         app:cardBackgroundColor="#ECF0F0">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:padding="12dp"
-                            android:orientation="horizontal">
+                            android:orientation="horizontal"
+                            android:padding="12dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -351,6 +359,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="Next step"
                                     android:textSize="14sp" />
 
@@ -359,6 +368,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
+                                    android:fontFamily="@font/jose_san_bold"
                                     android:text="@string/vehicle_tax_token"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
@@ -369,10 +379,9 @@
                                 android:id="@+id/taxtokenIcon"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
-                                android:layout_weight="1"
                                 android:layout_gravity="center"
-                                android:src="@drawable/incomplete_icon"
-                                />
+                                android:layout_weight="1"
+                                android:src="@drawable/incomplete_icon" />
 
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -384,10 +393,10 @@
                     android:id="@+id/nextStepButton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Next Step"
-                    android:textColor="@color/white"
                     android:background="@color/colorPrimary"
-                    >
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Next Step"
+                    android:textColor="@color/white">
 
 
                 </Button>

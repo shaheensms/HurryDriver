@@ -10,6 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,143 +19,154 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:layout_marginLeft="12dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginRight="12dp"
+                android:fontFamily="@font/jose_san_bold"
+                android:text="Let's start with creating \nyour account"
                 android:textColor="@color/black"
-                android:textSize="32sp"
-                android:text="Let's start with creating \nyour account"/>
+                android:textSize="32sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:weightSum="2"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
                     <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginRight="4dp"
                         android:layout_marginTop="16dp"
-                        android:textColorHint="@color/colorAccent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/colorAccent">
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edt_fname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableTint="@color/colorAccent"
                             android:drawableLeft="@drawable/draweble_user"
                             android:drawablePadding="8dp"
-                            android:padding="12dp"
-                            android:hint="@string/first_name"/>
+                            android:drawableTint="@color/colorAccent"
+                            android:fontFamily="@font/jose_san_bold"
+                            android:hint="@string/first_name"
+                            android:padding="12dp" />
 
 
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp"
                         android:layout_marginTop="16dp"
-                        android:textColorHint="@color/colorAccent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                        android:layout_marginRight="16dp"
+                        android:layout_weight="1"
+                        android:textColorHint="@color/colorAccent">
+
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edt_lname"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:drawableTint="@color/colorAccent"
                             android:drawableLeft="@drawable/draweble_user"
                             android:drawablePadding="8dp"
-                            android:padding="12dp"
-                            android:hint="@string/last_name"/>
+                            android:drawableTint="@color/colorAccent"
+                            android:fontFamily="@font/jose_san_bold"
+                            android:hint="@string/last_name"
+                            android:padding="12dp" />
 
 
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:layout_marginRight="16dp"
+                    android:textColorHint="@color/colorAccent">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/email_icon"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="@string/email"/>
+                        android:drawableTint="@color/colorAccent"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:hint="@string/email"
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:layout_marginRight="16dp"
+                    android:textColorHint="@color/colorAccent">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edt_phoneNo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="@string/phone_number"/>
+                        android:drawableTint="@color/colorAccent"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:hint="@string/phone_number"
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
-                    android:visibility="gone"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
                     android:textColorHint="@color/colorAccent"
-                    app:passwordToggleEnabled="true"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:visibility="gone"
+                    app:passwordToggleEnabled="true">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
+                        android:drawableTint="@color/colorAccent"
+                        android:hint="@string/password"
                         android:inputType="textPassword"
-                        android:hint="@string/password"/>
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:layout_marginRight="16dp"
+                    android:textColorHint="@color/colorAccent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/cityName"
@@ -164,6 +176,7 @@
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
+                        android:fontFamily="@font/jose_san_bold"
                         android:hint="@string/city_name"
                         android:padding="12dp" />
 
@@ -171,35 +184,36 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
 
-
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:visibility="gone"
+                    android:layout_marginRight="16dp"
                     android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:visibility="gone">
+
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/invitation_icon"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="Invite Code "/>
+                        android:drawableTint="@color/colorAccent"
+                        android:hint="Invite Code "
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
+
                 <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:layout_marginRight="16dp"
+                    android:textColorHint="@color/colorAccent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/carLicName"
@@ -209,6 +223,7 @@
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
+                        android:fontFamily="@font/jose_san_bold"
                         android:hint="Vehicle License Number"
                         android:padding="12dp" />
 
@@ -219,31 +234,27 @@
                     android:id="@+id/termCheck"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="16dp"
-                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/jose_san_bold"
                     android:linksClickable="true"
-                    android:textColorLink="#0D47A1"
-                    android:text="@string/agree_terms_privacy"/>
+                    android:text="@string/agree_terms_privacy"
+                    android:textColor="@color/colorAccent"
+                    android:textColorLink="#0D47A1" />
 
 
                 <Button
+                    android:id="@+id/continueBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/benson_bagla_font"
-                    android:textAllCaps="true"
-                    android:id="@+id/continueBtn"
+                    android:layout_marginRight="16dp"
                     android:background="@drawable/login_btn_background"
-                    android:textColor="#fff"
-                    android:text="@string/continuetext"/>
-
-
-
-
-
+                    android:fontFamily="@font/benson_bagla_font"
+                    android:text="@string/continuetext"
+                    android:textAllCaps="true"
+                    android:textColor="#fff" />
 
 
             </LinearLayout>

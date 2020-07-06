@@ -7,16 +7,17 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginBottom="8dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:orientation="vertical">
 
@@ -25,64 +26,71 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2">
+
                 <TextView
                     android:id="@+id/dateOfRow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="27 jun 2019 at 2:30 AM"
-                    android:textColor="#000000"
-                    android:textAlignment="textStart"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
                     android:layout_weight="2"
-                    />
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="27 jun 2019 at 2:30 AM"
+                    android:textAlignment="textStart"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:text="Pickup Location"/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Pickup Location"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/locationFrom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:textSize="12sp"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Shaktola, Tomsom Bridge, Cumilla"
                     android:textColor="#000"
-                    android:textStyle="bold"
-                    android:text="Shaktola, Tomsom Bridge, Cumilla"/>
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:text="Drop of Location"/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Drop of Location"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/locationTo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:textSize="12sp"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Bashundhara Shopping Complex, Dhaka"
                     android:textColor="#000"
-                    android:textStyle="bold"
-                    android:text="Bashundhara Shopping Complex, Dhaka"/>
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
@@ -94,51 +102,59 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
-                        android:textSize="12sp"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="Ride Type: "
                         android:textColor="#000"
-                        android:textStyle="bold"
-                        android:text="Ride Type: "/>
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/rideTypeTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
-                        android:textSize="12sp"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="One Way"
                         android:textColor="#000"
-                        android:textStyle="bold"
-                        android:text="One Way"/>
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
-                        android:textSize="12sp"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="Number of People: "
                         android:textColor="#000"
-                        android:textStyle="bold"
-                        android:text="Number of People: "/>
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
                     <TextView
                         android:id="@+id/numberOfPPlTv"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginTop="16dp"
-                        android:textSize="12sp"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="10"
                         android:textColor="#000"
-                        android:textStyle="bold"
-                        android:text="10"/>
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -146,45 +162,50 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="10sp"
-                    android:text="About Trip"/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="About Trip"
+                    android:textSize="10sp" />
 
                 <TextView
                     android:id="@+id/desc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
-                    android:textSize="12sp"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="lorem Ipsum Doler met ammmet"
                     android:textColor="#000"
-                    android:textStyle="bold"
-                    android:text="lorem Ipsum Doler met ammmet"/>
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
 
                 <EditText
                     android:id="@+id/bidPrice"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:hint="Enter Your Price"/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:hint="Enter Your Price"
+                    android:inputType="number" />
 
                 <Button
                     android:id="@+id/submitBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Submit"/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Submit" />
             </LinearLayout>
 
 

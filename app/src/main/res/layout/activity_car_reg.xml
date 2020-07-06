@@ -7,261 +7,264 @@
     android:orientation="vertical"
     tools:context=".CarReg">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="@font/jose_san_bold"
+            android:text="Let's give some information's about your car"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
             android:orientation="vertical">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/colorAccent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/carManufacturAutoComplete"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/car_icon"
+                    android:drawableRight="@drawable/ic_arrow_drop_down"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:focusable="true"
+                    android:hint="Car Manufracture "
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="2"
+                    android:textColorHint="@color/colorAccent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ed_carModel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/car_icon"
+                        android:drawableRight="@drawable/ic_arrow_drop_down"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/colorAccent"
+                        android:hint="Car Model"
+                        android:padding="12dp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/colorAccent">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/ed_carYear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_event_note"
+                        android:drawableRight="@drawable/ic_arrow_drop_down"
+                        android:drawablePadding="8dp"
+                        android:drawableTint="@color/colorAccent"
+                        android:hint="Year"
+                        android:padding="12dp" />
+
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/colorAccent"
+                android:visibility="gone"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/colorAccent"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/invitation_icon"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:hint="Invite Code "
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+
+                <RadioGroup
+                    android:id="@+id/acTypeGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:textSize="18sp">
+
+                    <RadioButton
+                        android:id="@+id/ac_on"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="AC"
+                        android:textColor="@color/red" />
+
+                    <RadioButton
+                        android:id="@+id/ac_off"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="NON-Ac"
+                        android:textColor="@color/red" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+
+            <!--Na lagle kaita dis-->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:textColor="@color/black"
-                android:textSize="32sp"
-                android:text="Let's give some information's about your car"/>
+                android:layout_marginRight="16dp"
+                android:fontFamily="@font/jose_san_bold"
+                android:text="Car Type : "
+                android:textColor="@color/red" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
-
-
-
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <AutoCompleteTextView
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:id="@+id/carManufacturAutoComplete"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
-                        android:drawableLeft="@drawable/car_icon"
-                        android:drawableRight="@drawable/ic_arrow_drop_down"
-                        android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="Car Manufracture "/>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginTop="16dp"
-                        android:textColorHint="@color/colorAccent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-                        <AutoCompleteTextView
-                            android:id="@+id/ed_carModel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/colorAccent"
-                            android:drawableLeft="@drawable/car_icon"
-                            android:drawableRight="@drawable/ic_arrow_drop_down"
-                            android:drawablePadding="8dp"
-                            android:padding="12dp"
-                            android:hint="Car Model"/>
-
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="16dp"
-                        android:textColorHint="@color/colorAccent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <AutoCompleteTextView
-                            android:id="@+id/ed_carYear"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/colorAccent"
-                            android:drawableLeft="@drawable/ic_event_note"
-                            android:drawableRight="@drawable/ic_arrow_drop_down"
-                            android:drawablePadding="8dp"
-                            android:padding="12dp"
-                            android:hint="Year"/>
-
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    app:passwordToggleEnabled="true"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
-                        android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:inputType="textPassword"
-                        android:hint="@string/password"/>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:visibility="gone"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
-                        android:drawableLeft="@drawable/invitation_icon"
-                        android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="Invite Code "/>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <RadioGroup
-                        android:id="@+id/acTypeGroup"
-                        android:textSize="18sp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="16dp">
-
-                        <RadioButton
-                            android:id="@+id/ac_on"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/red"
-                            android:checked="true"
-                            android:text="AC"/>
-                        <RadioButton
-                            android:id="@+id/ac_off"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@color/red"
-                            android:text="NON-Ac"/>
-
-                    </RadioGroup>
-
-                </LinearLayout>
-
-
-                <!--Na lagle kaita dis-->
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:textColor="@color/red"
-                    android:text="Car Type : "/>
-
-                <RadioGroup
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:id="@+id/numberOFPPl"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="16dp">
-
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/red"
-                        android:checked="true"
-                        android:text="4 Seat"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/red"
-                        android:text="6 Seat"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/red"
-                        android:text="8 Seat"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/red"
-                        android:text="10 Seat"/>
-
-                </RadioGroup>
-
-
-
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/submitBtn"
+            <RadioGroup
+                android:id="@+id/numberOFPPl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
+                android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/benson_bagla_font"
-                android:textAllCaps="true"
-                android:background="@drawable/login_btn_background"
-                android:textColor="#fff"
-                android:text="@string/continuetext"/>
+                android:layout_marginRight="16dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="4 Seat"
+                    android:textColor="@color/red" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="6 Seat"
+                    android:textColor="@color/red" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="8 Seat"
+                    android:textColor="@color/red" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="10 Seat"
+                    android:textColor="@color/red" />
+
+            </RadioGroup>
+
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/login_btn_background"
+            android:fontFamily="@font/jose_san_bold"
+            android:text="@string/continuetext"
+            android:textAllCaps="true"
+            android:textColor="#fff" />
+
+    </LinearLayout>
 
 </LinearLayout>

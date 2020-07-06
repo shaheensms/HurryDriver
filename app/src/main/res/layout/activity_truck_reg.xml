@@ -7,195 +7,204 @@
     android:orientation="vertical"
     tools:context=".TruckReg">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="fill_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="@font/jose_san_bold"
+            android:text="Let's give some information's about your Truck"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="fill_vertical"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
             android:orientation="vertical">
 
-            <TextView
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:textColor="@color/black"
-                android:textSize="32sp"
-                android:text="Let's give some information's about your Truck"/>
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/colorAccent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/ed_truckType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/truck_icon_red"
+                    android:drawableRight="@drawable/ic_arrow_drop_down"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:focusable="true"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:hint="Truck Type "
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp">
+                android:orientation="horizontal">
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:layout_marginRight="4dp"
+                    android:layout_weight="2"
+                    android:textColorHint="@color/colorAccent">
+
                     <AutoCompleteTextView
-                        android:clickable="true"
-                        android:focusable="true"
-                        android:id="@+id/ed_truckType"
+                        android:id="@+id/ed_truckModel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
                         android:drawableLeft="@drawable/truck_icon_red"
                         android:drawableRight="@drawable/ic_arrow_drop_down"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="Truck Type "/>
+                        android:drawableTint="@color/colorAccent"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:hint="Truck Model"
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="2"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_marginTop="16dp"
-                        android:textColorHint="@color/colorAccent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <AutoCompleteTextView
-                            android:id="@+id/ed_truckModel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/colorAccent"
-                            android:drawableLeft="@drawable/truck_icon_red"
-                            android:drawableRight="@drawable/ic_arrow_drop_down"
-                            android:drawablePadding="8dp"
-                            android:padding="12dp"
-                            android:hint="Truck Model"/>
-
-
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_marginTop="16dp"
-                        android:textColorHint="@color/colorAccent"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                        <AutoCompleteTextView
-                            android:id="@+id/ed_truckYear"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:drawableTint="@color/colorAccent"
-                            android:drawableLeft="@drawable/ic_event_note"
-                            android:drawableRight="@drawable/ic_arrow_drop_down"
-                            android:drawablePadding="8dp"
-                            android:padding="12dp"
-                            android:hint="Year"/>
-
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                </LinearLayout>
-
                 <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="4dp"
                     android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                    android:layout_marginRight="16dp"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/colorAccent">
+
                     <AutoCompleteTextView
-                        android:id="@+id/ed_truckTon"
+                        android:id="@+id/ed_truckYear"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
-                        android:drawableLeft="@drawable/truck_icon_red"
+                        android:drawableLeft="@drawable/ic_event_note"
                         android:drawableRight="@drawable/ic_arrow_drop_down"
                         android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="Ton "/>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:textColorHint="@color/colorAccent"
-                    app:passwordToggleEnabled="true"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
                         android:drawableTint="@color/colorAccent"
-                        android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:inputType="textPassword"
-                        android:hint="@string/password"/>
+                        android:fontFamily="@font/jose_san_bold"
+                        android:hint="Year"
+                        android:padding="12dp" />
 
 
                 </com.google.android.material.textfield.TextInputLayout>
-
-
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginTop="16dp"
-                    android:visibility="gone"
-                    android:textColorHint="@color/colorAccent"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawableTint="@color/colorAccent"
-                        android:drawableLeft="@drawable/invitation_icon"
-                        android:drawablePadding="8dp"
-                        android:padding="12dp"
-                        android:hint="Invite Code "/>
-
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-
-
             </LinearLayout>
 
-            <Button
-                android:id="@+id/submitBtn"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="@font/benson_bagla_font"
-                android:textAllCaps="true"
-                android:background="@drawable/login_btn_background"
-                android:textColor="#fff"
-                android:text="@string/continuetext"/>
+                android:textColorHint="@color/colorAccent">
+
+                <AutoCompleteTextView
+                    android:id="@+id/ed_truckTon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/truck_icon_red"
+                    android:drawableRight="@drawable/ic_arrow_drop_down"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:hint="Ton "
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/colorAccent"
+                android:visibility="gone"
+                app:passwordToggleEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="16dp"
+                android:textColorHint="@color/colorAccent"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/invitation_icon"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="@color/colorAccent"
+                    android:hint="Invite Code "
+                    android:padding="12dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/login_btn_background"
+            android:fontFamily="@font/jose_san_bold"
+            android:text="@string/continuetext"
+            android:textAllCaps="true"
+            android:textColor="#fff" />
+
+    </LinearLayout>
 
 </LinearLayout>

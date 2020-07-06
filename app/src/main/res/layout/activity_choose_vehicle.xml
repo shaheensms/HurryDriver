@@ -20,57 +20,58 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="18sp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:textStyle="bold"
-                android:text="Please choose your vehicle type."/>
+                android:fontFamily="@font/jose_san_bold"
+                android:text="Please choose your vehicle type."
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/privateCarBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="8dp"
-                android:id="@+id/privateCarBtn"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardElevation="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:foreground="?attr/selectableItemBackground"
-                    android:orientation="horizontal"
-                    >
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_margin="16dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="Car"
                             android:textColor="@color/white"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Car"/>
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/car_primary_reqs"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:text="@string/car_primary_reqs"/>
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
                     <ImageView
                         android:layout_width="120dp"
                         android:layout_height="100dp"
-                        android:layout_weight="1"
                         android:layout_margin="8dp"
-                        android:src="@drawable/car_icon"/>
+                        android:layout_weight="1"
+                        android:src="@drawable/car_icon" />
 
                 </LinearLayout>
 
@@ -78,106 +79,104 @@
 
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/truckBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/truckBtn"
-                app:cardElevation="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardElevation="8dp">
 
                 <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:layout_margin="16dp"
+                        android:layout_weight="1"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="Truck"
                             android:textColor="@color/white"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Truck"/>
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/car_primary_reqs"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:text="@string/car_primary_reqs"/>
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="120dp"
-                        android:layout_weight=".5"
                         android:layout_margin="8dp"
-                        android:src="@drawable/delivery_truck"/>
+                        android:layout_weight=".5"
+                        android:src="@drawable/delivery_truck" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/ambulanceBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardElevation="8dp"
-                android:id="@+id/ambulanceBtn"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                app:cardBackgroundColor="@color/colorPrimary">
+                app:cardBackgroundColor="@color/colorPrimary"
+                app:cardElevation="8dp">
 
                 <LinearLayout
-                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    >
+                    android:foreground="?attr/selectableItemBackground"
+                    android:orientation="horizontal">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="0.7"
                         android:layout_margin="16dp"
+                        android:layout_weight="0.7"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="Ambulance"
                             android:textColor="@color/white"
-                            android:textStyle="bold"
                             android:textSize="16sp"
-                            android:text="Ambulance"/>
+                            android:textStyle="bold" />
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:text="@string/car_primary_reqs"
                             android:textColor="@color/white"
-                            android:textSize="14sp"
-                            android:text="@string/car_primary_reqs"/>
+                            android:textSize="14sp" />
 
                     </LinearLayout>
 
                     <ImageView
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:layout_weight="1"
                         android:layout_margin="8dp"
-                        android:src="@drawable/ambulance"/>
+                        android:layout_weight="1"
+                        android:src="@drawable/ambulance" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
-
-
 
 
         </LinearLayout>

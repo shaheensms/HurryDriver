@@ -14,17 +14,19 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:orientation="horizontal">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:orientation="vertical">
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:src="@drawable/avatar"/>
+                android:src="@drawable/avatar" />
 
 
         </LinearLayout>
@@ -39,12 +41,13 @@
                 android:id="@+id/nameHomeFragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/jose_san_bold"
+                android:text="Cristina Perry"
                 android:textColor="#000"
-                android:textStyle="bold"
                 android:textSize="20sp"
-                android:text="Cristina Perry"/>
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -55,102 +58,116 @@
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/phone_icon"
                     android:drawablePadding="8dp"
-                    android:text="Mobile: "/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Mobile: " />
+
                 <TextView
                     android:id="@+id/phoneNum"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="8dp"
-                    android:text="+8801856508888"/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="+8801856508888" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:weightSum="2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:weightSum="2">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:drawablePadding="8dp"
                     android:drawableLeft="@drawable/driver_license_icon"
-                    android:text="License: "/>
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="License: " />
+
                 <TextView
                     android:id="@+id/licame"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="8dp"
-                    android:text=""/>
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:weightSum="2"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:weightSum="2">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:drawablePadding="8dp"
                     android:drawableLeft="@drawable/car_icon"
-                    android:textSize="18sp"
-                    android:text="Car Model: "/>
+                    android:drawablePadding="8dp"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Car Model: "
+                    android:textSize="18sp" />
+
                 <TextView
                     android:id="@+id/carModelName"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="8dp"
-                    android:textSize="20sp"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Toyota Premio 2019"
                     android:textColor="#000000"
-                    android:text="Toyota Premio 2019"/>
+                    android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>
 
 
-
-
-
-
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:orientation="horizontal">
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:padding="8dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="Rides"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:id="@+id/totalRide"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="150"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                 </LinearLayout>
 
@@ -158,45 +175,53 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:padding="8dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="Earning"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="150"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
                     android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_marginBottom="8dp"
-                    android:padding="8dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="Rides"
-                        android:textSize="14sp"/>
+                        android:textSize="14sp" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
                         android:text="150"
-                        android:textSize="20sp"/>
+                        android:textSize="20sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -210,9 +235,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="Your Rating"
                     android:textAlignment="center"
-                    android:textSize="16sp"
-                    android:text="Your Rating"/>
+                    android:textSize="16sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -220,27 +246,31 @@
                     android:layout_marginLeft="8dp"
                     android:layout_marginBottom="8dp"
                     android:orientation="horizontal">
+
                     <TextView
                         android:id="@+id/rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="4.5"
                         android:textAlignment="center"
-                        android:textSize="16sp"
-                        android:text="4.5"/>
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="/"
                         android:textAlignment="center"
-                        android:textSize="16sp"
-                        android:text="/"/>
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/jose_san_bold"
+                        android:text="5"
                         android:textAlignment="center"
-                        android:textSize="16sp"
-                        android:text="5"/>
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -252,62 +282,74 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="24dp"
+        android:gravity="center"
         android:orientation="horizontal">
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_marginLeft="4dp"
             android:layout_marginRight="8dp"
             app:cardCornerRadius="8dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/bank_purple_gredient"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/jose_san_bold"
                     android:gravity="center"
-                    android:textColor="#ccffffff"
-                    android:text="Request List"/>
+                    android:text="Request List"
+                    android:textColor="#ccffffff" />
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="25"
                     android:textAlignment="center"
-                    android:textSize="32sp"
-                    android:text="25"/>
+                    android:textColor="#fff"
+                    android:textSize="32sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
+
         <com.google.android.material.card.MaterialCardView
             android:layout_width="150dp"
             android:layout_height="100dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="4dp"
             app:cardCornerRadius="8dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/bank_purple_gredient"
                 android:gravity="center"
                 android:orientation="vertical">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/jose_san_bold"
                     android:gravity="center"
-                    android:textColor="#ccffffff"
-                    android:text="Trip List"/>
+                    android:text="Trip List"
+                    android:textColor="#ccffffff" />
+
                 <TextView
                     android:id="@+id/completedTrioNumber"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#fff"
+                    android:fontFamily="@font/jose_san_bold"
+                    android:text="10"
                     android:textAlignment="center"
-                    android:textSize="32sp"
-                    android:text="10"/>
+                    android:textColor="#fff"
+                    android:textSize="32sp" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
@@ -317,10 +359,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/jose_san_bold"
+        android:text="Running Trip"
         android:textColor="#000"
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:text="Running Trip"/>
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -329,25 +372,27 @@
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:orientation="vertical">
+
         <androidx.cardview.widget.CardView
-            android:layout_marginTop="8dp"
-            app:cardElevation="8dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardElevation="8dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:weightSum="2">
+
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="120dp"
                     android:layout_height="100dp"
-                    app:cardCornerRadius="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="12dp">
+                    android:layout_marginBottom="12dp"
+                    app:cardCornerRadius="8dp">
 
                     <ImageView
                         android:layout_width="match_parent"
@@ -361,86 +406,94 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
                     android:layout_marginLeft="8dp"
-                    android:orientation="vertical"
-                    android:layout_weight="2">
+                    android:layout_marginTop="12dp"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:weightSum="2">
+
                         <TextView
                             android:id="@+id/dateOfRow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="27 jun 2019 at 2:30 AM"
-                            android:textColor="#000000"
-                            android:textAlignment="textStart"
-                            android:textStyle="bold"
                             android:layout_weight="2"
-                            />
+                            android:fontFamily="@font/jose_san_bold"
+                            android:text="27 jun 2019 at 2:30 AM"
+                            android:textAlignment="textStart"
+                            android:textColor="#000000"
+                            android:textStyle="bold" />
+
                         <TextView
                             android:id="@+id/fareRow"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="$350"
-                            android:paddingLeft="10dp"
-                            android:paddingRight="4dp"
-                            android:paddingTop="2dp"
-                            android:paddingBottom="2dp"
                             android:background="@drawable/price_tag_round_bg"
-                            android:textColor="#fff"
+                            android:fontFamily="@font/jose_san_bold"
+                            android:paddingLeft="10dp"
+                            android:paddingTop="2dp"
+                            android:paddingRight="4dp"
+                            android:paddingBottom="2dp"
+                            android:text="$350"
                             android:textAlignment="textEnd"
-                            android:textSize="12dp"
-                            />
+                            android:textColor="#fff"
+                            android:textSize="12dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:text="Pickup Location"/>
+                            android:fontFamily="@font/jose_san_bold"
+                            android:text="Pickup Location"
+                            android:textSize="10sp" />
 
                         <TextView
                             android:id="@+id/locationFrom"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
-                            android:textSize="12sp"
+                            android:fontFamily="@font/jose_san_bold"
+                            android:text="Shaktola, Tomsom Bridge, Cumilla"
                             android:textColor="#000"
-                            android:textStyle="bold"
-                            android:text="Shaktola, Tomsom Bridge, Cumilla"/>
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:textSize="10sp"
-                            android:text="Drop of Location"/>
+                            android:fontFamily="@font/jose_san_bold"
+                            android:text="Drop of Location"
+                            android:textSize="10sp" />
 
                         <TextView
                             android:id="@+id/locationTo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
-                            android:textSize="12sp"
+                            android:fontFamily="@font/jose_san_bold"
+                            android:text="Bashundhara Shopping Complex, Dhaka"
                             android:textColor="#000"
-                            android:textStyle="bold"
-                            android:text="Bashundhara Shopping Complex, Dhaka"/>
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
 
@@ -449,9 +502,6 @@
 
         </androidx.cardview.widget.CardView>
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>
