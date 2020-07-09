@@ -28,18 +28,18 @@ import com.metacoders.hurrydriver.Viewholders.viewholderForReqList;
 
 public class RequestListFragment extends Fragment {
 
-    RecyclerView mrecyclerview  ;
-    LinearLayoutManager linearLayoutManager ;
+    RecyclerView mrecyclerview;
+    LinearLayoutManager linearLayoutManager;
     DatabaseReference mref;
 
-    FirebaseRecyclerOptions<modelForCarRequest > options ;
-    FirebaseRecyclerAdapter<modelForCarRequest, viewholderForReqList> firebaseRecyclerAdapter ;
+    FirebaseRecyclerOptions<modelForCarRequest> options;
+    FirebaseRecyclerAdapter<modelForCarRequest, viewholderForReqList> firebaseRecyclerAdapter;
 
-    View view  ;
-    String uid = "TEST" ;
+    View view;
+    String uid = "TEST";
 
 
-    public  RequestListFragment(){
+    public RequestListFragment() {
 
 
     }
@@ -48,12 +48,13 @@ public class RequestListFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-         view   = inflater.inflate(R.layout.fragment_request_list, container, false);
+        view = inflater.inflate(R.layout.fragment_request_list, container, false);
 
-         mref = FirebaseDatabase.getInstance().getReference(constants.carRequestLink); // db link
+        mref = FirebaseDatabase.getInstance().getReference(constants.carRequestLink); // db link
 
+        mref.keepSynced(true);
 
-        mrecyclerview = view.findViewById(R.id.recyclerViewOnFramentRequestList) ;
+        mrecyclerview = view.findViewById(R.id.recyclerViewOnFramentRequestList);
 
         linearLayoutManager = new LinearLayoutManager(getContext());
 
@@ -61,35 +62,30 @@ public class RequestListFragment extends Fragment {
         linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
 
-        mrecyclerview.setLayoutManager(linearLayoutManager) ;
+        mrecyclerview.setLayoutManager(linearLayoutManager);
         mrecyclerview.setHasFixedSize(true);
 
-        mref.keepSynced(true);
 
-        loadDataToFireBase()  ;
+
+        loadDataToFireBase();
 
         return view;
 
     }
+
     private void loadDataToFireBase() {
 
-        options = new FirebaseRecyclerOptions.Builder<modelForCarRequest>().setQuery(mref , modelForCarRequest.class).build();
+        options = new FirebaseRecyclerOptions.Builder<modelForCarRequest>().setQuery(mref, modelForCarRequest.class).build();
         firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<modelForCarRequest, viewholderForReqList>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull viewholderForReqList viewholdersForCurrentTrip,final int i, @NonNull modelForCarRequest model) {
+            protected void onBindViewHolder(@NonNull viewholderForReqList viewholdersForCurrentTrip, final int i, @NonNull modelForCarRequest model) {
 
 
-                viewholdersForCurrentTrip.setDataToView(getContext() ,
-                        model.getPostId() , model.getUserId()  ,model.getUserNotificationID()   , model.getDriverId()  , model.getDriverNotificationID() ,
-                        model.getToLoc() , model.getFromLoc() ,  model.getTimeDate() , model.getCarModl() , model.getDriverName() ,
-                        model.getStatus()  , model.getCarLicNum() , model.getFare() , model.getCarType() ,
-                        model.getReqDate() , model.getTripDetails() , model.getReturnTimee() , model.getNumOfPpl() ,model.getRideType() );
-
-
-
-
-
-
+                viewholdersForCurrentTrip.setDataToView(getContext(),
+                        model.getPostId(), model.getUserId(), model.getUserNotificationID(), model.getDriverId(), model.getDriverNotificationID(),
+                        model.getToLoc(), model.getFromLoc(), model.getTimeDate(), model.getCarModl(), model.getDriverName(),
+                        model.getStatus(), model.getCarLicNum(), model.getFare(), model.getCarType(),
+                        model.getReqDate(), model.getTripDetails(), model.getReturnTimee(), model.getNumOfPpl(), model.getRideType());
 
 
             }
@@ -102,78 +98,66 @@ public class RequestListFragment extends Fragment {
                 final viewholderForReqList viewholders = new viewholderForReqList(iteamVIew);
 
 
-
                 viewholderForReqList.setOnClickListener(new viewholderForReqList.Clicklistener() {
                     @Override
-                    public void onItemClick(View view, final  int postion) {
+                    public void onItemClick(View view, final int postion) {
 
-                        final String DriverName  = getItem(postion).getDriverName() ;
-                        final String Status = getItem(postion).getStatus() ;
-                        final String PostID = getItem(postion).getPostId() ;
-                        final String userNottificaionId = getItem(postion).getUserNotificationID() ;
+                        final String DriverName = getItem(postion).getDriverName();
+                        final String Status = getItem(postion).getStatus();
+                        final String PostID = getItem(postion).getPostId();
+                        final String userNottificaionId = getItem(postion).getUserNotificationID();
                         final String timeOfTrip = getItem(postion).getTimeDate();
-                        final String fromLoc = getItem(postion).getFromLoc() ;
+                        final String fromLoc = getItem(postion).getFromLoc();
                         final String toLoc = getItem(postion).getToLoc();
                         final String numberOfppl = getItem(postion).getNumOfPpl();
-                        final String description = getItem(postion).getTripDetails() ;
-                        final String returnDate = getItem(postion).getReturnTimee() ;
-                        final String rideType = getItem(postion).getRideType() ;
+                        final String description = getItem(postion).getTripDetails();
+                        final String returnDate = getItem(postion).getReturnTimee();
+                        final String rideType = getItem(postion).getRideType();
 
 
                         //TODO you have to check for driver has already bid on this or not
                         //TODO if he didnt then   give him access
 
-                 mref.child(PostID).child("bids").addValueEventListener(new ValueEventListener() {
-                     @Override
-                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        mref.child(PostID).child("bids").addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                         if (dataSnapshot.hasChild(uid))
-                         {
-                             Intent io = new Intent(getContext() , Activity_Bid_Page_Driver.class) ;
+                                if (dataSnapshot.hasChild(uid)) {
+                                    Intent io = new Intent(getContext(), Activity_Bid_Page_Driver.class);
 
-                             io.putExtra("drivername" , DriverName) ;
-                             io.putExtra("status",Status);
-                             io.putExtra("postid", PostID);
-                             io.putExtra("usernottificationid" , userNottificaionId);
-                             io.putExtra("timeoftrip", timeOfTrip);
-                             io.putExtra("fromloc", fromLoc);
-                             io.putExtra("toloc", toLoc);
-                             io.putExtra("numberofppl", numberOfppl);
-                             io.putExtra("des", description);
-                             io.putExtra("returndate", returnDate) ;
-                             io.putExtra("ridetype" , rideType) ;
-
+                                    io.putExtra("drivername", DriverName);
+                                    io.putExtra("status", Status);
+                                    io.putExtra("postid", PostID);
+                                    io.putExtra("usernottificationid", userNottificaionId);
+                                    io.putExtra("timeoftrip", timeOfTrip);
+                                    io.putExtra("fromloc", fromLoc);
+                                    io.putExtra("toloc", toLoc);
+                                    io.putExtra("numberofppl", numberOfppl);
+                                    io.putExtra("des", description);
+                                    io.putExtra("returndate", returnDate);
+                                    io.putExtra("ridetype", rideType);
 
 
-                             startActivity(io);
+                                    startActivity(io);
 
 
+                                } else {
 
-                         }
-
-                         else {
-
-                             Toast.makeText(getContext() , "Sorry You Already Has Bidded On This" , Toast.LENGTH_SHORT)
-                                     .show();
+                                    Toast.makeText(getContext(), "Sorry You Already Has Bidded On This", Toast.LENGTH_SHORT)
+                                            .show();
 
 
-                         }
+                                }
 
 
+                            }
 
-                     }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-                     @Override
-                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                     }
-                 }) ;
-
-
-
-
-
+                            }
+                        });
 
 
                     }
@@ -183,13 +167,9 @@ public class RequestListFragment extends Fragment {
                 return viewholders;
             }
         };
-        mrecyclerview.setLayoutManager(linearLayoutManager) ;
+        mrecyclerview.setLayoutManager(linearLayoutManager);
         firebaseRecyclerAdapter.startListening();
         mrecyclerview.setAdapter(firebaseRecyclerAdapter);
-
-
-
-
 
 
     }

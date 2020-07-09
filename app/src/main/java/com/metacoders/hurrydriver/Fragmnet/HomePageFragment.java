@@ -32,13 +32,14 @@ public class HomePageFragment extends Fragment {
 
         TextView nameTv , licTv , modelTv , tripNumTv , phnNumberTv  , ratingTv , totalRide;
 
-
+    DatabaseReference mref ;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
 
         view = inflater.inflate(R.layout.fragment_home_page, container, false);
+
 
         // init the views
 
@@ -52,7 +53,7 @@ public class HomePageFragment extends Fragment {
 
 
 
-        loadDataFromProfile() ;
+       // loadDataFromProfile() ;
 
 
         return view;
@@ -60,7 +61,7 @@ public class HomePageFragment extends Fragment {
     }
     private void loadDataFromProfile() {
         String uid = FirebaseAuth.getInstance().getUid() ;
-        DatabaseReference mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
+        mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
 
         mref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -97,5 +98,12 @@ public class HomePageFragment extends Fragment {
 
 
 
+    }
+
+    @Override
+    public void onStart() {
+
+        loadDataFromProfile();
+        super.onStart();
     }
 }

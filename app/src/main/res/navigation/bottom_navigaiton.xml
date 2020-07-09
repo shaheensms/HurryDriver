@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigaiton"
+    app:startDestination="@id/HomePageFragment">
+
+    <fragment
+        android:id="@+id/TripsList"
+        android:name="com.metacoders.hurrydriver.Fragmnet.TripsList"
+        android:label="TripsList"
+        tools:layout="@layout/fragment_trip_list"
+        />
+
+    <fragment
+        android:id="@+id/HomePageFragment"
+        android:name="com.metacoders.hurrydriver.Fragmnet.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
+
+    <fragment
+        android:id="@+id/RequestListFragment"
+        android:name="com.metacoders.hurrydriver.Fragmnet.RequestListFragment"
+        tools:layout="@layout/fragment_request_list" />
+</navigation>

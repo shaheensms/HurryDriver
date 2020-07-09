@@ -10,5 +10,6 @@
     <color name="icon_green">#20FF94</color>
     <color name="icon_yellow">#FFEB3B</color>
     <color name="icon_red">#FF0900</color>
+    <color name="backGroundColor">#ededed</color>
 
 </resources>

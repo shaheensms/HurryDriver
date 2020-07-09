@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/HomePageFragment"
+        android:title="Dash-Board"
+        android:icon="@drawable/ic_baseline_dashboard_24"
+        android:menuCategory="secondary"/>
+    <item
+        android:id="@+id/TripsList"
+        android:title="My-List"
+        android:icon="@drawable/checklist"
+        android:menuCategory="secondary"/>
+
+    <item
+        android:id="@+id/RequestListFragment"
+        android:title="Requests"
+        android:icon="@drawable/plus"
+        android:menuCategory="secondary"/>
+
+
+
+</menu>

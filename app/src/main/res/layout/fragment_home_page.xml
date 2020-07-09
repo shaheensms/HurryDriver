@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    >
+
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-
+    android:background="@color/backGroundColor"
     tools:context=".Fragmnet.HomePageFragment">
 
     <LinearLayout
@@ -18,14 +25,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
                 android:src="@drawable/avatar" />
 
 
@@ -105,6 +111,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:drawableLeft="@drawable/car_icon"
+                    android:drawableTint="@color/colorPrimary"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/jose_san_bold"
                     android:text="Car Model: "
@@ -373,11 +380,11 @@
         android:layout_marginRight="16dp"
         android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:cardElevation="8dp">
+            app:cardElevation="12dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -438,7 +445,7 @@
                             android:paddingTop="2dp"
                             android:paddingRight="4dp"
                             android:paddingBottom="2dp"
-                            android:text="$350"
+                            android:text="৳350"
                             android:textAlignment="textEnd"
                             android:textColor="#fff"
                             android:textSize="12dp" />
@@ -500,8 +507,11 @@
                 </LinearLayout>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
 
 </LinearLayout>
+
+
+</ScrollView>
