@@ -273,7 +273,7 @@ public class uploadCarPicToServer extends AppCompatActivity {
                 @Override
                 public void onProgress(@NonNull UploadTask.TaskSnapshot taskSnapshot) {
 
-                    mprogressDialog.setTitle("Uploading.......");
+                    mprogressDialog.setMessage("Uploading.......");
                     mprogressDialog.show();
 
 

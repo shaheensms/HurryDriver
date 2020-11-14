@@ -32,13 +32,12 @@ import java.util.HashMap;
 
 public class signUpAcitivity extends AppCompatActivity {
 
-    TextInputEditText  fnamein , snameIn, emailIn , phIn , carLicNumber    ;
-    CheckBox  terms ;
-    Button resigterBtn ;
-    String  fname , sname , email,  phone , carLic;
-    DatabaseReference mref ;
-    FirebaseAuth mauth ;
-
+    TextInputEditText fnamein, snameIn, emailIn, phIn, carLicNumber;
+    CheckBox terms;
+    Button resigterBtn;
+    String fname, sname, email, phone, carLic;
+    DatabaseReference mref;
+    FirebaseAuth mauth;
 
 
     @Override
@@ -53,9 +52,8 @@ public class signUpAcitivity extends AppCompatActivity {
         mauth = FirebaseAuth.getInstance();
 
 
-
         Intent o = getIntent();
-        phone = o.getStringExtra("PHONE") ;
+        phone = o.getStringExtra("PHONE");
 
 
         // init view
@@ -65,16 +63,11 @@ public class signUpAcitivity extends AppCompatActivity {
         phIn = findViewById(R.id.edt_phoneNo);
         emailIn = findViewById(R.id.edt_email);
         resigterBtn = findViewById(R.id.continueBtn);
-        terms = findViewById(R.id.termCheck) ;
-        carLicNumber = findViewById(R.id.carLicName) ;
+        terms = findViewById(R.id.termCheck);
+        carLicNumber = findViewById(R.id.carLicName);
 
 
         terms.setChecked(false);
-
-
-
-
-
 
 
         //click event
@@ -87,13 +80,13 @@ public class signUpAcitivity extends AppCompatActivity {
                 sname = snameIn.getText().toString();
                 email = emailIn.getText().toString();
                 //  phone = phIn.getText().toString();
-                carLic = carLicNumber.getText().toString() ;
+                carLic = carLicNumber.getText().toString();
 
 
-                if (TextUtils.isEmpty(fname) ||TextUtils.isEmpty(sname) ||TextUtils.isEmpty(email) ||TextUtils.isEmpty(phone)
-                        || phone.length() != 14||  TextUtils.isEmpty(carLic)){
+                if (TextUtils.isEmpty(fname) || TextUtils.isEmpty(sname) || TextUtils.isEmpty(email) || TextUtils.isEmpty(phone)
+                        || phone.length() != 14 || TextUtils.isEmpty(carLic)) {
 
-                    Toast.makeText(getApplicationContext() , "ffff"+fname+ sname + email +carLic+ phone, Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "ffff" + fname + sname + email + carLic + phone, Toast.LENGTH_LONG).show();
 
                     new AwesomeWarningDialog(signUpAcitivity.this)
                             .setTitle("Error")
@@ -108,15 +101,13 @@ public class signUpAcitivity extends AppCompatActivity {
                                 @Override
                                 public void exec() {
                                     // click
-                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                    new AwesomeErrorDialog(getApplicationContext()).hide();
 
                                 }
                             })
                             .show();
 
-                }
-                else if (!terms.isChecked() )
-                {
+                } else if (!terms.isChecked()) {
                     new AwesomeWarningDialog(signUpAcitivity.this)
                             .setTitle("Error")
                             .setMessage("Please Accept To Our Terms & Condition")
@@ -130,59 +121,56 @@ public class signUpAcitivity extends AppCompatActivity {
                                 @Override
                                 public void exec() {
                                     // click
-                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                    new AwesomeErrorDialog(getApplicationContext()).hide();
 
                                 }
                             })
                             .show();
 
-                }
-
-                else{
+                } else {
 
                     // uploading data to firebase
-                    uploadDataToFirebase(fname+ " "+ sname  , email , phone , carLic) ;
+                    uploadDataToFirebase(fname + " " + sname, email, phone, carLic);
                 }
-
-
-
-
 
 
             }
         });
 
 
-
-
-
     }
 
-    private void uploadDataToFirebase(String s, String email, String phone , String carLicense) {
+    private void uploadDataToFirebase(String s, String email, String phone, String carLicense) {
 
-        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss a");
         Date date = new Date();
-      String DATE  =  dateFormat.format(date);
+        String DATE = dateFormat.format(date);
 
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink);
-        String uid  = mauth.getUid() ;
+        String uid = mauth.getUid();
+
+        // TODO add  notification Subscriber
 
 
-        HashMap  dataMap = new HashMap();
 
-        dataMap.put("driverName", s) ;
-        dataMap.put("email",email);
-        dataMap.put("phone", phone) ;
-        dataMap.put("userID" , uid) ;
-        dataMap.put("driverRating", "0") ;
-        dataMap.put("totalRides","0" )  ;
-        dataMap.put("driverFined" , "0") ;
-        dataMap.put("driverEarnedThisMonth" , "0") ;
-        dataMap.put("driverEarnedLifeLong", "0") ;
-        dataMap.put("driverJoinedDate" , DATE) ;
-        dataMap.put("driverIdActivated" , "DEACTIVATED") ;
-        dataMap.put("carLic" , carLicense) ;
-        dataMap.put("tripCounter" ,"0" ) ;
+        HashMap dataMap = new HashMap();
+
+        dataMap.put("driverName", s);
+        dataMap.put("email", email);
+        dataMap.put("phone", phone);
+        dataMap.put("userID", uid);
+        dataMap.put("driverRating", "0");
+        dataMap.put("totalRides", "0");
+        dataMap.put("driverFined", "0");
+        dataMap.put("driverEarnedThisMonth", "0");
+        dataMap.put("driverEarnedLifeLong", "0");
+        dataMap.put("driverJoinedDate", DATE);
+        dataMap.put("driverIdActivated", "DEACTIVATED");
+        dataMap.put("carLic", carLicense);
+        dataMap.put("tripCounter", "0");
+        dataMap.put("driverNotificationId" , "testID") ;
+
+
 
 
         // starting to send the data to firebase
@@ -192,14 +180,10 @@ public class signUpAcitivity extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        // data succefully d updated
-
-
-                        Intent i = new Intent(getApplicationContext() , ChooseVehicle.class);
-
+                        // data successfully  updated
+                        Intent i = new Intent(getApplicationContext(), ChooseVehicle.class);
                         startActivity(i);
                         finish();
-
 
 
                     }
@@ -211,7 +195,7 @@ public class signUpAcitivity extends AppCompatActivity {
                 // show something  wrong
                 new AwesomeWarningDialog(signUpAcitivity.this)
                         .setTitle("Error")
-                        .setMessage("Error"+ e.getMessage()+ ". Please Try Again !!")
+                        .setMessage("Error" + e.getMessage() + ". Please Try Again !!")
                         .setColoredCircle(R.color.dialogNoticeBackgroundColor)
                         .setDialogIconAndColor(R.drawable.ic_notice, R.color.white)
                         .setCancelable(false)
@@ -222,7 +206,7 @@ public class signUpAcitivity extends AppCompatActivity {
                             @Override
                             public void exec() {
                                 // click
-                                new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                new AwesomeErrorDialog(getApplicationContext()).hide();
 
                             }
                         })
@@ -232,15 +216,13 @@ public class signUpAcitivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     @Override
     public void onBackPressed() {
         super.onBackPressed();
 
-        Toast.makeText(getApplicationContext() , "You Cant Go Back " , Toast.LENGTH_SHORT)
+        Toast.makeText(getApplicationContext(), "You Cant Go Back ", Toast.LENGTH_SHORT)
                 .show();
 
     }

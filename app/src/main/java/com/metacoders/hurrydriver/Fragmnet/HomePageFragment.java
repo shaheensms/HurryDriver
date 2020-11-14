@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,6 +63,9 @@ public class HomePageFragment extends Fragment {
     private void loadDataFromProfile() {
         String uid = FirebaseAuth.getInstance().getUid() ;
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
+        mref.keepSynced(true);
+
+        Log.d("TAG", "loadDataFromProfile: " + uid);
 
         mref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -70,6 +74,7 @@ public class HomePageFragment extends Fragment {
                 driverProfileModel  model = dataSnapshot.getValue(driverProfileModel.class);
                 nameTv.setText(model.getDriverName());
                 licTv.setText(model.getCarLic());
+
                 if (model.getCarType().contains("Private-Car") ||model.getCarType().equals("Private-Car")  )
                 {
 
@@ -105,5 +110,11 @@ public class HomePageFragment extends Fragment {
 
         loadDataFromProfile();
         super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadDataFromProfile();
     }
 }

@@ -14,6 +14,10 @@ import android.widget.Toast;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.R;
 
 public class PickPhotoForUploadList extends AppCompatActivity {
@@ -24,7 +28,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
     private static final int INTENT_SIDE= 300;
     private static final int INTENT_INSIDE = 400;
 
-    String state = "";
+    String state = "" , uid ;
 
     Intent o;
 
@@ -35,6 +39,10 @@ public class PickPhotoForUploadList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_car_photo_upload);
         getSupportActionBar().hide();
+
+        // uid
+        uid = FirebaseAuth.getInstance().getUid() ;
+
 
         // init views
         frontBtn = findViewById(R.id.frontUploadBtn);
@@ -214,9 +222,15 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                 }
 
                 else {
-                    //TODO must  sent user to the  another page where the get Nottified there acoount activision
+                    
 
-                    Intent intent = new Intent(getApplicationContext() , MainActivity.class);
+//                    DatabaseReference mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
+//                    mref.child("driverIdActivated").setValue() ;
+
+
+                    
+
+                    Intent intent = new Intent(getApplicationContext() , DriverStatusPage.class);
                     startActivity(intent);
                     finish();
 

@@ -29,6 +29,9 @@
     <string name="upload_vehicle_fitness_paper">Please Upload Vehicle Fitness Paper Image</string>
     <string name="upload_tax_token">Please Upload Tax Token Paper Image</string>
     <string name="upload_vehicle_reg_papaer">Please Upload Vehicle Registration Paper Image</string>
+    <string name="our_support_team_will_check_all_the_details">Our Support Team Will Check All The Details</string>
+    <string name="your_account_is_on_hold_nplease_wait_while">Your Account Is On Hold \nPlease Wait While</string>
+    <string name="if_problem_occurs_please_contact_nour_customer_service">If Problem Occurs Please Contact \nOur Customer Service</string>
 
 
 </resources>
