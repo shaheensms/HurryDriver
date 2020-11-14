@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.AndroidException;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -60,9 +61,6 @@ public class CarReg extends AppCompatActivity {
 
     };
 
-
-
-
     String manufratureCompany  ;
     String carModel  ;
     String carYear  ;
@@ -76,7 +74,7 @@ public class CarReg extends AppCompatActivity {
         setContentView(R.layout.activity_car_reg);
 
 
-        uid = FirebaseAuth.getInstance().getUid() ;
+        uid = FirebaseAuth.getInstance().getUid();
 
 
         manufactureTv = findViewById(R.id.carManufacturAutoComplete);
@@ -133,7 +131,8 @@ public class CarReg extends AppCompatActivity {
                 RadioButton  acRadioButton = (RadioButton) findViewById(acRadioButtonId);
                 RadioButton carSeatButton = findViewById(carRadioButtonID);
 
-                carSeatNum = carSeatButton.getText().toString();
+               // Log.d("TAG", "onClick: "+ carRadioButtonID + R.id.);
+               carSeatNum = carSeatButton.getText().toString();
                 manufratureCompany = manufactureTv.getText().toString() ;
                 carModel = carModelTv.getText().toString() ;
                 carYear = carYearTv.getText().toString() ;
@@ -142,6 +141,7 @@ public class CarReg extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<String,Object>();
 
                 map.put("carType" ,carType) ;
+                map.put("regStep", "2");
                 map.put("acType", acType);
                 map.put("buildCompany" , manufratureCompany) ;
                 map.put("carModel",carModel);

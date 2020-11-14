@@ -128,6 +128,8 @@
                         android:layout_height="wrap_content"
                         android:drawableLeft="@drawable/phone_icon"
                         android:drawablePadding="8dp"
+                        android:clickable="false"
+                        android:focusable="false"
                         android:drawableTint="@color/colorAccent"
                         android:fontFamily="@font/jose_san_bold"
                         android:hint="@string/phone_number"

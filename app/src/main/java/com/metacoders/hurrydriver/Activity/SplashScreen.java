@@ -1,12 +1,11 @@
 package com.metacoders.hurrydriver.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -36,9 +35,10 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
 
                 checkUserExist();
+                // throw  new RuntimeException("Test Crash") ;
 
             }
-        }, 700);
+        }, 1000);
     }
 
     private void checkUserExist() {
@@ -50,72 +50,56 @@ public class SplashScreen extends AppCompatActivity {
             finish();
         } else {
 
-            try {
-                uid = FirebaseAuth.getInstance().getUid();
+            uid = user.getUid();
+            // check user is activated or not
+            DatabaseReference mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
+            mref.keepSynced(true);
 
-            } catch (Exception e) {
+            mref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                Intent i = new Intent(getApplicationContext(), Acitivity_Choose_SignIn_Register.class);
-                startActivity(i);
-                finish();
+                    if (snapshot.exists()) {
+                        driverProfileModel model = snapshot.getValue(driverProfileModel.class);
+                        if (model.getDriverIdActivated().equals("DEACTIVATED") || model.getDriverIdActivated().equals("BAN")) {
 
-            }
-            if (uid == null || uid.isEmpty()) {
-                Intent i = new Intent(getApplicationContext(), Acitivity_Choose_SignIn_Register.class);
-                startActivity(i);
-                finish();
-            } else {
-                // check user is activated or not
-
-                DatabaseReference mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
-                mref.keepSynced(true);
-
-                mref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        if (snapshot.exists()) {
-                            driverProfileModel model = snapshot.getValue(driverProfileModel.class);
-
-
-                            if (model.getDriverIdActivated().equals("DEACTIVATED") || model.getDriverIdActivated().equals("BAN")) {
-
-                                Intent i = new Intent(getApplicationContext(), DriverStatusPage.class);
-                                startActivity(i);
-                                finish();
-
-                            }
-                            else {
-                                Intent i = new Intent(getApplicationContext(), MainActivity.class);
-                                startActivity(i);
-                                finish();
-
-                            }
-
+                            // check user step 1st
+                            //TODO USER STEP
+                            Intent i = new Intent(getApplicationContext(), DriverStatusPage.class);
+                            startActivity(i);
+                            finish();
 
                         } else {
-                            Intent i = new Intent(getApplicationContext(), Acitivity_Choose_SignIn_Register.class);
+                            Intent i = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i);
                             finish();
 
                         }
 
-                    }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
+                    } else {
                         Intent i = new Intent(getApplicationContext(), Acitivity_Choose_SignIn_Register.class);
                         startActivity(i);
                         finish();
 
                     }
-                });
 
+                }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                    Intent i = new Intent(getApplicationContext(), Acitivity_Choose_SignIn_Register.class);
+                    startActivity(i);
+                    finish();
+
+                }
+            });
+
 
         }
 
     }
+
+
 }

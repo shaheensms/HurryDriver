@@ -1,5 +1,6 @@
 package com.metacoders.hurrydriver.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -14,6 +15,14 @@ import android.widget.Toast;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.R;
 
 public class remainingStepsActivity extends AppCompatActivity {
@@ -223,9 +232,28 @@ public class remainingStepsActivity extends AppCompatActivity {
                 }
                 else {
 
-                  Intent intent = new Intent(getApplicationContext() , PickPhotoForUploadList.class);
-                  startActivity(intent);
-                  finish();
+                   // add the step number
+                    FirebaseAuth mauth = FirebaseAuth.getInstance();
+                    DatabaseReference databaseReference = FirebaseDatabase
+                            .getInstance()
+                            .getReference(constants.driverProfileLink).child(mauth.getUid()).child("regStep");
+
+                    databaseReference.setValue("3")
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Intent intent = new Intent(getApplicationContext() , PickPhotoForUploadList.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "Try Again Error : " + e.getMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+
 
                 }
 

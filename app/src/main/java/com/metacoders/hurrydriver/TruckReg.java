@@ -140,6 +140,7 @@ public class TruckReg extends AppCompatActivity {
                 Map<String, Object> map = new HashMap<String,Object>();
 
                 map.put("carType" ,carType) ;
+                map.put("regStep", "2");
                 map.put("acType", acType);
                 map.put("buildCompany" , truckType) ;
                 map.put("carModel",truckModel);

@@ -1,16 +1,15 @@
 package com.metacoders.hurrydriver.Activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
@@ -20,6 +19,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Constants.constants;
@@ -38,6 +38,7 @@ public class signUpAcitivity extends AppCompatActivity {
     String fname, sname, email, phone, carLic;
     DatabaseReference mref;
     FirebaseAuth mauth;
+    FirebaseUser user ;
 
 
     @Override
@@ -50,6 +51,7 @@ public class signUpAcitivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         mauth = FirebaseAuth.getInstance();
+        user = mauth.getCurrentUser();
 
 
         Intent o = getIntent();
@@ -66,6 +68,7 @@ public class signUpAcitivity extends AppCompatActivity {
         terms = findViewById(R.id.termCheck);
         carLicNumber = findViewById(R.id.carLicName);
 
+        phIn.setText(phone);
 
         terms.setChecked(false);
 
@@ -152,7 +155,6 @@ public class signUpAcitivity extends AppCompatActivity {
         // TODO add  notification Subscriber
 
 
-
         HashMap dataMap = new HashMap();
 
         dataMap.put("driverName", s);
@@ -168,9 +170,9 @@ public class signUpAcitivity extends AppCompatActivity {
         dataMap.put("driverIdActivated", "DEACTIVATED");
         dataMap.put("carLic", carLicense);
         dataMap.put("tripCounter", "0");
-        dataMap.put("driverNotificationId" , "testID") ;
-
-
+        dataMap.put("regStep", "1");
+        //TODO add notification
+        dataMap.put("driverNotificationId", "testID");
 
 
         // starting to send the data to firebase

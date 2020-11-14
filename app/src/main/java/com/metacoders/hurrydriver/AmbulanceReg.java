@@ -102,6 +102,7 @@ public class AmbulanceReg extends AppCompatActivity {
                 map.put("carType" ,"Ambulance") ;
                 map.put("acType", acType);
                 map.put("buildCompany" , carType) ;
+                map.put("regStep", "2");
                 map.put("carModel","null");
                 map.put("carYear", "null") ;
                 map.put("truckSize","null" ) ;

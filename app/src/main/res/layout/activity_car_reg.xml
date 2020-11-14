@@ -218,6 +218,7 @@
                 android:layout_marginRight="16dp">
 
                 <RadioButton
+                    android:id="@+id/fourSeats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
@@ -226,6 +227,7 @@
                     android:textColor="@color/red" />
 
                 <RadioButton
+                    android:id="@+id/sixSeats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jose_san_bold"
@@ -233,6 +235,7 @@
                     android:textColor="@color/red" />
 
                 <RadioButton
+                    android:id="@+id/eightSeats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jose_san_bold"
@@ -240,6 +243,7 @@
                     android:textColor="@color/red" />
 
                 <RadioButton
+                    android:id="@+id/tenSeats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jose_san_bold"

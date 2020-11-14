@@ -1,9 +1,5 @@
 package com.metacoders.hurrydriver.Activity;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +7,16 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeErrorDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.AwesomeWarningDialog;
 import com.awesomedialog.blennersilva.awesomedialoglibrary.interfaces.Closure;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,18 +24,17 @@ import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.R;
 
 public class PickPhotoForUploadList extends AppCompatActivity {
-    CardView frontBtn, backBtn, sideBtn, insideBtn;
-    Button nextButton ;
     private static final int INTENT_FRONT = 100;
     private static final int INTENT_BACK = 200;
-    private static final int INTENT_SIDE= 300;
+    private static final int INTENT_SIDE = 300;
     private static final int INTENT_INSIDE = 400;
-
-    String state = "" , uid ;
+    CardView frontBtn, backBtn, sideBtn, insideBtn;
+    Button nextButton;
+    String state = "", uid;
 
     Intent o;
 
-    ImageView front  ,  back , side , inside  ;
+    ImageView front, back, side, inside;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +43,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
         getSupportActionBar().hide();
 
         // uid
-        uid = FirebaseAuth.getInstance().getUid() ;
+        uid = FirebaseAuth.getInstance().getUid();
 
 
         // init views
@@ -52,8 +54,8 @@ public class PickPhotoForUploadList extends AppCompatActivity {
 
         // icons
         front = findViewById(R.id.driverfrontIcon);
-        inside = findViewById(R.id.regPaperIconinside) ;
-        back = findViewById(R.id.fitnessIconBack) ;
+        inside = findViewById(R.id.regPaperIconinside);
+        back = findViewById(R.id.fitnessIconBack);
         side = findViewById(R.id.ppiconside);
         nextButton = findViewById(R.id.nextStepButton);
 
@@ -75,7 +77,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
 
                 o.putExtra("STATE", state);
 
-                startActivityForResult(o , INTENT_FRONT);
+                startActivityForResult(o, INTENT_FRONT);
 
 
             }
@@ -89,7 +91,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
 
                 o.putExtra("STATE", state);
 
-                startActivityForResult(o , INTENT_BACK);
+                startActivityForResult(o, INTENT_BACK);
 
 
             }
@@ -101,7 +103,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                 state = "side";
                 o.putExtra("STATE", state);
 
-                startActivityForResult(o , INTENT_SIDE);
+                startActivityForResult(o, INTENT_SIDE);
 
 
             }
@@ -115,7 +117,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
 
                 o.putExtra("STATE", state);
 
-                startActivityForResult(o , INTENT_INSIDE);
+                startActivityForResult(o, INTENT_INSIDE);
 
 
             }
@@ -128,7 +130,7 @@ public class PickPhotoForUploadList extends AppCompatActivity {
 
 
                 // check if all the work is done or not
-                if(front.getTag()=="NOTOK"){
+                if (front.getTag() == "NOTOK") {
                     // show something  wrong
                     new AwesomeWarningDialog(PickPhotoForUploadList.this)
                             .setTitle("Error")
@@ -143,16 +145,14 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                                 @Override
                                 public void exec() {
                                     // click
-                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                    new AwesomeErrorDialog(getApplicationContext()).hide();
 
                                 }
                             })
                             .show();
 
 
-
-                }
-                else if (side.getTag()=="NOTOK"){
+                } else if (side.getTag() == "NOTOK") {
 
                     new AwesomeWarningDialog(PickPhotoForUploadList.this)
                             .setTitle("Error")
@@ -167,15 +167,14 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                                 @Override
                                 public void exec() {
                                     // click
-                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                    new AwesomeErrorDialog(getApplicationContext()).hide();
 
                                 }
                             })
                             .show();
 
 
-                }
-                else if (inside.getTag()=="NOTOK"){
+                } else if (inside.getTag() == "NOTOK") {
                     new AwesomeWarningDialog(PickPhotoForUploadList.this)
                             .setTitle("Error")
                             .setMessage("Please Upload the Image Of Inside Of Your Car")
@@ -189,15 +188,14 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                                 @Override
                                 public void exec() {
                                     // click
-                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                    new AwesomeErrorDialog(getApplicationContext()).hide();
 
                                 }
                             })
                             .show();
 
 
-                }
-                else if (back.getTag()=="NOTOK"){
+                } else if (back.getTag() == "NOTOK") {
 
                     new AwesomeWarningDialog(PickPhotoForUploadList.this)
                             .setTitle("Error")
@@ -212,27 +210,38 @@ public class PickPhotoForUploadList extends AppCompatActivity {
                                 @Override
                                 public void exec() {
                                     // click
-                                    new AwesomeErrorDialog(getApplicationContext()).hide() ;
+                                    new AwesomeErrorDialog(getApplicationContext()).hide();
 
                                 }
                             })
                             .show();
 
 
-                }
-
-                else {
-                    
+                } else {
 
 //                    DatabaseReference mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid);
 //                    mref.child("driverIdActivated").setValue() ;
 
+                    FirebaseAuth mauth = FirebaseAuth.getInstance();
+                    DatabaseReference databaseReference = FirebaseDatabase
+                            .getInstance()
+                            .getReference(constants.driverProfileLink).child(mauth.getUid()).child("regStep");
 
-                    
+                    databaseReference.setValue("4").addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
 
-                    Intent intent = new Intent(getApplicationContext() , DriverStatusPage.class);
-                    startActivity(intent);
-                    finish();
+                            Intent intent = new Intent(getApplicationContext(), DriverStatusPage.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getApplicationContext(), "Error  : " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
 
                 }
 
@@ -264,13 +273,11 @@ public class PickPhotoForUploadList extends AppCompatActivity {
             inside.setTag("OK");
 
 
-
         } else if (requestCode == INTENT_SIDE && resultCode == RESULT_OK) {
 
             side.setImageResource(R.drawable.done_icon);
             side.setTag("OK");
-        }
-        else {
+        } else {
             /*
             driverLicIcon.setImageResource(R.drawable.incomplete_icon);
             nidICon.setImageResource(R.drawable.incomplete_icon);
