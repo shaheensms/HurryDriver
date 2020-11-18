@@ -18,14 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemee"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Activity.SplashScreen"
+        <activity android:name=".Activity.TrpDetails"></activity>
+        <activity
+            android:name=".Activity.SplashScreen"
             android:theme="@style/AppThemee">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity android:name=".Activity.DriverStatusPage" />
         <activity android:name=".Activity.PickPhotoForUploadList" />
@@ -46,11 +47,7 @@
         <activity android:name=".Activity.login_Activity" />
         <activity
             android:name=".Activity.Acitivity_Choose_SignIn_Register"
-            android:theme="@style/AppThemeNoAction">
-
-
-
-        </activity>
+            android:theme="@style/AppThemeNoAction"></activity>
         <activity android:name=".Fragmnet.HomePageFragment" />
         <activity android:name=".Activity.Activity_Running_Bid_List" />
         <activity android:name=".Activity.Activity_On_UnsuccessfulBidList" />

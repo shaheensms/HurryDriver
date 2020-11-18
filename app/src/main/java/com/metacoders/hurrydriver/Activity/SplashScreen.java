@@ -3,6 +3,7 @@ package com.metacoders.hurrydriver.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,9 +15,11 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 import com.metacoders.hurrydriver.Constants.constants;
 import com.metacoders.hurrydriver.Models.driverProfileModel;
 import com.metacoders.hurrydriver.R;
+import com.metacoders.hurrydriver.Utils.SharedPrefManager;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -61,15 +64,48 @@ public class SplashScreen extends AppCompatActivity {
 
                     if (snapshot.exists()) {
                         driverProfileModel model = snapshot.getValue(driverProfileModel.class);
+                        Gson gson = new Gson();
+                        String ProfileData = gson.toJson(model);
+
+                        SharedPrefManager.getInstance(getApplicationContext())
+                                .userLogin(ProfileData);
                         if (model.getDriverIdActivated().equals("DEACTIVATED") || model.getDriverIdActivated().equals("BAN")) {
 
                             // check user step 1st
-                            //TODO USER STEP
-                            Intent i = new Intent(getApplicationContext(), DriverStatusPage.class);
-                            startActivity(i);
-                            finish();
+
+                            switch (model.getRegStep()) {
+                                case "1": {
+                                    Intent i = new Intent(getApplicationContext(), ChooseVehicle.class);
+                                    startActivity(i);
+                                    finish();
+                                    break;
+                                }
+                                case "2": {
+                                    Intent i = new Intent(getApplicationContext(), remainingStepsActivity.class);
+                                    startActivity(i);
+                                    finish();
+
+                                    break;
+                                }
+                                case "3": {
+
+                                    Intent i = new Intent(getApplicationContext(), PickPhotoForUploadList.class);
+                                    startActivity(i);
+                                    finish();
+                                    break;
+                                }
+                                case "4": {
+
+                                    Intent i = new Intent(getApplicationContext(), DriverStatusPage.class);
+                                    startActivity(i);
+                                    finish();
+                                    break;
+                                }
+                            }
 
                         } else {
+
+
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i);
                             finish();

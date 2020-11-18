@@ -19,7 +19,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.metacoders.hurrydriver.Constants.constants;
+import com.metacoders.hurrydriver.Models.driverProfileModel;
 import com.metacoders.hurrydriver.R;
+import com.metacoders.hurrydriver.Utils.SharedPrefManager;
 
 import java.util.HashMap;
 
@@ -34,7 +36,7 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
     String bid , uid  ;
     HashMap map ;
 
-    DatabaseReference mref, driverRef  ;
+    DatabaseReference mref, driverRef , postRef  ;
 
 
 
@@ -115,22 +117,24 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
 
 
         mref = FirebaseDatabase.getInstance().getReference(constants.carRequestLink).child(postid).child("bids").child(uid);
+        postRef = FirebaseDatabase.getInstance().getReference(constants.carRequestLink).child(postid).child("status") ;
 
         driverRef = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child(constants.driverBidDir);
         // String     , driverRating  , bidPrice   ,driverImageLink;
 
+        driverProfileModel model = SharedPrefManager.getInstance(getApplicationContext()).getUser() ;
          map = new HashMap();
         map.put("driverUid" ,uid  );
         map.put("bidPrice", bid) ;
-        map.put("driverNottificationId" ,"test" ) ;
+        map.put("driverNottificationId" ,model.getDriverNotificationId() ) ;
         map.put("userNotticationId" , usernottificationid) ;
         map.put("tripId", postid) ;
         map.put("postID", postid) ;
-        map.put("driverName", "DriverNamePlaceHolder") ;
-        map.put("drivercarcondition", "drivercarconditionPlaceHolder");
-        map.put("driverCarModel", "driverCarModels") ;
+        map.put("driverName", model.getDriverName()) ;
+        map.put("drivercarcondition", "5");
+        map.put("driverCarModel", model.getCarModel()) ;
         map.put("driverRating", "9") ;
-        map.put("driverImageLink", "ImageLink") ;
+        map.put("driverImageLink", model.getProfile_picture()) ;
 
 
 
@@ -145,7 +149,13 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 
-                                finish();
+                                postRef.setValue("Bid Found").addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        finish();
+                                    }
+                                }) ;
+
 
 
                             }

@@ -1,10 +1,12 @@
 package com.metacoders.hurrydriver.Models;
 
-public class modelForCarRequest {
+import java.io.Serializable;
+
+public class modelForCarRequest implements Serializable {
 
     String postId  , userId  , userNotificationID  , driverId  , driverNotificationID ,
             toLoc , fromLoc ,  timeDate , carModl , driverName , status  , carLicNum , fare , carType ,
-            reqDate , tripDetails  , returnTimee  , numOfPpl ,rideType  ;
+            reqDate , tripDetails  , returnTimee  , numOfPpl ,rideType , transId  ;
     public modelForCarRequest() {
     }
 
@@ -28,6 +30,14 @@ public class modelForCarRequest {
         this.returnTimee = returnTimee;
         this.numOfPpl = numOfPpl;
         this.rideType = rideType;
+    }
+
+    public String getTransId() {
+        return transId;
+    }
+
+    public void setTransId(String transId) {
+        this.transId = transId;
     }
 
     public String getPostId() {

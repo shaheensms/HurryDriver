@@ -5,7 +5,7 @@ public class driverProfileModel {
             driverJoinedDate , driverName , driverRating , driver_license_image , email ,
             fitness_license_image , nid_card_image , phone ,profile_picture ,  tax_token_image
             , totalRides ,userID , vehicle_reg_image  , acType ,carType ,buildCompany ,carModel, carYear , truckSize
-            ,sitCount,regStep;
+            ,sitCount,regStep,driverNotificationId;
 
 
 
@@ -39,6 +39,14 @@ public class driverProfileModel {
         this.carYear = carYear;
         this.truckSize = truckSize;
         this.sitCount = sitCount;
+    }
+
+    public String getDriverNotificationId() {
+        return driverNotificationId;
+    }
+
+    public void setDriverNotificationId(String driverNotificationId) {
+        this.driverNotificationId = driverNotificationId;
     }
 
     public String getRegStep() {

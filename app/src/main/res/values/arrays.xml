@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="stepView" >
+        <item>Requested Car</item>
+        <item>Bidding</item>
+        <item>Driver Selected</item>
+        <item>Advance Payment</item>
+    </string-array>
+</resources>

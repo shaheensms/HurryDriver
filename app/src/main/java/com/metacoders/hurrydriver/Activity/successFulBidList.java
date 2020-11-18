@@ -39,7 +39,7 @@ public class successFulBidList extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_success_ful_bid_list);
 
-            uid = FirebaseAuth.getInstance().getUid() ;
+        uid = FirebaseAuth.getInstance().getUid() ;
         mref = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(uid).child(constants.succfulllistDir);
 
 

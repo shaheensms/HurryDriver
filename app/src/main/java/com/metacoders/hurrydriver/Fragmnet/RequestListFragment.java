@@ -2,6 +2,7 @@ package com.metacoders.hurrydriver.Fragmnet;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,7 +38,7 @@ public class RequestListFragment extends Fragment {
     FirebaseRecyclerAdapter<modelForCarRequest, viewholderForReqList> firebaseRecyclerAdapter;
 
     View view;
-    String uid = "TEST";
+    String uid = FirebaseAuth.getInstance().getUid();
 
 
     public RequestListFragment() {
@@ -123,7 +125,7 @@ public class RequestListFragment extends Fragment {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                                if (dataSnapshot.hasChild(uid)) {
+                                if (!dataSnapshot.hasChild(uid)) {
                                     Intent io = new Intent(getContext(), Activity_Bid_Page_Driver.class);
 
                                     io.putExtra("drivername", DriverName);
@@ -143,7 +145,7 @@ public class RequestListFragment extends Fragment {
 
 
                                 } else {
-
+                                    Log.d("TAG", "onDataChange: " + uid);
                                     Toast.makeText(getContext(), "Sorry You Already Has Bidded On This", Toast.LENGTH_SHORT)
                                             .show();
 

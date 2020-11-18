@@ -22,8 +22,7 @@ public class TripsList extends Fragment {
     LinearLayout runningBidCard  , cancelBid  , successfulBid ;
 
 
-    public  TripsList()
-    {
+    public  TripsList() {
 
     }
 
