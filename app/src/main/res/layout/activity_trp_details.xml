@@ -319,6 +319,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
                             <de.hdodenhof.circleimageview.CircleImageView
+                               android:id="@+id/pp"
                                 android:layout_width="70dp"
                                 android:layout_height="70dp"
                                 android:layout_gravity="center"
@@ -353,6 +354,7 @@
                                         android:layout_width="wrap_content"
                                         android:layout_height="match_parent"
                                         android:layout_marginLeft="8dp"
+                                        android:autoLink="phone"
                                         android:text="+8801856508888"/>
                                 </LinearLayout>
                                 <LinearLayout
@@ -360,41 +362,13 @@
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:weightSum="2"
-                                    android:orientation="horizontal">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:drawablePadding="8dp"
-                                        android:text="License: "/>
-
-                                    <TextView
-                                        android:id="@+id/driverIDInTripDetails"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_marginLeft="8dp"
-                                        android:text="xxksjd2232xz44" />
-                                </LinearLayout>
+                                    android:orientation="horizontal"/>
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
                                     android:weightSum="2"
-                                    android:orientation="horizontal">
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:drawablePadding="8dp"
-                                        android:textSize="14sp"
-                                        android:text="Car Model: "/>
-                                    <TextView
-                                        android:id="@+id/carModelInTripDetais"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
-                                        android:layout_marginLeft="8dp"
-                                        android:textSize="14sp"
-                                        android:textColor="#000000"
-                                        android:text="Toyota Premio 2019"/>
-                                </LinearLayout>
+                                    android:orientation="horizontal"/>
 
                             </LinearLayout>
                         </LinearLayout>
@@ -471,7 +445,46 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Total Fare: "
+                            android:text="Advance Paid: "
+                            android:textAlignment="center"
+                            android:textColor="#000"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/advancedpriceInTripDetails"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="4dp"
+                            android:text="00"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="4dp"
+                            android:text="Tk"
+                            android:textAlignment="center"
+                            android:textColor="@android:color/holo_green_dark"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text=" Client Will Pay: "
                             android:textAlignment="center"
                             android:textColor="#000"
                             android:textSize="20sp" />
@@ -482,7 +495,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="4dp"
                             android:layout_marginTop="4dp"
-                            android:text="1050"
+                            android:text="00"
                             android:textAlignment="center"
                             android:textColor="@android:color/holo_green_dark"
                             android:textSize="30sp"
@@ -568,6 +581,16 @@
                         android:textColor="@color/black"
                         android:layout_marginBottom="5dp"
                         android:layout_height="wrap_content"/>
+                    <Button
+
+                        android:id="@+id/completeBTnTripdetails"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:textColor="#fff"
+                        android:backgroundTint="@color/green"
+                        android:background="@drawable/complete_button"
+                        android:text="Complete Trip"/>
                           <Button
 
                         android:id="@+id/cancelBTnTripdetails"

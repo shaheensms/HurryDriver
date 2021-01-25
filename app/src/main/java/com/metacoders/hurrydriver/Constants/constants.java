@@ -7,6 +7,8 @@ public class constants {
 
     public  static  String  carRequestLink = "reqCarDb" ;
 
+    public  static  String  clientProfile = "userProfile" ;
+
     public  static  String  acceptedRideList = "" ;
 
     public  static  String  succfulllistDir = "compeletedList" ;

@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemee"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".Activity.Activity_Succesful_List"/>
         <activity android:name=".Activity.TrpDetails"></activity>
         <activity
             android:name=".Activity.SplashScreen"

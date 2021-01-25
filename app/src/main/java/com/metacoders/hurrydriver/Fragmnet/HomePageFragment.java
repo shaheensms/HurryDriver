@@ -44,9 +44,10 @@ public class HomePageFragment extends Fragment {
     FirebaseRecyclerOptions<modelForCarRequest> options;
     FirebaseRecyclerAdapter<modelForCarRequest, viewHolderForRunningTrip> firebaseRecyclerAdapter;
     DatabaseReference mref;
-    CircleImageView profileImage ;
+    CircleImageView profileImage;
 
     LinearLayoutManager linearLayoutManager;
+
     public HomePageFragment() {
     }
 
@@ -59,7 +60,7 @@ public class HomePageFragment extends Fragment {
 
 
         // init the views
-        context= view.getContext();
+        context = view.getContext();
         nameTv = (TextView) view.findViewById(R.id.nameHomeFragment);
         licTv = (TextView) view.findViewById(R.id.licame);
         modelTv = (TextView) view.findViewById(R.id.carModelName);
@@ -69,7 +70,7 @@ public class HomePageFragment extends Fragment {
         totalRide = view.findViewById(R.id.totalRide);
         recyclerView = view.findViewById(R.id.RunningTripsList);
         linearLayoutManager = new LinearLayoutManager(context);
-      //  linearLayoutManager.setStackFromEnd(true);
+        //  linearLayoutManager.setStackFromEnd(true);
         linearLayoutManager.setReverseLayout(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         profileImage = (CircleImageView) view.findViewById(R.id.profileImage);
@@ -141,8 +142,16 @@ public class HomePageFragment extends Fragment {
                         model.getStatus(), model.getCarLicNum(), model.getFare(), model.getCarType(),
                         model.getReqDate(), model.getTripDetails(), model.getReturnTimee(), model.getNumOfPpl(), model.getRideType());
 
+                if(model.getStatus().toLowerCase().equals("completed") ||model.getStatus().toLowerCase().contains("by user") ){
 
+                    viewholdersForCurrentTrip.itemView.setVisibility(View.GONE);
+                    viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+                }else {
 
+                    viewholdersForCurrentTrip.itemView.setVisibility(View.VISIBLE);
+                    viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                }
 
             }
 
@@ -156,24 +165,22 @@ public class HomePageFragment extends Fragment {
                 viewHolderForRunningTrip.setOnClickListener(new viewHolderForRunningTrip.Clicklistener() {
                     @Override
                     public void onItemClick(View view, final int postion) {
-                        Intent o = new Intent(getContext() , TrpDetails.class );
+                        Intent o = new Intent(getContext(), TrpDetails.class);
                         //carry data to their
-                        o.putExtra("STATUS", getItem(postion).getStatus()) ;
-                        o.putExtra("DRIVERNAME" , getItem(postion).getDriverName()) ;
-                        o.putExtra("CARMODEL", getItem(postion).getCarModl()) ;
-                        o.putExtra("FORMLOC", getItem(postion).getFromLoc()) ;
-                        o.putExtra("TOLOC", getItem(postion).getToLoc()) ;
-                        o.putExtra("FARE", getItem(postion).getFare()) ;
-                        o.putExtra("TIME", getItem(postion).getTimeDate()) ;
-                        o.putExtra("POSTID", getItem(postion).getPostId()) ;
-                        o.putExtra("DRIVERUID", getItem(postion).getDriverId()) ;
-                        o.putExtra("DRIVERNOTIFICATIONID", getItem(postion).getDriverNotificationID()) ;
-                        o.putExtra("DESC", getItem(postion).getTripDetails()) ;
-                        o.putExtra("TYPE" , getItem(postion).getRideType()) ;
-                        modelForCarRequest modelForCarRequest = getItem(postion) ;
-                        o.putExtra("MODEL" , modelForCarRequest ) ;
-
-
+                        o.putExtra("STATUS", getItem(postion).getStatus());
+                        o.putExtra("DRIVERNAME", getItem(postion).getDriverName());
+                        o.putExtra("CARMODEL", getItem(postion).getCarModl());
+                        o.putExtra("FORMLOC", getItem(postion).getFromLoc());
+                        o.putExtra("TOLOC", getItem(postion).getToLoc());
+                        o.putExtra("FARE", getItem(postion).getFare());
+                        o.putExtra("TIME", getItem(postion).getTimeDate());
+                        o.putExtra("POSTID", getItem(postion).getPostId());
+                        o.putExtra("DRIVERUID", getItem(postion).getDriverId());
+                        o.putExtra("DRIVERNOTIFICATIONID", getItem(postion).getDriverNotificationID());
+                        o.putExtra("DESC", getItem(postion).getTripDetails());
+                        o.putExtra("TYPE", getItem(postion).getRideType());
+                        modelForCarRequest modelForCarRequest = getItem(postion);
+                        o.putExtra("MODEL", modelForCarRequest);
 
                         startActivity(o);
                     }

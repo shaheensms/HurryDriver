@@ -68,7 +68,6 @@ public class RequestListFragment extends Fragment {
         mrecyclerview.setHasFixedSize(true);
 
 
-
         loadDataToFireBase();
 
         return view;
@@ -89,6 +88,16 @@ public class RequestListFragment extends Fragment {
                         model.getStatus(), model.getCarLicNum(), model.getFare(), model.getCarType(),
                         model.getReqDate(), model.getTripDetails(), model.getReturnTimee(), model.getNumOfPpl(), model.getRideType());
 
+                if(model.getStatus().toLowerCase().equals("completed") ||model.getStatus().toLowerCase().contains("by user") ){
+
+                    viewholdersForCurrentTrip.itemView.setVisibility(View.GONE);
+                    viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+                }else {
+
+                    viewholdersForCurrentTrip.itemView.setVisibility(View.VISIBLE);
+                    viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+                }
 
             }
 
@@ -117,8 +126,8 @@ public class RequestListFragment extends Fragment {
                         final String rideType = getItem(postion).getRideType();
 
 
-                        //TODO you have to check for driver has already bid on this or not
-                        //TODO if he didnt then   give him access
+                        // you have to check for driver has already bid on this or not
+                        // if he didnt then   give him access
 
                         mref.child(PostID).child("bids").addValueEventListener(new ValueEventListener() {
                             @Override
@@ -139,12 +148,13 @@ public class RequestListFragment extends Fragment {
                                     io.putExtra("des", description);
                                     io.putExtra("returndate", returnDate);
                                     io.putExtra("ridetype", rideType);
-
+                                    io.putExtra("model" , getItem(postion)) ;
 
                                     startActivity(io);
 
 
                                 } else {
+
                                     Log.d("TAG", "onDataChange: " + uid);
                                     Toast.makeText(getContext(), "Sorry You Already Has Bidded On This", Toast.LENGTH_SHORT)
                                             .show();

@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.metacoders.hurrydriver.Activity.Activity_On_UnsuccessfulBidList;
 import com.metacoders.hurrydriver.Activity.Activity_Running_Bid_List;
+import com.metacoders.hurrydriver.Activity.Activity_Succesful_List;
 import com.metacoders.hurrydriver.R;
 
 public class TripsList extends Fragment {
@@ -67,8 +68,7 @@ public class TripsList extends Fragment {
             public void onClick(View view) {
 
 
-                Intent intent = new Intent(getContext() , Activity_Running_Bid_List.class);
-
+                Intent intent = new Intent(getContext() , Activity_Succesful_List.class);
                 startActivity(intent);
 
 

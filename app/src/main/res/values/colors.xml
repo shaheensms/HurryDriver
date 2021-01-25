@@ -11,5 +11,6 @@
     <color name="icon_yellow">#FFEB3B</color>
     <color name="icon_red">#FF0900</color>
     <color name="backGroundColor">#ededed</color>
+    <color name="green">#66BB6A</color>
 
 </resources>

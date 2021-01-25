@@ -23,9 +23,21 @@ public class viewHolderForRunningBId extends RecyclerView.ViewHolder {
         super(itemView);
 
         mview = itemView;
+        //item click
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                mclicklistener.onItemClick(v , getAdapterPosition());
+
+            }
+        });
 
 
     }
+
+    private  static  viewHolderForRunningTrip.Clicklistener mclicklistener ;
 
     public void setData(Context context, String postId, String userId, String userNotificationID, String driverId, String driverNotificationID,
                         String toLoc, String fromLoc, String timeDate, String carModl, String driverName,
@@ -43,17 +55,25 @@ public class viewHolderForRunningBId extends RecyclerView.ViewHolder {
         cardView = mview.findViewById(R.id.tripModule_card);
 
 
-        if (postId.contains("TEST")) {
-            cardView.setVisibility(View.GONE);
+        dateView.setText(timeDate);
+        //    fareView.setText(fare);
+        locaTo.setText(toLoc);
+        locaFrom.setText(fromLoc);
+        statusTv.setText(status);
 
-        } else {
 
-            dateView.setText(timeDate);
-            //    fareView.setText(fare);
-            locaTo.setText(toLoc);
-            locaFrom.setText(fromLoc);
-            statusTv.setText(status);
-        }
+    }
+
+    public   interface  Clicklistener {
+
+        void onItemClick( View view , int postion );
+
+    }
+
+    public  static  void  setOnClickListener (viewHolderForRunningTrip.Clicklistener clickListener ){
+
+
+        mclicklistener = clickListener ;
 
 
     }

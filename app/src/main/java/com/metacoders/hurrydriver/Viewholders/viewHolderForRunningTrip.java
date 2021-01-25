@@ -52,17 +52,17 @@ public class viewHolderForRunningTrip extends RecyclerView.ViewHolder {
         cardView = mview.findViewById(R.id.runingCard);
 
 
-        if (postId.contains("TEST")) {
-            cardView.setVisibility(View.GONE);
-
-        } else {
+//        if (postId.contains("TEST")) {
+//            cardView.setVisibility(View.GONE);
+//
+//        } else {
 
             dateView.setText(timeDate);
             //    fareView.setText(fare);
             locaTo.setText(toLoc);
             locaFrom.setText(fromLoc);
             priceTv.setText("৳"+fare);
-        }
+   //     }
 
 
     }
