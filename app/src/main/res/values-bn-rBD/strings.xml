@@ -13,6 +13,7 @@
     <string name="password">Password</string>
     <string name="phone_number">Phone Number</string>
     <string name="email">Email</string>
+    <string name="do_bid">Enter Your Bid</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
     <string name="continuetext">Continue</string>
@@ -32,6 +33,103 @@
     <string name="our_support_team_will_check_all_the_details">Our Support Team Will Check All The Details</string>
     <string name="your_account_is_on_hold_nplease_wait_while">Your Account Is On Hold \nPlease Wait While</string>
     <string name="if_problem_occurs_please_contact_nour_customer_service">If Problem Occurs Please Contact \nOur Customer Service</string>
+    <string name="welcome_to_hurry_ndriver">Welcome to Hurry \nDriver</string>
+    <string name="let_s_give_some_information_s_about_your_ambulance">Let\'s give some information\'s about your Ambulance</string>
+    <string name="ambulance_type">Ambulance Type :</string>
+    <string name="icu_ccu">ICU/CCU</string>
+    <string name="general">General</string>
+    <string name="ac">AC</string>
+    <string name="non_ac">NON-Ac</string>
+    <string name="welcome_back">Welcome back,</string>
+    <string name="next_step">Next step</string>
+    <string name="upload_an_image_of_the_front">Upload An Image Of The Front</string>
+    <string name="upload_an_image_of_the_back">Upload An Image Of The Back</string>
+    <string name="upload_an_image_of_the_inside">Upload An Image Of The Inside</string>
+    <string name="upload_an_image_of_the_side">Upload An Image Of The Side</string>
+    <string name="let_s_give_some_information_s_about_your_car">Let\'s give some information\'s about your car</string>
+    <string name="car_manufracture">Car Manufracture</string>
+    <string name="car_model">Car Model</string>
+    <string name="year">Year</string>
+    <string name="car_type">Car Type :</string>
+    <string name="please_choose_your_vehicle_type">Please choose your vehicle type.</string>
+    <string name="truck">Truck</string>
+    <string name="ambulance">Ambulance</string>
+    <string name="pick_a_photo_of_your_driver_s_license">Pick a photo of your Driver\'s License</string>
+    <string name="take_a_photo_of_your_nid_card">Take a photo of your NID card</string>
+    <string name="please_make_sure_we_can_easily_read_all_the_details">Please make sure we can easily read all the details</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="mobile_verification">Mobile Verification</string>
+    <string name="please_enter_your_mobile_number">Please enter your mobile number</string>
+    <string name="terms_and_condition">Terms And Condition</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="we_have_sent_you_access_code_n_via_sms_for_mobile_verificaiton">We have sent you access code\n Via SMS For Mobile Verificaiton</string>
+    <string name="didn_t_recieve_the_otp">Didn\'t Recieve the OTP?</string>
+    <string name="welcome">Welcome ,</string>
+    <string name="user">User</string>
+    <string name="let_s_start_with_creating_nyour_account">Let\'s start with creating \nyour account</string>
+    <string name="vehicle_license_number">Vehicle License Number</string>
+    <string name="trip_cost">Trip Cost:</string>
+    <string name="trip_type">Trip Type :</string>
+    <string name="pickup_location">Pickup Location</string>
+    <string name="drop_of_location">Drop of Location</string>
+    <string name="please_wait_while_customer_send_initial_payment_through_bkash_or_rocket_to_complete_the_rental">Please Wait While Customer Send initial payment through Bkash or Rocket to complete the rental.</string>
+    <string name="trip_description">Trip Description :</string>
+    <string name="trip_details">Trip Details</string>
+    <string name="mobile">Mobile:</string>
+    <string name="advance_paid">Advance Paid:</string>
+    <string name="client_will_pay">Client Will Pay:</string>
+    <string name="give_feedback_to_this_trip">Give Feedback to this trip:</string>
+    <string name="complete_trip">Complete Trip</string>
+    <string name="cancel_trip">Cancel Trip</string>
+    <string name="let_s_give_some_information_s_about_your_truck">Let\'s give some information\'s about your Truck</string>
+    <string name="truck_type">Truck Type</string>
+    <string name="truck_model">Truck Model</string>
+    <string name="ton">Ton</string>
+    <string name="ride_type">Ride Type:</string>
+    <string name="number_of_people">Number of People:</string>
+    <string name="about_trip">About Trip</string>
+    <string name="submit">Submit</string>
+    <string name="gallery">Gallery</string>
+    <string name="rides">Rides</string>
+    <string name="earning">Earning</string>
+    <string name="on_going">On-Going</string>
+    <string name="running_trip">Running Trip</string>
+    <string name="your_rating">Your Rating</string>
+    <string name="running_bids">Running Bids</string>
+    <string name="successful_bids">Successful Bids</string>
+    <string name="unsuccessful_bids">Unsuccessful Bids</string>
+    <string name="updated">Updated</string>
+
+    <string-array name="carType">
+        <item>Model of Car</item>
+        <item>Private Car</item>
+        <item>Micro-Bus</item>
+        <item>Truck</item>
+    </string-array>
+
+    <string-array name="Year">
+        <item>Year</item>
+        <item>1999</item>
+        <item>2000</item>
+        <item>2001</item>
+        <item>2002</item>
+        <item>2004</item>
+        <item>2005</item>
+        <item>2006</item>
+        <item>2007</item>
+        <item>2008</item>
+        <item>2009</item>
+        <item>2010</item>
+        <item>2011</item>
+        <item>2012</item>
+    </string-array>
+    <string-array name="truckType">
+        <item>Model of Truck</item>
+        <item>Private Car</item>
+        <item>Micro-Bus</item>
+        <item>Truck</item>
+    </string-array>
+
 
 
 </resources>

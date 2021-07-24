@@ -27,7 +27,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.metacoders.hurrydriver.Activity.TrpDetails;
+import com.metacoders.hurrydriver.Activity.signUpAcitivity;
 import com.metacoders.hurrydriver.Constants.constants;
+import com.metacoders.hurrydriver.Models.DriverWalletModel;
 import com.metacoders.hurrydriver.Models.driverProfileModel;
 import com.metacoders.hurrydriver.Models.modelForCarRequest;
 import com.metacoders.hurrydriver.R;
@@ -38,14 +40,15 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomePageFragment extends Fragment {
 
     View view;
-    TextView nameTv, licTv, modelTv, tripNumTv, phnNumberTv, ratingTv, totalRide;
+    TextView nameTv, licTv, modelTv, tripNumTv, phnNumberTv, ratingTv, totalRide, on_goingCountTv , total_earning;
     Context context;
     RecyclerView recyclerView;
     FirebaseRecyclerOptions<modelForCarRequest> options;
     FirebaseRecyclerAdapter<modelForCarRequest, viewHolderForRunningTrip> firebaseRecyclerAdapter;
     DatabaseReference mref;
+    double amount  = 0 ;
     CircleImageView profileImage;
-
+    int total  = 0  , cancel = 0 ;
     LinearLayoutManager linearLayoutManager;
 
     public HomePageFragment() {
@@ -74,12 +77,42 @@ public class HomePageFragment extends Fragment {
         linearLayoutManager.setReverseLayout(true);
         recyclerView.setLayoutManager(linearLayoutManager);
         profileImage = (CircleImageView) view.findViewById(R.id.profileImage);
+        on_goingCountTv = view.findViewById(R.id.onGoingRide);
+        total_earning = view.findViewById(R.id.total_earning) ;
 
         // loadDataFromProfile() ;
         loadRunningProjects();
-
+        countData();
+        loadWalletData() ;
         return view;
 
+    }
+
+    private void loadWalletData() {
+        String uid = FirebaseAuth.getInstance().getUid();
+        mref = FirebaseDatabase.getInstance().getReference("wallet").child(uid);
+
+
+        mref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull  DataSnapshot snapshot) {
+                for(DataSnapshot datas: snapshot.getChildren()){
+                    DriverWalletModel carRequest  = datas.getValue(DriverWalletModel.class) ;
+
+                    amount = carRequest.getAmount() + amount ;
+
+
+                }
+
+                total_earning.setText(amount + "");
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull  DatabaseError error) {
+
+            }
+        });
     }
 
     private void loadDataFromProfile() {
@@ -93,27 +126,34 @@ public class HomePageFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                driverProfileModel model = dataSnapshot.getValue(driverProfileModel.class);
-                nameTv.setText(model.getDriverName());
-                licTv.setText(model.getCarLic());
+                if (dataSnapshot.exists()) {
+                    driverProfileModel model = dataSnapshot.getValue(driverProfileModel.class);
+                    nameTv.setText(model.getDriverName());
+                    licTv.setText(model.getCarLic());
 
-                if (model.getCarType().contains("Private-Car") || model.getCarType().equals("Private-Car")) {
+                    if (model.getCarType().contains("Private-Car") || model.getCarType().equals("Private-Car")) {
 
-                    modelTv.setText(model.getBuildCompany() + " " + model.getCarModel() + " " + model.getCarYear());
+                        modelTv.setText(model.getBuildCompany() + " " + model.getCarModel() + " " + model.getCarYear());
+                    } else {
+
+                        modelTv.setText(model.getCarType());
+                    }
+
+                    tripNumTv.setText(model.getTotalRides());
+                    phnNumberTv.setText(model.getPhone());
+                    ratingTv.setText(model.getDriverRating());
+                    totalRide.setText(model.getTotalRides());
+                    Glide.with(context)
+                            .load(model.getProfile_picture())
+                            .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
+                            .into(profileImage);
+
                 } else {
-
-                    modelTv.setText(model.getCarType());
+                    // user didn't complete the his profile
+                    Intent p = new Intent(getContext(), signUpAcitivity.class);
+                    startActivity(p);
+                    getActivity().finish();
                 }
-
-                tripNumTv.setText(model.getTotalRides());
-                phnNumberTv.setText(model.getPhone());
-                ratingTv.setText(model.getDriverRating());
-                totalRide.setText(model.getTotalRides());
-                Glide.with(context)
-                        .load(model.getProfile_picture())
-                        .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
-                        .into(profileImage);
-
 
             }
 
@@ -142,11 +182,11 @@ public class HomePageFragment extends Fragment {
                         model.getStatus(), model.getCarLicNum(), model.getFare(), model.getCarType(),
                         model.getReqDate(), model.getTripDetails(), model.getReturnTimee(), model.getNumOfPpl(), model.getRideType());
 
-                if(model.getStatus().toLowerCase().equals("completed") ||model.getStatus().toLowerCase().contains("by user") ){
+                if (model.getStatus().toLowerCase().equals("completed") || model.getStatus().toLowerCase().contains("by user")) {
 
                     viewholdersForCurrentTrip.itemView.setVisibility(View.GONE);
                     viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
-                }else {
+                } else {
 
                     viewholdersForCurrentTrip.itemView.setVisibility(View.VISIBLE);
                     viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -192,8 +232,44 @@ public class HomePageFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
         firebaseRecyclerAdapter.startListening();
         recyclerView.setAdapter(firebaseRecyclerAdapter);
+        try {
+            on_goingCountTv.setText(recyclerView.getLayoutManager().getItemCount() + "");
+        } catch (Exception e) {
+            on_goingCountTv.setText("N/A");
+        }
 
     }
+
+    private void countData(){
+
+
+        String uid = FirebaseAuth.getInstance().getUid();
+        mref = FirebaseDatabase.getInstance().getReference(constants.carRequestLink);
+
+        Query firebaseQuery = mref.orderByChild("driverId").equalTo(uid) ;
+
+        firebaseQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull  DataSnapshot snapshot) {
+
+                for(DataSnapshot datas: snapshot.getChildren()){
+                    modelForCarRequest carRequest  = datas.getValue(modelForCarRequest.class) ;
+                    if(carRequest.getStatus().toLowerCase().contains("completed")){
+                        total++ ;
+                    }
+                }
+
+                totalRide.setText(total+"");
+            }
+
+            @Override
+            public void onCancelled(@NonNull  DatabaseError error) {
+
+            }
+        });
+
+    }
+
 
     @Override
     public void onStart() {

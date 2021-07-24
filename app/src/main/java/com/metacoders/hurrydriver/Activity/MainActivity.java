@@ -18,6 +18,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.database.DatabaseReference;
 import com.metacoders.hurrydriver.Adapter.viewPager2_adapter;
 import com.metacoders.hurrydriver.Adapter.viewPagerAdapter;
 import com.metacoders.hurrydriver.Fragmnet.HomePageFragment;
@@ -112,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 super.onPageScrollStateChanged(state);
             }
         });
+
 
 
     }

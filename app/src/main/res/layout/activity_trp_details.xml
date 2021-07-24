@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:focusableInTouchMode="true"
-    tools:context=".Activity.Trip_Running_details">
+    android:focusableInTouchMode="true">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -75,7 +74,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="10sp"
-                            android:text="Pickup Location"/>
+                            android:text="@string/pickup_location"/>
 
                         <TextView
                             android:id="@+id/locationFromTripDetails"
@@ -98,7 +97,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:textSize="10sp"
-                            android:text="Drop of Location"/>
+                            android:text="@string/drop_of_location"/>
 
                         <TextView
                             android:id="@+id/locationToTripDetalis"
@@ -129,7 +128,7 @@
                         android:textSize="20sp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Trip Details"
+                        android:text="@string/trip_details"
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:layout_marginBottom="8dp"
@@ -153,7 +152,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Trip Cost: "
+                                android:text="@string/trip_cost"
                                 android:textColor="@color/white"
                                 android:textStyle="bold"/>
                             <TextView
@@ -178,7 +177,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Trip Type : "
+                                android:text="@string/trip_type"
                                 android:textColor="@color/white"
                                 android:textStyle="bold"/>
                             <TextView
@@ -202,7 +201,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Trip Description : "
+                            android:text="@string/trip_description"
                             android:textColor="@color/black"
                             android:textStyle="bold"/>
 
@@ -213,7 +212,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:id="@+id/descTv"
-                        android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English."
                         android:textColor="@color/black" />
 
                 </LinearLayout>
@@ -275,7 +273,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="6"
-                        android:text="Please Wait While Customer Send initial payment through Bkash or Rocket to complete the rental."
+                        android:text="@string/please_wait_while_customer_send_initial_payment_through_bkash_or_rocket_to_complete_the_rental"
                         android:textColor="@color/red"
                         android:textStyle="bold"/>
 
@@ -348,7 +346,7 @@
                                         android:layout_height="match_parent"
 
                                         android:drawablePadding="8dp"
-                                        android:text="Mobile: "/>
+                                        android:text="@string/mobile"/>
                                     <TextView
                                         android:id="@+id/phoneNumINTripDetails"
                                         android:layout_width="wrap_content"
@@ -445,7 +443,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Advance Paid: "
+                            android:text="@string/advance_paid"
                             android:textAlignment="center"
                             android:textColor="#000"
                             android:textSize="20sp" />
@@ -484,7 +482,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text=" Client Will Pay: "
+                            android:text="@string/client_will_pay"
                             android:textAlignment="center"
                             android:textColor="#000"
                             android:textSize="20sp" />
@@ -548,7 +546,7 @@
                         android:layout_marginLeft="8dp"
                         android:visibility="invisible"
                         android:layout_marginBottom="8dp"
-                        android:text="Give Feedback to this trip: " />
+                        android:text="@string/give_feedback_to_this_trip" />
 
                     <EditText
                         android:visibility="gone"
@@ -574,7 +572,7 @@
                         android:textColor="#fff"
                         android:padding="16dp"
                         android:background="@drawable/complete_button"
-                        android:text="Complete Trip"/>
+                        android:text="@string/complete_trip"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:textSize="14sp"
@@ -590,7 +588,7 @@
                         android:textColor="#fff"
                         android:backgroundTint="@color/green"
                         android:background="@drawable/complete_button"
-                        android:text="Complete Trip"/>
+                        android:text="@string/complete_trip"/>
                           <Button
 
                         android:id="@+id/cancelBTnTripdetails"
@@ -599,7 +597,7 @@
                         android:padding="16dp"
                         android:textColor="#fff"
                         android:background="@drawable/complete_button"
-                        android:text="Cancel Trip"/>
+                        android:text="@string/cancel_trip"/>
                 </LinearLayout>
 
 

@@ -91,7 +91,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Pickup Location"
+                        android:text="@string/pickup_location"
                         android:textSize="10sp" />
 
                     <TextView
@@ -117,7 +117,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Drop of Location"
+                        android:text="@string/drop_of_location"
                         android:textSize="10sp" />
 
                     <TextView

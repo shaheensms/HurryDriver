@@ -19,7 +19,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="12dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Let's give some information's about your car"
+            android:text="@string/let_s_give_some_information_s_about_your_car"
             android:textColor="@color/black"
             android:textSize="32sp" />
 
@@ -52,7 +52,7 @@
                     android:drawablePadding="8dp"
                     android:drawableTint="@color/colorAccent"
                     android:focusable="true"
-                    android:hint="Car Manufracture "
+                    android:hint="@string/car_manufracture"
                     android:padding="12dp" />
 
 
@@ -82,7 +82,7 @@
                         android:drawableRight="@drawable/ic_arrow_drop_down"
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
-                        android:hint="Car Model"
+                        android:hint="@string/car_model"
                         android:padding="12dp" />
 
 
@@ -106,7 +106,7 @@
                         android:drawableRight="@drawable/ic_arrow_drop_down"
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
-                        android:hint="Year"
+                        android:hint="@string/year"
                         android:padding="12dp" />
 
 
@@ -206,7 +206,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
                 android:fontFamily="@font/jose_san_bold"
-                android:text="Car Type : "
+                android:text="@string/car_type"
                 android:textColor="@color/red" />
 
             <RadioGroup

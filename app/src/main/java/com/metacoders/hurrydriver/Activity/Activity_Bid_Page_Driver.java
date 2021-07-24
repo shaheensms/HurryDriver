@@ -73,7 +73,7 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
         numberofpplTv = findViewById(R.id.numberOfPPlTv);
         descTv = findViewById(R.id.desc);
         rideTypeTv = findViewById(R.id.rideTypeTv);
-        bidInput = findViewById(R.id.bidPrice);
+        bidInput = findViewById(R.id.bid);
         bidSubmitBtn = findViewById(R.id.submitBtn);
 
 
@@ -98,7 +98,13 @@ public class Activity_Bid_Page_Driver extends AppCompatActivity {
                 // get the bid
                 bid = bidInput.getText().toString();
 
-                addthebidToServer(bid);
+                if(bid.equals("0") || bid.isEmpty()){
+                    Toast.makeText(getApplicationContext() , "Invalid Value" , Toast.LENGTH_LONG).show();
+                }else {
+                    addthebidToServer(bid);
+                }
+
+
 
 
             }

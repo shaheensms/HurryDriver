@@ -24,6 +24,7 @@
                 android:focusable="true">
 
                 <LinearLayout
+                    android:padding="5dp"
                     android:id="@+id/runningBidCardview"
                     android:layout_width="374dp"
                     android:layout_height="match_parent"
@@ -56,7 +57,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jose_san_bold"
-                            android:text="Running Bids"
+                            android:text="@string/running_bids"
                             android:textColor="@color/icon_yellow"
                             android:textSize="22sp"
                             android:textStyle="bold" />
@@ -66,6 +67,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:orientation="horizontal">
 
                             <TextView
@@ -96,19 +98,13 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jose_san_bold"
-                                android:text="Updated "
+                                android:text="@string/updated"
                                 android:textColor="@color/black"
                                 android:textSize="16sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/jose_san_bold"
-                                android:text="7"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
 
                             <TextView
+                                android:id="@+id/time1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jose_san_bold"
@@ -142,11 +138,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
+
                 android:layout_marginRight="16dp"
                 android:layout_marginBottom="8dp"
                 android:foreground="?attr/selectableItemBackground">
 
                 <LinearLayout
+                    android:padding="5dp"
                     android:id="@+id/successfulBidList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -178,7 +176,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jose_san_bold"
-                            android:text="Successful Bids"
+                            android:text="@string/successful_bids"
                             android:textColor="@color/icon_green"
 
                             android:textSize="22sp"
@@ -189,6 +187,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:orientation="horizontal">
 
                             <TextView
@@ -204,6 +203,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="14"
+                                android:fontFamily="@font/jose_san_bold"
                                 android:textColor="@color/black"
                                 android:textSize="20sp" />
                         </LinearLayout>
@@ -219,21 +219,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jose_san_bold"
-                                android:text="Updated "
+                                android:text="@string/updated"
                                 android:textColor="@color/black"
 
                                 android:textSize="16sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/jose_san_bold"
-                                android:text="7"
 
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
 
                             <TextView
+                                android:id="@+id/time2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jose_san_bold"
@@ -274,6 +268,7 @@
                 android:foreground="?android:attr/selectableItemBackground">
 
                 <LinearLayout
+                    android:padding="5dp"
                     android:id="@+id/cancelCardview"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -306,7 +301,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jose_san_bold"
-                            android:text="Unsuccessful Bids"
+                            android:text="@string/unsuccessful_bids"
                             android:textColor="@color/icon_red"
                             android:textSize="22sp"
 
@@ -317,6 +312,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:gravity="center"
+                            android:visibility="gone"
                             android:orientation="horizontal">
 
                             <TextView
@@ -325,7 +321,6 @@
                                 android:fontFamily="@font/jose_san_bold"
                                 android:text="Total Trips : "
                                 android:textColor="@color/black"
-
                                 android:textSize="20sp" />
 
                             <TextView
@@ -334,7 +329,6 @@
                                 android:fontFamily="@font/jose_san_bold"
                                 android:text="14"
                                 android:textColor="@color/black"
-
                                 android:textSize="20sp" />
                         </LinearLayout>
 
@@ -349,20 +343,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jose_san_bold"
-                                android:text="Updated "
+                                android:text="@string/updated"
                                 android:textColor="@color/black"
 
                                 android:textSize="16sp" />
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:fontFamily="@font/jose_san_bold"
-                                android:text="7"
-                                android:textColor="@color/black"
-                                android:textSize="16sp" />
 
                             <TextView
+                                android:id="@+id/time3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/jose_san_bold"

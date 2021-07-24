@@ -67,7 +67,7 @@
                     android:drawableLeft="@drawable/phone_icon"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="Mobile: " />
+                    android:text="@string/mobile" />
 
                 <TextView
                     android:id="@+id/phoneNum"
@@ -90,7 +90,7 @@
                     android:drawableLeft="@drawable/driver_license_icon"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="License: " />
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/licame"
@@ -116,7 +116,7 @@
                     android:drawableTint="@color/colorPrimary"
                     android:drawablePadding="8dp"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="Car Model: "
+                    android:text="@string/car_model"
                     android:textSize="18sp" />
 
                 <TextView
@@ -167,16 +167,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Rides"
+                        android:text="@string/rides"
                         android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/totalRide"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="150"
-                        android:textSize="20sp" />
+                        android:text="0"
+                        android:gravity="center_horizontal"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -196,15 +197,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Earning"
+                        android:text="@string/earning"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/total_earning"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="150"
-                        android:textSize="20sp" />
+                        android:text="0"
+                        android:gravity="center_horizontal"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
 
@@ -222,15 +225,17 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Rides"
+                        android:text="@string/on_going"
                         android:textSize="14sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/onGoingRide"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="150"
-                        android:textSize="20sp" />
+                        android:text="0"
+                        android:gravity="center_horizontal"
+                        android:textSize="18sp" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -245,7 +250,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="Your Rating"
+                    android:text="@string/your_rating"
                     android:textAlignment="center"
                     android:textSize="16sp" />
 
@@ -261,7 +266,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="4.5"
+                        android:text="0"
                         android:textAlignment="center"
                         android:textSize="16sp" />
 
@@ -370,7 +375,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/jose_san_bold"
-        android:text="Running Trip"
+        android:text="@string/running_trip"
         android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="bold" />

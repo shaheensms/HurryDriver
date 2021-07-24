@@ -24,7 +24,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Pick a photo of your Driver's License"
+            android:text="@string/pick_a_photo_of_your_driver_s_license"
             android:textSize="28sp" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Please make sure we can easily read all the details"
+            android:text="@string/please_make_sure_we_can_easily_read_all_the_details"
             android:textSize="14sp" />
 
         <ImageView
@@ -75,7 +75,7 @@
                 android:layout_margin="16dp"
                 android:background="@drawable/btn_red_back"
                 android:fontFamily="@font/jose_san_bold"
-                android:text="Take Photo"
+                android:text="@string/take_photo"
                 android:textColor="@color/white" />
 
         </LinearLayout>

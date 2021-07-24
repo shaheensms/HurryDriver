@@ -23,7 +23,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="12dp"
                 android:fontFamily="@font/jose_san_bold"
-                android:text="Let's start with creating \nyour account"
+                android:text="@string/let_s_start_with_creating_nyour_account"
                 android:textColor="@color/black"
                 android:textSize="32sp" />
 
@@ -226,7 +226,7 @@
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
                         android:fontFamily="@font/jose_san_bold"
-                        android:hint="Vehicle License Number"
+                        android:hint="@string/vehicle_license_number"
                         android:padding="12dp" />
 
 

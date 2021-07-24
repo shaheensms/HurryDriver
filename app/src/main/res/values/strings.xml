@@ -1,46 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">Hurry Driver</string>
-    <string name="having_trouble_login">Having trouble login?</string>
-    <string name="remember_me">Remember me</string>
-    <string name="agree_terms_privacy">By clicking, you agree to our
-        <a href="http://link1/terms">Terms of Use</a> and read the <a href="http://link1/privacy">Privacy Policy</a></string>
-    <string name="what_to_do">Here\'s what you need to do to set up your account</string>
-    <string name="remaining_steps">Remaining steps</string>
-    <string name="registerBtn">Register</string>
-    <string name="sign_in_btn">Sign In</string>
-    <string name="city_name">City Name</string>
-    <string name="password">Password</string>
-    <string name="phone_number">Phone Number</string>
-    <string name="email">Email</string>
-    <string name="first_name">First Name</string>
-    <string name="last_name">Last Name</string>
-    <string name="continuetext">Continue</string>
-    <string name="upload_Driver_lic">Upload A Picture Of your Driver License</string>
-    <string name="upload_a_reg_paper_image">Upload A Registration Paper Image (Vehicle)</string>
-    <string name="nid_front_side">NID Front Side</string>
-    <string name="upload_a_profile_photo">Upload A Profile Photo</string>
-    <string name="vehicle_tax_token">Vehicle Tax Token</string>
-    <string name="car_primary_reqs">At least 21 years old, with a driver\'s license and comprehensive insurance. Your vehicle is any mid-size or full-size 4-door vehicle, in excellent condition, less than 9 years old</string>
-    <string name="fillTheDataProperly">Please Fill The Data Properly!!</string>
-    <string name="upload_dirver_lic_image">Please Upload Your Driver License Image</string>
-    <string name="ulpoad_your_nid">Please Upload Your Nid Image (Front)</string>
-    <string name="upload_your_profile_pic">Please Upload Your Profile Picture Image</string>
-    <string name="upload_vehicle_fitness_paper">Please Upload Vehicle Fitness Paper Image</string>
-    <string name="upload_tax_token">Please Upload Tax Token Paper Image</string>
-    <string name="upload_vehicle_reg_papaer">Please Upload Vehicle Registration Paper Image</string>
-    <string name="our_support_team_will_check_all_the_details">Our Support Team Will Check All The Details</string>
-    <string name="your_account_is_on_hold_nplease_wait_while">Your Account Is On Hold \nPlease Wait While</string>
-    <string name="if_problem_occurs_please_contact_nour_customer_service">If Problem Occurs Please Contact \nOur Customer Service</string>
+    <string name="having_trouble_login">লগইন করতে সমস্যা হচ্ছে?</string>
+    <string name="remember_me">আমাকে মনে কর</string>
+    <string name="agree_terms_privacy">ক্লিক করে, আপনি আমাদের সাথে সম্মত হন<a href="http://link1/terms"> ব্যবহারের শর্তাবলী</a> এবং পড়ুন<a href="http://link1/privacy"> গোপনীয়তা নীতি</a>  </string>
+    <string name="what_to_do">আপনার অ্যাকাউন্ট সেট আপ করতে আপনার যা করা দরকার তা এখানে</string>
+    <string name="remaining_steps">বাকি পদক্ষেপ</string>
+    <string name="registerBtn">নিবন্ধন</string>
+    <string name="sign_in_btn">সাইন ইন করুন</string>
+    <string name="city_name">শহরের নাম</string>
+    <string name="password">পাসওয়ার্ড</string>
+    <string name="phone_number">ফোন নম্বর</string>
+    <string name="email">ইমেল</string>
+    <string name="first_name">নামের প্রথম অংশ</string>
+    <string name="last_name">নামের শেষাংশ</string>
+    <string name="continuetext">চালিয়ে যান</string>
+    <string name="upload_Driver_lic">আপনার ড্রাইভার লাইসেন্সের একটি ছবি আপলোড করুন</string>
+    <string name="upload_a_reg_paper_image">একটি নিবন্ধকরণ কাগজ চিত্র (যানবাহন) আপলোড করুন</string>
+    <string name="nid_front_side">এনআইডি ফ্রন্ট সাইড</string>
+    <string name="upload_a_profile_photo">একটি প্রোফাইল ছবি আপলোড করুন</string>
+    <string name="vehicle_tax_token">যানবাহন কর টোকেন</string>
+    <string name="car_primary_reqs">চালকের লাইসেন্স এবং ব্যাপক বীমা সহ কমপক্ষে 21 বছর বয়সী। আপনার যানবাহনটি 9 বছরেরও কম বয়সী, দুর্দান্ত অবস্থায়, কোনও মাঝারি বা ফুল-সাইজের 4-দরজা যানবাহন</string>
+    <string name="fillTheDataProperly">সঠিকভাবে তথ্য পূরণ করুন !!</string>
+    <string name="upload_dirver_lic_image">আপনার ড্রাইভার লাইসেন্স চিত্র আপলোড করুন</string>
+    <string name="ulpoad_your_nid">আপনার নিড চিত্র আপলোড করুন (সামনে)</string>
+    <string name="upload_your_profile_pic">আপনার প্রোফাইল ছবি চিত্র আপলোড করুন</string>
+    <string name="upload_vehicle_fitness_paper">যানবাহন ফিটনেস পেপার চিত্র আপলোড করুন</string>
+    <string name="upload_tax_token">কর টোকেন কাগজ চিত্র আপলোড করুন</string>
+    <string name="upload_vehicle_reg_papaer">যানবাহন নিবন্ধকরণ কাগজ চিত্র আপলোড করুন</string>
+    <string name="our_support_team_will_check_all_the_details">আমাদের সহায়তা দলটি সমস্ত বিবরণ পরীক্ষা করবে</string>
+    <string name="your_account_is_on_hold_nplease_wait_while">আপনার অ্যাকাউন্টটি আটকে আছে \nদয়া করে অপেক্ষা করুন</string>
+    <string name="if_problem_occurs_please_contact_nour_customer_service">যদি সমস্যা দেখা দেয় তবে দয়া করে Customer n আমাদের গ্রাহক পরিষেবার সাথে যোগাযোগ করুন</string>
+    <string name="welcome_to_hurry_ndriver">তাড়াতাড়ি Welcome n ড্রাইভারকে স্বাগতম</string>
+    <string name="let_s_give_some_information_s_about_your_ambulance">আসুন আপনার অ্যাম্বুলেন্স সম্পর্কে কিছু তথ্য দেওয়া যাক</string>
+    <string name="ambulance_type">অ্যাম্বুলেন্সের ধরণ:</string>
+    <string name="icu_ccu">আইসিইউ /সিসিইউ</string>
+    <string name="general">সাধারণ</string>
+    <string name="ac">এসি</string>
+    <string name="non_ac">নন-এসি</string>
+    <string name="welcome_back">ফিরে আসার জন্য স্বাগতম,</string>
+    <string name="next_step">পরবর্তী পর্ব</string>
+    <string name="upload_an_image_of_the_front">সামনের একটি চিত্র আপলোড করুন</string>
+    <string name="upload_an_image_of_the_back">পিছনে একটি চিত্র আপলোড করুন</string>
+    <string name="upload_an_image_of_the_inside">ভিতরের একটি চিত্র আপলোড করুন</string>
+    <string name="upload_an_image_of_the_side">পাশের একটি চিত্র আপলোড করুন</string>
+    <string name="let_s_give_some_information_s_about_your_car">আপনার গাড়ি সম্পর্কে কিছু তথ্য দেওয়া যাক</string>
+    <string name="car_manufracture">গাড়ি ম্যানুফ্যাকচার</string>
+    <string name="car_model">গাড়ির মডেল</string>
+    <string name="car_type">গাড়ির ধরণ:</string>
+    <string name="please_choose_your_vehicle_type">আপনার গাড়ির ধরণটি চয়ন করুন।</string>
+    <string name="truck">ট্রাক</string>
+    <string name="ambulance">অ্যাম্বুলেন্স</string>
+    <string name="pick_a_photo_of_your_driver_s_license">আপনার ড্রাইভারের লাইসেন্সের একটি ছবি বাছুন</string>
+    <string name="take_a_photo_of_your_nid_card">আপনার এনআইডি কার্ডের একটি ছবি তুলুন</string>
+    <string name="please_make_sure_we_can_easily_read_all_the_details">দয়া করে নিশ্চিত হয়ে নিন যে আমরা সহজেই সমস্ত বিবরণ পড়তে পারি</string>
+    <string name="take_photo">ছবি তোল</string>
+    <string name="mobile_verification">মোবাইল যাচাইকরণ</string>
+    <string name="please_enter_your_mobile_number">আপনার মোবাইল নম্বর লিখুন দয়া করে</string>
+    <string name="terms_and_condition">শর্তাবলী</string>
+    <string name="enter_otp">ওটিপি প্রবেশ করান</string>
+    <string name="we_have_sent_you_access_code_n_via_sms_for_mobile_verificaiton">আমরা আপনাকে মোবাইল ভেরিফিক্যানের মাধ্যমে access n এসএমএসের মাধ্যমে অ্যাক্সেস কোড প্রেরণ করেছি</string>
+    <string name="didn_t_recieve_the_otp">ওটিপি রিসিভ করিনি?</string>
+    <string name="welcome">স্বাগত ,</string>
+    <string name="user">ব্যবহারকারী</string>
+    <string name="let_s_start_with_creating_nyour_account">আপনার অ্যাকাউন্ট তৈরি করে শুরু করা যাক</string>
+    <string name="vehicle_license_number">যানবাহনের লাইসেন্স নম্বর</string>
+    <string name="trip_cost">ট্রিপ ব্যয়:</string>
+    <string name="trip_type">ট্রিপ প্রকার:</string>
+    <string name="please_wait_while_customer_send_initial_payment_through_bkash_or_rocket_to_complete_the_rental">ভাড়াটি সম্পূর্ণ করতে গ্রাহক বিকাশ বা রকেটের মাধ্যমে প্রাথমিক অর্থ প্রদানের সময় অপেক্ষা করুন।</string>
+    <string name="trip_description">ট্রিপ বর্ণনা:</string>
+    <string name="trip_details">ট্রিপ বিশদ</string>
+    <string name="advance_paid">অগ্রিম প্রদেয়:</string>
+    <string name="client_will_pay">ক্লায়েন্ট প্রদান করবে:</string>
+    <string name="give_feedback_to_this_trip">এই ভ্রমণের প্রতিক্রিয়া জানান:</string>
+    <string name="cancel_trip">ট্রিপ বাতিল করুন</string>
+    <string name="complete_trip">সম্পূর্ণ ট্রিপ</string>
+    <string name="let_s_give_some_information_s_about_your_truck">আপনার ট্রাক সম্পর্কে কিছু তথ্য দেওয়া যাক</string>
+    <string name="truck_type">ট্রাকের ধরণ</string>
+    <string name="truck_model">ট্রাক মডেল</string>
+    <string name="year">বছর</string>
+    <string name="ton">টন</string>
+    <string name="pickup_location">অবস্থান নিতে</string>
+    <string name="drop_of_location">অবস্থানের ড্রপ</string>
+    <string name="ride_type">যাত্রার ধরণ:</string>
+    <string name="number_of_people">জনগণের সংখ্যা:</string>
+    <string name="about_trip">ট্রিপ সম্পর্কে</string>
+    <string name="submit">জমা দিন</string>
+    <string name="mobile">মুঠোফোন:</string>
+    <string name="gallery">গ্যালারী</string>
+    <string name="rides">রাইডস</string>
+    <string name="earning">উপার্জন</string>
+    <string name="on_going">চলছে</string>
+    <string name="running_trip">চলমান ট্রিপ</string>
+    <string name="your_rating">তোমার রেটিং</string>
+    <string name="running_bids">বিড চলছে</string>
+    <string name="do_bid">বিড করুন</string>
+    <string name="successful_bids">সফল বিডস</string>
+    <string name="unsuccessful_bids">অসফল বিডস</string>
+    <string name="updated">আপডেট হয়েছে</string>
 
     <string-array name="carType">
-        <item>Model of Car</item>
-        <item>Private Car</item>
-        <item>Micro-Bus</item>
-        <item>Truck</item>
+        <item>গাড়ির মডেল</item>
+        <item>ব্যক্তিগত গাড়ী</item>
+        <item>মাইক্রো-বাস</item>
+        <item>ট্রাক</item>
     </string-array>
 
     <string-array name="Year">
-        <item>Year</item>
+        <item>বছর</item>
         <item>1999</item>
         <item>2000</item>
         <item>2001</item>
@@ -49,18 +117,17 @@
         <item>2005</item>
         <item>2006</item>
         <item>2007</item>
-        <item>2008</item>
-        <item>2009</item>
-        <item>2010</item>
-        <item>2011</item>
+        <item>২০০৮</item>
+        <item>২০০৯</item>
+        <item>২০১০</item>
+        <item>২০১১</item>
         <item>2012</item>
     </string-array>
     <string-array name="truckType">
-        <item>Model of Truck</item>
-        <item>Private Car</item>
-        <item>Micro-Bus</item>
-        <item>Truck</item>
+        <item>ট্রাক মডেল</item>
+        <item>ব্যক্তিগত গাড়ী</item>
+        <item>মাইক্রো-বাস</item>
+        <item>ট্রাক</item>
     </string-array>
-
 
 </resources>

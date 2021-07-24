@@ -19,6 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +28,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.metacoders.hurrydriver.Constants.constants;
+import com.metacoders.hurrydriver.Models.DriverWalletModel;
 import com.metacoders.hurrydriver.Models.TransactionsModel;
 import com.metacoders.hurrydriver.Models.modelForCarRequest;
 import com.metacoders.hurrydriver.Models.userModel;
@@ -177,8 +179,6 @@ public class TrpDetails extends AppCompatActivity {
             map.put("fareGained", fare);
             map.put("fare" , requestModel.getFare()) ;
             map.put("CompleteDate", date);
-
-
             driverRef.child(postID).setValue(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -190,12 +190,12 @@ public class TrpDetails extends AppCompatActivity {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
 
-
+                                            CreateDriverWallet();
                                             DatabaseReference mreff = FirebaseDatabase.getInstance().getReference(constants.driverProfileLink).child(driverID);
 
                                             final Map<String, Object> updates = new HashMap<String, Object>();
-                                            updates.put("driverEarnedLifeLong", driverNewLifetimeEarn);
-                                            updates.put("driverEarnedThisMonth", driverNewThisMonthEarn);
+                                            updates.put("driverEarnedLifeLong", "0");
+                                            updates.put("driverEarnedThisMonth", "0");
                                             updates.put("totalRides", driverTotalTrip);
                                             updates.put("tripCounter", driverTripCountThisMOn);
 
@@ -247,7 +247,6 @@ public class TrpDetails extends AppCompatActivity {
                     .addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-
                             dialog.dismiss();
                             Toast.makeText(getApplicationContext(), "Error : " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -264,7 +263,7 @@ public class TrpDetails extends AppCompatActivity {
               if(snapshot.exists()){
                   TransactionsModel model = snapshot.getValue(TransactionsModel.class) ;
                String amountPaidstr =   model.getAmountPaid() ;
-               int amountPaid  = Integer.parseInt(amountPaidstr) ;
+               Float amountPaid  = Float.valueOf(amountPaidstr) ;
                fare = (Integer.parseInt(fare) - amountPaid)+"" ;
                advancePayment.setText(amountPaid+"");
                FARE.setText(fare);
@@ -396,7 +395,7 @@ public class TrpDetails extends AppCompatActivity {
 
     public void SetCanclOrCompletedButton() {
         DateTimeComparator comparator = DateTimeComparator.getDateOnlyInstance();
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Date date = new Date();
         Date startDate = new Date();
         try {
@@ -408,10 +407,13 @@ public class TrpDetails extends AppCompatActivity {
         }
 
         int retVal = comparator.compare(startDate, date);
+    //    Toast.makeText(getApplicationContext() , "" + retVal+" " + startDate+ " " + date , Toast.LENGTH_LONG).show();
+        Log.d("TAG", "SetCanclOrCompletedButton: "+ "" + retVal+" " + startDate+ " " + date);
+
         if (retVal == 0) {
             //both dates are equal
             completeBtn.setVisibility(View.VISIBLE);
-            cancel.setVisibility(View.VISIBLE);
+            cancel.setVisibility(View.INVISIBLE);
 
         } else if (retVal < 0) {
             //myDateOne is before myDateTwo
@@ -431,4 +433,23 @@ public class TrpDetails extends AppCompatActivity {
 
         Log.d("TAG", "onCliccck: " + retVal);
     }
+
+    private void CreateDriverWallet() {
+        double totalAmount = Double.parseDouble(FARE.getText().toString());
+        // now register it to the servers
+        DatabaseReference mref = FirebaseDatabase.getInstance().getReference("wallet").child(driverID);
+        String key = mref.push().getKey() ;
+
+        DriverWalletModel model = new DriverWalletModel(System.currentTimeMillis()+"" ,requestModel.getPostId(), driverID , totalAmount , true  ) ;
+        //
+
+        mref.child(key).setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                finish();
+            }
+        }) ;
+
+    }
+
 }

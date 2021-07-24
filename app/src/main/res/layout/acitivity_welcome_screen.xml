@@ -31,9 +31,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="Roboto Condensed"
+                    android:fontFamily="@font/jose_san_bold"
                     android:letterSpacing="0.05"
-                    android:text="Welcome to our \nDriver App"
+                    android:text="@string/welcome_to_hurry_ndriver"
                     android:textColor="@color/black"
                     android:textSize="32sp" />
 

@@ -20,7 +20,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="12dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Let's give some information's about your Truck"
+            android:text="@string/let_s_give_some_information_s_about_your_truck"
             android:textColor="@color/black"
             android:textSize="32sp" />
 
@@ -53,7 +53,7 @@
                     android:drawableTint="@color/colorAccent"
                     android:focusable="true"
                     android:fontFamily="@font/jose_san_bold"
-                    android:hint="Truck Type "
+                    android:hint="@string/truck_type"
                     android:padding="12dp" />
 
 
@@ -84,7 +84,7 @@
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
                         android:fontFamily="@font/jose_san_bold"
-                        android:hint="Truck Model"
+                        android:hint="@string/truck_model"
                         android:padding="12dp" />
 
 
@@ -109,7 +109,7 @@
                         android:drawablePadding="8dp"
                         android:drawableTint="@color/colorAccent"
                         android:fontFamily="@font/jose_san_bold"
-                        android:hint="Year"
+                        android:hint="@string/year"
                         android:padding="12dp" />
 
 
@@ -134,7 +134,7 @@
                     android:drawablePadding="8dp"
                     android:drawableTint="@color/colorAccent"
                     android:fontFamily="@font/jose_san_bold"
-                    android:hint="Ton "
+                    android:hint="@string/ton"
                     android:padding="12dp" />
 
 

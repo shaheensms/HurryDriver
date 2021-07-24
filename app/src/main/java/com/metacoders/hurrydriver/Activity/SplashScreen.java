@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -103,9 +104,8 @@ public class SplashScreen extends AppCompatActivity {
                                 }
                             }
 
-                        } else {
-
-
+                        }
+                        else {
                             Intent i = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(i);
                             finish();
@@ -113,8 +113,10 @@ public class SplashScreen extends AppCompatActivity {
                         }
 
 
-                    } else {
-                        Intent i = new Intent(getApplicationContext(), Acitivity_Choose_SignIn_Register.class);
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext() , "Complete Your Profile first !!" , Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(getApplicationContext(), signUpAcitivity.class);
                         startActivity(i);
                         finish();
 

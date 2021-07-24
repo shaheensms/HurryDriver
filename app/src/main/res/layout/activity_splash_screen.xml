@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#D41F26"
     tools:context=".Activity.SplashScreen">
+
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:background="@drawable/hurry_logo_back"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        />
+        android:background="@drawable/hurry_back_minimized" />
+
     <ProgressBar
+        android:id="@+id/progress_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/progress_view"
-        android:indeterminate="true"
-        android:indeterminateTint="@color/white"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="30dp"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/white" />
 
 
 </RelativeLayout>

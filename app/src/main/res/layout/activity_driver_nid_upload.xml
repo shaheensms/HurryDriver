@@ -24,7 +24,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Take a photo of your NID card"
+            android:text="@string/take_a_photo_of_your_nid_card"
             android:textSize="28sp" />
 
         <TextView
@@ -33,7 +33,7 @@
             android:layout_marginTop="24dp"
             android:layout_marginBottom="24dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Please make sure we can easily read all the details"
+            android:text="@string/please_make_sure_we_can_easily_read_all_the_details"
             android:textSize="14sp" />
 
 
@@ -67,7 +67,7 @@
                 android:layout_margin="16dp"
                 android:background="@drawable/btn_red_back"
                 android:fontFamily="@font/jose_san_bold"
-                android:text="Take Photo"
+                android:text="@string/take_photo"
                 android:textColor="@color/white" />
 
         </LinearLayout>

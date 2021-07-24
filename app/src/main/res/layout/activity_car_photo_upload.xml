@@ -41,7 +41,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Welcome back, "
+                        android:text="@string/welcome_back"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
 
@@ -49,7 +49,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="Shaheen,"
+                        android:text=""
                         android:textColor="@color/black"
                         android:textSize="24sp" />
 
@@ -105,7 +105,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Next step"
+                                    android:text="@string/next_step"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -114,7 +114,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Upload An Image Of The Front"
+                                    android:text="@string/upload_an_image_of_the_front"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
 
@@ -156,7 +156,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Next step"
+                                    android:text="@string/next_step"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -165,7 +165,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Upload An Image Of The Back"
+                                    android:text="@string/upload_an_image_of_the_back"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
 
@@ -207,7 +207,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Next step"
+                                    android:text="@string/next_step"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -216,7 +216,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Upload An Image Of The Inside"
+                                    android:text="@string/upload_an_image_of_the_inside"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
 
@@ -266,7 +266,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Next step"
+                                    android:text="@string/next_step"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -275,7 +275,7 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:fontFamily="@font/jose_san_bold"
-                                    android:text="Upload An Image Of The Side"
+                                    android:text="@string/upload_an_image_of_the_side"
                                     android:textColor="@color/black"
                                     android:textSize="16sp" />
 
@@ -301,7 +301,7 @@
                     android:layout_height="wrap_content"
                     android:background="@color/colorPrimary"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="Next Step"
+                    android:text="@string/next_step"
                     android:textColor="@color/white">
 
 

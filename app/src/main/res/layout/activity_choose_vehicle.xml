@@ -23,7 +23,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/jose_san_bold"
-                android:text="Please choose your vehicle type."
+                android:text="@string/please_choose_your_vehicle_type"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -103,7 +103,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Truck"
+                            android:text="@string/truck"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -153,7 +153,7 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="Ambulance"
+                            android:text="@string/ambulance"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />

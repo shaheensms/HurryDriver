@@ -32,7 +32,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-
             android:orientation="vertical"
             android:layout_height="match_parent">
 
@@ -63,7 +62,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Enter OTP"
+                android:text="@string/enter_otp"
                 android:fontFamily="@font/jose_san_bold"
                 android:textSize="25sp"
                 android:textColor="@color/black"
@@ -81,7 +80,7 @@
                 android:lineSpacingExtra="4dp"
                 android:textSize="16sp"
                 android:gravity="center"
-                android:text="We have sent you access code\n Via SMS For Mobile Verificaiton"/>
+                android:text="@string/we_have_sent_you_access_code_n_via_sms_for_mobile_verificaiton"/>
 
             <in.aabhasjindal.otptextview.OtpTextView
                 android:layout_gravity="center"
@@ -116,7 +115,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Didn't Recieve the OTP?"
+                android:text="@string/didn_t_recieve_the_otp"
                 android:textSize="17sp"
 
                 android:layout_gravity="center"

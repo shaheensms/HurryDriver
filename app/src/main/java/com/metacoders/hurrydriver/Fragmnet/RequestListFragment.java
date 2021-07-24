@@ -88,11 +88,13 @@ public class RequestListFragment extends Fragment {
                         model.getStatus(), model.getCarLicNum(), model.getFare(), model.getCarType(),
                         model.getReqDate(), model.getTripDetails(), model.getReturnTimee(), model.getNumOfPpl(), model.getRideType());
 
-                if(model.getStatus().toLowerCase().equals("completed") ||model.getStatus().toLowerCase().contains("by user") ){
+                if (model.getStatus().toLowerCase().equals("completed")
+                        || model.getStatus().toLowerCase().contains("by user")
+                        || model.getStatus().toLowerCase().contains("accepted")) {
 
                     viewholdersForCurrentTrip.itemView.setVisibility(View.GONE);
                     viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
-                }else {
+                } else {
 
                     viewholdersForCurrentTrip.itemView.setVisibility(View.VISIBLE);
                     viewholdersForCurrentTrip.itemView.setLayoutParams(new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -148,7 +150,7 @@ public class RequestListFragment extends Fragment {
                                     io.putExtra("des", description);
                                     io.putExtra("returndate", returnDate);
                                     io.putExtra("ridetype", rideType);
-                                    io.putExtra("model" , getItem(postion)) ;
+                                    io.putExtra("model", getItem(postion));
 
                                     startActivity(io);
 

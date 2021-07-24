@@ -19,7 +19,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginRight="12dp"
             android:fontFamily="@font/jose_san_bold"
-            android:text="Let's give some information's about your Ambulance"
+            android:text="@string/let_s_give_some_information_s_about_your_ambulance"
             android:textColor="@color/black"
             android:textSize="32sp" />
 
@@ -119,7 +119,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="16dp"
                 android:fontFamily="@font/jose_san_bold"
-                android:text="Ambulance Type : "
+                android:text="@string/ambulance_type"
                 android:textColor="@color/red"
                 android:textSize="18sp" />
 
@@ -138,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="ICU/CCU"
+                    android:text="@string/icu_ccu"
                     android:textColor="@color/red" />
 
                 <RadioButton
@@ -146,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/jose_san_bold"
-                    android:text="General"
+                    android:text="@string/general"
                     android:textColor="@color/red" />
 
             </RadioGroup>
@@ -185,7 +185,7 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="AC"
+                        android:text="@string/ac"
                         android:textColor="@color/red" />
 
                     <RadioButton
@@ -193,7 +193,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/jose_san_bold"
-                        android:text="NON-Ac"
+                        android:text="@string/non_ac"
                         android:textColor="@color/red" />
 
                 </RadioGroup>
