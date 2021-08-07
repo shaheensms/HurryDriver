@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/TripsList"
-        android:name="com.metacoders.hurrydriver.Fragmnet.TripsList"
+        android:name="com.hubit.hurrydriver.Fragmnet.TripsList"
         android:label="TripsList"
         tools:layout="@layout/fragment_trip_list"
         />
 
     <fragment
         android:id="@+id/HomePageFragment"
-        android:name="com.metacoders.hurrydriver.Fragmnet.HomePageFragment"
+        android:name="com.hubit.hurrydriver.Fragmnet.HomePageFragment"
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" />
 
     <fragment
         android:id="@+id/RequestListFragment"
-        android:name="com.metacoders.hurrydriver.Fragmnet.RequestListFragment"
+        android:name="com.hubit.hurrydriver.Fragmnet.RequestListFragment"
         tools:layout="@layout/fragment_request_list" />
 </navigation>

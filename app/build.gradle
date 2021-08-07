@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
-
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 android {
     compileSdkVersion 30
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.metacoders.hurrydriver"
+        applicationId "com.hubit.hurrydriver"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
@@ -35,7 +35,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.4'
     implementation 'com.google.firebase:firebase-database:20.0.0'
     implementation 'com.google.firebase:firebase-storage:20.0.0'
-    implementation 'com.google.firebase:firebase-crashlytics:18.1.0'
+    implementation 'com.google.firebase:firebase-crashlytics:18.2.0'
     implementation 'com.google.firebase:firebase-analytics:19.0.0'
 
 
@@ -46,7 +46,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
-
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'
     // Gif Image View
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
 
